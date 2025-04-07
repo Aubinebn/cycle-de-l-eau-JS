@@ -17,5 +17,5 @@ function switchScene(e)
     // });
 
     var offset = $(this).offset();
-    log('x = ' + ((e.pageX - offset.left) / $(this).outerWidth() * 100) + '% , y = ' + ((e.pageY - offset.top) / $(this).outerHeight() * 100) + "%" );
+    log('x = ' + ((e.pageX - offset.left) / sceneWidth * 100) + '% , y = ' + ((e.pageY - offset.top) / bg.height() * 100) + "%" );
 }
