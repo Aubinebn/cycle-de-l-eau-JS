@@ -22,9 +22,9 @@ const amenagements = [
     {
         milieu: "urbain",
         label: "Parcs",
-        x: 20,
-        y: 10,
-        image: "parcs.png",
+        x: 29,
+        y: 48,
+        image: "parc+zoneurbaine.png",
         effects: {
             evaporation: +1,
             infiltration: +1,
@@ -37,8 +37,8 @@ const amenagements = [
         milieu: "urbain",
         label: "Densification urbaine",
         x: 20,
-        y: 10,
-        image: "parcs.png",
+        y: 30,
+        image: "immeubles.png",
         effects: {
             infiltration: -1,
             ruissellement: -1,
@@ -51,9 +51,9 @@ const amenagements = [
     {
         milieu: "urbain",
         label: "Noues d'infiltration",
-        x: 20,
-        y: 10,
-        image: "parcs.png",
+        x: 38,
+        y: 45,
+        image: "noue.png",
         effects: {
             evaporation: -1,
             infiltration: +1,
@@ -62,14 +62,14 @@ const amenagements = [
             reseauEau: -1,
             biodiversite: +1,
         },
-        description: "Le noues et fossés d'infiltration facilitent la régulation des inondations et des macro-polluants. Ils peuvent également constituer un bon support de sensibilisation à la gestion des eaux pluviales, notamment dans les zones urbaines.",
+        description: "Les noues et fossés d'infiltration facilitent la régulation des inondations et des macro-polluants. Ils peuvent également constituer un bon support de sensibilisation à la gestion des eaux pluviales, notamment dans les zones urbaines.",
     },
     {
         milieu: "urbain",
         label: "Infiltration à la parcelle",
-        x: 20,
-        y: 10,
-        image: "parcs.png",
+        x: 82,
+        y: 63,
+        image: "infiltration-parcelle.png",
         effects: {
             evaporation: -1,
             infiltration: +1,
@@ -83,9 +83,9 @@ const amenagements = [
     {
         milieu: "urbain",
         label: "Séparation Eaux usées / Eaux pluviales",
-        x: 20,
-        y: 10,
-        image: "parcs.png",
+        x: 70,
+        y: 73,
+        image: "reseau-separatif.png",
         effects: {
             qualiteEau: +1,
         },
@@ -94,9 +94,9 @@ const amenagements = [
     {
         milieu: "urbain",
         label: "Stockage des eaux de pluies",
-        x: 20,
-        y: 10,
-        image: "parcs.png",
+        x: 79.5,
+        y: 59,
+        image: "cuve-eau.png",
         effects: {
             ruissellement: -1,
             reseauEau: -1,
@@ -106,9 +106,9 @@ const amenagements = [
     {
         milieu: "urbain",
         label: "Bassin de rétention des eaux pluviales",
-        x: 20,
-        y: 10,
-        image: "parcs.png",
+        x: 59,
+        y: 47,
+        image: "bassin-retention.png",
         effects: {
             ruissellement: -1,
             reseauEau: -1,
@@ -118,8 +118,8 @@ const amenagements = [
     {
         milieu: "urbain",
         label: "Parking infiltrant",
-        x: 20,
-        y: 10,
+        x: 59,
+        y: 47,
         image: "parcs.png",
         effects: {
             infiltration: +1,
