@@ -1,0 +1,117 @@
+html, body {
+    height:100%;
+}
+#viewport {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    height:100%;
+    background: #313438;
+}
+#viewport-scroll {
+    position:fixed;
+    top:0;
+    left:0;
+    height:100%;
+}
+#viewport-scroll .bg {
+    /*height:100%;*/
+    /*object-fit: contain;*/
+    /*object-position: left;*/
+    position:absolute;
+    top:0;
+    left:0;
+}
+#milieux .milieu {
+    position:absolute;
+    top:0;
+}
+#milieux .amenagement {
+    position:absolute;
+    background:red;
+}
+#milieux .point-info {
+    position:absolute;
+    background:yellow;
+}
+
+#gui {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+#gui .gui-elt {
+    background:#273D3D;
+    border-radius:8px;
+    padding:7px;
+}
+#gui #gui-bottom {
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+}
+#gui #gui-bottom #nav {
+    position:relative;
+}
+#gui #gui-bottom #nav #nav-bg {
+    width:500px;
+}
+#gui #gui-bottom #nav #nav-bg,
+#gui #gui-bottom #nav #nav-current {
+    height:calc(500px * 0.1875);
+    background:#fff;
+    background-image:url(img/bg.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:left bottom;
+    border-radius:inherit;
+    opacity:.4;
+}
+#gui #gui-bottom #nav #nav-current {
+    position:absolute;
+    top:0;
+    left:0;
+    width:33.3333%;
+    opacity:1;
+}
+#gui #gui-top {
+    position:fixed;
+    width:400px;
+    top:15px;
+    left:15px;
+}
+#gui #gui-top .gui-elt {
+    margin-bottom:15px;
+}
+#gui #gui-effects1 .gui-effect {
+    position:relative;
+    text-transform:uppercase;
+    font-weight:bold;
+}
+#gui #gui-effects1 .gui-effect .gui-effect-bar {
+    height:32px;
+    border-radius:8px;
+    background:#CEEFF5;
+    position:relative;
+}
+#gui #gui-effects1 .gui-effect .gui-effect-bar:before,
+#gui #gui-effects1 .gui-effect .gui-effect-bar:after {
+    content:'';
+    position:absolute;
+    width:24px;
+    height:32px;
+    background:#CEEFF5;
+    border-radius:50%;
+}
+#gui #gui-effects1 .gui-effect .gui-effect-bar:before {
+    left:0;
+}
+#gui #gui-effects1 .gui-effect .gui-effect-bar:after {
+    right:0;
+}

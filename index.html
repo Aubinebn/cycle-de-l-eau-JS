@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cycle de l'eau</title>
+
+    <link rel="stylesheet" href="lib/reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="lib/jquery.min.js"></script>
+
+    <script src="lib/utils.js"></script>
+
+    <script src="data/milieux.js"></script>
+    <script src="data/amenagements.js"></script>
+    <script src="data/points-info.js"></script>
+
+    <script src="events.js"></script>
+</head>
+<body>
+    <div id="viewport">
+        <div id="viewport-scroll">
+            <img class="bg" src="img/ciel-beau-temps.png" />
+            <img class="bg" src="img/bg.png" />
+
+            <div id="milieux">
+            </div>
+        </div>
+    </div>
+
+    <div id="gui">
+        <div id="gui-top">
+            <div id="gui-effects1" class="gui-elt">
+                <div class="gui-effect gui-effect-evaporation">
+                    <div class="gui-effect-label">Évaporation</div>
+                    <div class="gui-effect-bar"></div>
+                </div>
+                <div class="gui-effect gui-effect-evaporation">
+                    <div class="gui-effect-label">Infiltration</div>
+                    <div class="gui-effect-bar"></div>
+                </div>
+                <div class="gui-effect gui-effect-evaporation">
+                    <div class="gui-effect-label">Ruissellement</div>
+                    <div class="gui-effect-bar"></div>
+                </div>
+            </div>
+            <div id="gui-effects2" class="gui-elt">
+                <div class="gui-effect gui-effect-qualite-eau">
+                    <div class="gui-effect-label">Qualité de l'eau</div>
+                    <div class="gui-effect-bar"></div>
+                </div>
+                <div class="gui-effect gui-effect-biodiversite">
+                    <div class="gui-effect-label">Biodiversité</div>
+                    <div class="gui-effect-bar"></div>
+                </div>
+                <div class="gui-effect gui-effect-reseau-eau">
+                    <div class="gui-effect-label">Réseau d'eau</div>
+                    <div class="gui-effect-bar"></div>
+                </div>
+            </div>
+        </div>
+        <div id="gui-bottom" class="gui-elt">
+            <div id="nav">
+                <div id="nav-bg"></div>
+                <div id="nav-current"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
