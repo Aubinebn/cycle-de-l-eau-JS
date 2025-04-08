@@ -34,14 +34,16 @@ function setupMilieux()
 
 function setupAmenagements()
 {
+    let amenagementEltTemplate = $(''
+        + '<div class="amenagement">'
+        +   '<div class="bulle-amenagement"></div>'
+    +       '<div class="fiche-amenagement">Fiche</div>'
+        + '</div>'
+    );
+
     amenagements.forEach(function(amenagement)
     {
-        let amenagementElt = $(''
-            + '<div class="amenagement">'
-            +   '<h2>' + amenagement.label + '</h2>'
-            +   '<h2>' + amenagement.label + '</h2>'
-            + '</div>'
-        );
+        amenagementElt = amenagementEltTemplate.clone();
 
         amenagementElt.css({
             left: amenagement.x * sceneWidth / 100,

@@ -32,6 +32,19 @@ html, body {
     position:absolute;
     background:red;
 }
+#milieux .amenagement .bulle-amenagement {
+    position: absolute;
+    background-image: url("img/UI/bulle_amenagement.png");
+    height: 161px;
+    aspect-ratio: 1;
+    left: -24px;
+    bottom: -13px;
+}
+#milieux .amenagement .bulle-amenagement.active {
+    background-image: url("img/UI/bulle_amenagement_green.png");
+}
+
+
 #milieux .point-info {
     position:absolute;
     background:yellow;
