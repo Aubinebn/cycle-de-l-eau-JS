@@ -1,18 +1,8 @@
 function setupEventListeners()
 {
-    $('body').click(changeMilieu);
+    $(document).click(onClickDocument);
 
     $('.amenagement .bulle-amenagement').click(onClickBulleAmenagement);
-}
 
-function onClickBulleAmenagement()
-{
-    let bulle = $(this);
-    let amenagement = bulle.closest('.amenagement');
-    let ficheAmenagement = amenagement.find('.fiche-amenagement');
-
-    bulle.toggleClass('active').attr('src');
-    ficheAmenagement.toggleClass('active');
-
-    return false;
+    $('.amenagement .toggle').click(toggleAmenagement);
 }

@@ -35,3 +35,48 @@ function updateEffects()
 
     }
 }
+
+function onClickBulleAmenagement()
+{
+    let bulle = $(this);
+    let amenagement = bulle.closest('.amenagement');
+
+    amenagement.hasClass('focus') ? unfocusAmenagement() : focusAmenagement(amenagement);
+
+    return false;
+}
+
+function unfocusAmenagement()
+{
+    let amenagement = $('.amenagement.focus')
+    amenagement.removeClass('focus');
+    $('.bulle-amenagement').removeClass('light');
+}
+
+function focusAmenagement(amenagement)
+{
+    //-- Enleve d'abord le focus si il est présent sur un autre aménagement
+    unfocusAmenagement();
+
+    //-- Met le focus sur l'aménagement
+    amenagement.addClass('focus');
+
+    //-- Baisse l'opacité des autres bulles
+    $('.bulle-amenagement').addClass('light');
+    amenagement.find('.bulle-amenagement').removeClass('light');
+}
+
+function toggleAmenagement()
+{
+    let amenagement = $(this).closest('.amenagement');
+
+    amenagement.toggleClass('active');
+
+    return false;
+}
+
+function onClickDocument()
+{
+    //-- On ferme les fiches d'aménagement ouvertes
+    unfocusAmenagement();
+}

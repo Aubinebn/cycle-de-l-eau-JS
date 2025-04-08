@@ -32,22 +32,31 @@ function setupMilieux()
 
 function setupAmenagements()
 {
-    let amenagementEltTemplate = $(''
-        + '<div class="amenagement">'
-        +   '<div class="bulle-amenagement"></div>'
-        +   '<div class="fiche-amenagement">Fiche</div>'
-        + '</div>'
-    );
-
     amenagements.forEach(function(amenagement)
     {
-        amenagementElt = amenagementEltTemplate.clone();
+        //-- Crée un élément d'aménagement (bulle et fiche)
+        let amenagementElt = $('' +
+            '<div class="amenagement">' +
+                '<div class="bulle-amenagement"></div>' +
+                '<div class="fiche-amenagement">' +
+                    '<div class="fiche-amenagement-content">' +
+                        '<h2 class="amenagement-name">' + amenagement.label + '</h2>' +
+                        '<div class="amenagement-description">' + amenagement.description + '</div>' +
+                        '<div class="amenagement-toggler">' +
+                            '<div class="toggle off">Inactif</div>' +
+                            '<div class="toggle on">Actif</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>'
+        );
 
         amenagementElt.css({
             left: amenagement.x * sceneWidth / 100,
             top: amenagement.y * sceneHeight / 100
         });
 
+        //-- Ajoute l'élément d'aménagement dans le bon milieu
         milieuxContainer.find('.milieu-' + amenagement.milieu).append(amenagementElt);
     });
 }
