@@ -1,10 +1,11 @@
-var currentScene = 0;
-var numScenes = 3;
+var currentMilieu = 0;
+var numMilieux = 3;
 var jwindow = $(window);
-var sceneWidth = jwindow.width();
-var screenHeight;
+
 var viewportScroll = $('#viewport-scroll');
 var bg = viewportScroll.find('.bg');
+var sceneWidth = bg.width();
+var sceneHeight = bg.height();
 
 var milieuxContainer = viewportScroll.find('#milieux');
 
@@ -12,9 +13,6 @@ init();
 
 function init()
 {
-    bg.width(sceneWidth*3);
-    screenHeight = bg.height();
-
     setupMilieux();
     setupAmenagements();
     setupPointsInfo();
@@ -27,7 +25,7 @@ function setupMilieux()
     {
         let milieuElt = $('<div class="milieu milieu-' + milieu.name + '"></div>');
         milieuElt.css('left', sceneWidth * i);
-        log(milieuElt);
+
         milieuxContainer.append(milieuElt);
     });
 }
@@ -47,7 +45,7 @@ function setupAmenagements()
 
         amenagementElt.css({
             left: amenagement.x * sceneWidth / 100,
-            top: amenagement.y * screenHeight / 100
+            top: amenagement.y * sceneHeight / 100
         });
 
         milieuxContainer.find('.milieu-' + amenagement.milieu).append(amenagementElt);
@@ -66,7 +64,7 @@ function setupPointsInfo()
 
         pointInfoElt.css({
             left: pointInfo.x * sceneWidth / 100,
-            top: pointInfo.y * screenHeight / 100
+            top: pointInfo.y * sceneHeight / 100
         })
 
         milieuxContainer.find('.milieu-' + pointInfo.milieu).append(pointInfoElt);
