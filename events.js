@@ -1,22 +1,13 @@
 function setupEventListeners()
 {
-    $('body').click(changeMilieu);
+    $(document).click(hideAllModals);
 
-    $('.amenagement .bulle-amenagement').click(onClickBulleAmenagement);
+    $('#nav').click(changeMilieu);
+
+    $(document).on('click', '.amenagement .bulle-amenagement', onClickBulleAmenagement);
+    $(document).on('click', '.amenagement .toggle', toggleAmenagement);
 
     $('.gui-effect .gui-effect-more').click(onClickGuiEffectMore);
-}
-
-function onClickBulleAmenagement()
-{
-    let bulle = $(this);
-    let amenagement = bulle.closest('.amenagement');
-    let ficheAmenagement = amenagement.find('.fiche-amenagement');
-
-    bulle.toggleClass('active').attr('src');
-    ficheAmenagement.toggleClass('active');
-
-    return false;
 }
 
 function onClickGuiEffectMore()

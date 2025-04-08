@@ -88,7 +88,42 @@ function calcEffect(effectName, effect)
     };
 }
 
+function onClickBulleAmenagement()
+{
+    hideAllModals();
+
+    let amenagementElt = $(this).closest('.amenagement');
+    let milieu = amenagementElt.closest('.milieu');
+
+    //-- Remet l'aménagement en dernier dans son conteneur, pour qu'il prenne le max zIndex
+    let focusClone = amenagementElt.clone().appendTo($('#focus-container'));
+
+    //-- Met le focus sur l'aménagement
+    focusClone.addClass('focus');
+
+    //-- Baisse l'opacité des autres bulles
+    $('.bulle-amenagement').addClass('light');
+    focusClone.find('.bulle-amenagement').removeClass('light');
+
+    $('#focus-overlay').addClass('visible');
+
+    return false;
+}
+
+function toggleAmenagement()
+{
+    $(this).closest('.amenagement').toggleClass('active');
+    return false;
+}
+
 function hideAllModals()
 {
+    $('#focus-container').empty();
+
+    $('#focus-overlay').removeClass('visible');
+
     $('#gui-effect-more-info').hide();
+
+    $('.amenagement').removeClass('focus');
+    $('.bulle-amenagement').removeClass('light');
 }
