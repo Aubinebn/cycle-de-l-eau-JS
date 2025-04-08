@@ -1,6 +1,7 @@
 var currentMilieu = 0;
 var numMilieux = 3;
 var jwindow = $(window);
+
 var viewportScroll = $('#viewport-scroll');
 var bg = viewportScroll.find('.bg');
 var sceneWidth = bg.width();
@@ -12,8 +13,6 @@ init();
 
 function init()
 {
-    // bg.width(sceneWidth*3);
-
     setupMilieux();
     setupAmenagements();
     setupPointsInfo();
@@ -26,6 +25,7 @@ function setupMilieux()
     {
         let milieuElt = $('<div class="milieu milieu-' + milieu.name + '"></div>');
         milieuElt.css('left', sceneWidth * i);
+
         milieuxContainer.append(milieuElt);
     });
 }
