@@ -17,6 +17,7 @@
     <script src="data/points-info.js"></script>
 
     <script src="events.js"></script>
+    <script src="game.js"></script>
 </head>
 <body>
     <div id="viewport">
@@ -34,40 +35,83 @@
             <div id="gui-effects1" class="gui-elt">
                 <div class="gui-effect gui-effect-evaporation">
                     <div class="gui-effect-label">Évaporation</div>
-                    <div class="gui-effect-bar"></div>
+                    <div class="gui-effect-bar">
+                        <div class="gui-effect-bar-bg"></div>
+                        <div class="gui-effect-bar-progress"></div>
+                        <!--<svg class="gui-effect-bar-progress" xmlns="http://www.w3.org/2000/svg" width="218" height="32" viewBox="0 0 218 32" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4027 0H210V32H11.4027C5.10517 32 0 24.8366 0 16C0 7.16344 5.10517 0 11.4027 0Z" fill="url(#paint0_linear_236_1252)"/>
+                            <ellipse cx="210" cy="16" rx="8" ry="16" fill="#8AD4E3"/>
+                            <ellipse cx="210" cy="16" rx="8" ry="16" fill="#7BE29F"/>
+                            <defs>
+                                <linearGradient id="paint0_linear_236_1252" x1="0" y1="16" x2="210" y2="16" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#7BE29F"/>
+                                    <stop offset="1" stop-color="#ADEDC4"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>-->
+                    </div>
                 </div>
                 <div class="gui-effect gui-effect-evaporation">
                     <div class="gui-effect-label">Infiltration</div>
-                    <div class="gui-effect-bar"></div>
+                    <div class="gui-effect-bar">
+                        <div class="gui-effect-bar-bg"></div>
+                        <div class="gui-effect-bar-progress"></div>
+                    </div>
                 </div>
                 <div class="gui-effect gui-effect-evaporation">
                     <div class="gui-effect-label">Ruissellement</div>
-                    <div class="gui-effect-bar"></div>
+                    <div class="gui-effect-bar">
+                        <div class="gui-effect-bar-bg"></div>
+                        <div class="gui-effect-bar-progress"></div>
+                    </div>
                 </div>
             </div>
             <div id="gui-effects2" class="gui-elt">
                 <div class="gui-effect gui-effect-qualite-eau">
                     <div class="gui-effect-label">Qualité de l'eau</div>
-                    <div class="gui-effect-bar"></div>
+                    <div class="gui-effect-bar">
+                        <img class="gui-effect-bar-bg" src="img/effect-bar-quality-bg.svg" />
+                        <img class="gui-effect-bar-progress" src="img/effect-bar-quality-progress.svg" />
+                    </div>
                 </div>
                 <div class="gui-effect gui-effect-biodiversite">
                     <div class="gui-effect-label">Biodiversité</div>
-                    <div class="gui-effect-bar"></div>
+                    <div class="gui-effect-bar">
+                        <img class="gui-effect-bar-bg" src="img/effect-bar-quality-bg.svg" />
+                        <img class="gui-effect-bar-progress" src="img/effect-bar-quality-progress.svg" />
+                    </div>
                 </div>
                 <div class="gui-effect gui-effect-reseau-eau">
                     <div class="gui-effect-label">Réseau d'eau</div>
-                    <div class="gui-effect-bar"></div>
+                    <div class="gui-effect-bar">
+                        <img class="gui-effect-bar-bg" src="img/effect-bar-quality-bg.svg" />
+                        <img class="gui-effect-bar-progress" src="img/effect-bar-quality-progress.svg" />
+                    </div>
                 </div>
             </div>
         </div>
-        <div id="gui-bottom" class="gui-elt">
-            <div id="nav">
-                <div id="nav-bg"></div>
-                <div id="nav-current"></div>
+        <div id="gui-bottom">
+            <div class="gui-elt">
+                <div id="nav">
+                    <div id="nav-bg"></div>
+                    <div id="nav-current"></div>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="main.js"></script>
+    <svg width="424" height="32" viewBox="0 0 424 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <clipPath id="gui-effect-bar-clip">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 32C5.37258 32 0 24.8366 0 16C0 7.16344 5.37258 0 12 0H412H414V0.221223C419.675 1.49077 424 8.07201 424 16C424 23.928 419.675 30.5092 414 31.7788V32H412H12Z" fill="url(#paint0_linear_236_1248)" fill-opacity="0.2"/>
+                <linearGradient id="paint0_linear_236_1248" x1="-7" y1="16" x2="394" y2="16" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#5BCCE2"/>
+                    <stop offset="1" stop-color="#89E7F9"/>
+                </linearGradient>
+            </clipPath>
+        </defs>
+    </svg>
+
+    <script src="init.js"></script>
 </body>
 </html>
