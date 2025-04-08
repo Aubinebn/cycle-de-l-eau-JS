@@ -1,8 +1,9 @@
 var currentMilieu = 0;
 var numMilieux = 3;
 var jwindow = $(window);
-
+var viewport = $('#viewport');
 var viewportScroll = $('#viewport-scroll');
+var viewportScaleRatio = getViewportScaleRatio();
 var bg = viewportScroll.find('.bg');
 var sceneWidth = bg.width() / numMilieux;
 var sceneHeight = bg.height();
@@ -16,6 +17,9 @@ function init()
     setupMilieux();
     setupAmenagements();
     setupPointsInfo();
+    setupEffects();
+    updateEffects();
+
     setupEventListeners();
 }
 
@@ -69,4 +73,64 @@ function setupPointsInfo()
 
         milieuxContainer.find('.milieu-' + pointInfo.milieu).append(pointInfoElt);
     });
+}
+
+function setupEffects()
+{
+    Object.keys(effects.progress).forEach(setupEffectProgress);
+    Object.keys(effects.score).forEach(setupEffectScore);
+}
+
+function setupEffectProgress(effectName)
+{
+    let effect = effects.progress[effectName];
+
+    let effectElt =
+        '<div class="gui-effect gui-effect-' + effectName + '" data-name="' + effectName + '">' +
+            '<div class="gui-effect-label">' + effect.label + '</div>' +
+            '<div class="gui-effect-bar-container">' +
+                '<div class="gui-effect-bar">' +
+                    '<div class="gui-effect-bar-bg"></div>' +
+                    '<div class="gui-effect-bar-progress"></div>' +
+                    '<!--<svg class="gui-effect-bar-progress" xmlns="http://www.w3.org/2000/svg" width="218" height="32" viewBox="0 0 218 32" fill="none">' +
+                        '<path fill-rule="evenodd" clip-rule="evenodd" d="M11.4027 0H210V32H11.4027C5.10517 32 0 24.8366 0 16C0 7.16344 5.10517 0 11.4027 0Z" fill="url(#paint0_linear_236_1252)"/>' +
+                        '<ellipse cx="210" cy="16" rx="8" ry="16" fill="#8AD4E3"/>' +
+                        '<ellipse cx="210" cy="16" rx="8" ry="16" fill="#7BE29F"/>' +
+                        '<defs>' +
+                            '<linearGradient id="paint0_linear_236_1252" x1="0" y1="16" x2="210" y2="16" gradientUnits="userSpaceOnUse">' +
+                            '<stop stop-color="#7BE29F"/>' +
+                            '<stop offset="1" stop-color="#ADEDC4"/>' +
+                        '</linearGradient>' +
+                        '</defs>' +
+                    '</svg>-->' +
+                '</div>' +
+                '<div class="gui-effect-more">?</div>' +
+            '</div>' +
+        '</div>';
+
+    $('#gui-effects-progress').append(effectElt);
+}
+
+function setupEffectScore(effectName)
+{
+    let effect = effects.score[effectName];
+
+    let effectElt =
+        '<div class="gui-effect gui-effect-' + effectName + '" data-name="' + effectName + '">' +
+            '<div class="gui-effect-label">' + effect.label + '</div>' +
+            '<div class="gui-effect-bar-container">' +
+                '<div class="gui-effect-bar">' +
+                    '<img class="gui-effect-bar-bg" src="img/effect-bar-quality-bg.svg" />' +
+                    '<img class="gui-effect-bar-score" src="img/effect-bar-quality-progress.svg" />' +
+                '</div>' +
+                '<div class="gui-effect-more">?</div>' +
+            '</div>' +
+        '</div>';
+
+    $('#gui-effects-score').append(effectElt);
+}
+
+function getViewportScaleRatio()
+{
+    return parseFloat($('#viewport').css('transform').replace(/\(|\)|scale/g,'').split(',')[3]);
 }

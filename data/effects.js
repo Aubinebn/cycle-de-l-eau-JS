@@ -1,19 +1,36 @@
-const effects = [
-    'evaporation',
-    'infiltration',
-    'qualiteEau',
-    'ruissellement',
-    'reseauEau',
-    'biodiversite'
-];
-
-function getEffect(effectName)
-{
-    effects.forEach(function(effectName)
+const effects = {
+    'progress' :
     {
-        for (let i in amenagements)
-        {
-            let modifier = amenagements[i].effects[effectName];
+        evaporation: {
+            label: 'Évaporation',
+            default: 3
         }
-    });
-}
+        ,
+        infiltration: {
+            label: 'Infiltration',
+            default: 2.5
+        }
+        ,
+        ruissellement: {
+            label: 'Ruissellement',
+            default: 2.5
+        }
+    },
+    'score':
+    {
+        qualiteEau: {
+            label: 'Qualité de l\'eau',
+            default: 3
+        }
+        ,
+        biodiversite: {
+            label: 'Biodiversité',
+            default:  3
+        }
+        ,
+        reseauEau: {
+            label: 'Réseau d\'eau',
+            default: 5
+        }
+    }
+};

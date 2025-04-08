@@ -24,12 +24,14 @@ const amenagements = [
         label: "Parcs",
         x: 29,
         y: 48,
+        active: true,
         image: "parc+zoneurbaine.png",
         effects: {
             evaporation: +1,
             infiltration: +1,
             ruissellement: -1,
             biodiversite: +1,
+            qualiteEau: -10
         },
         description: "En ville, les parcs végétalisés permettent de créer une zone perméable (qui laisse traverser l'eau) ce qui permet de laisser l'eau intégrer le sol et remplir les nappes phréatiques. De plus ces espaces sont des refuges pour la biodiversité qui peine à trouver sa place en ville.",
     },
@@ -38,6 +40,7 @@ const amenagements = [
         label: "Densification urbaine",
         x: 20,
         y: 30,
+        active: true,
         image: "immeubles.png",
         effects: {
             infiltration: -1,
@@ -53,6 +56,7 @@ const amenagements = [
         label: "Noues d'infiltration",
         x: 38,
         y: 45,
+        active: false,
         image: "noue.png",
         effects: {
             evaporation: -1,
@@ -69,6 +73,7 @@ const amenagements = [
         label: "Infiltration à la parcelle",
         x: 82,
         y: 63,
+        active: false,
         image: "infiltration-parcelle.png",
         effects: {
             evaporation: -1,
@@ -85,6 +90,7 @@ const amenagements = [
         label: "Séparation Eaux usées / Eaux pluviales",
         x: 70,
         y: 73,
+        active: false,
         image: "reseau-separatif.png",
         effects: {
             qualiteEau: +1,
@@ -96,6 +102,7 @@ const amenagements = [
         label: "Stockage des eaux de pluies",
         x: 79.5,
         y: 59,
+        active: true,
         image: "cuve-eau.png",
         effects: {
             ruissellement: -1,
@@ -108,6 +115,7 @@ const amenagements = [
         label: "Bassin de rétention des eaux pluviales",
         x: 59,
         y: 47,
+        active: false,
         image: "bassin-retention.png",
         effects: {
             ruissellement: -1,
@@ -120,6 +128,7 @@ const amenagements = [
         label: "Parking infiltrant",
         x: 59,
         y: 47,
+        active: true,
         image: "parcs.png",
         effects: {
             infiltration: +1,
@@ -136,6 +145,7 @@ const amenagements = [
         label: "Désimperméabilisation /Végétalisation",
         x: 20,
         y: 10,
+        active: false,
         image: "parcs.png",
         effects: {
             evaporation: +1,
@@ -156,6 +166,7 @@ const amenagements = [
         label: "Test 3",
         x: 50,
         y: 50,
+        active: true,
         effects: {
             evaporation: +1,
             ruissellement: +1
@@ -168,6 +179,7 @@ const amenagements = [
         label: "Test 5",
         x: 20,
         y: 70,
+        active: false,
         effects: {
             evaporation: +1,
             ruissellement: +1
