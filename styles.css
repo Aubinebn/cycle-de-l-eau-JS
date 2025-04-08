@@ -360,18 +360,28 @@ html, body {
     background:url(img/effect-down.png) no-repeat left center;
 }
 
-#test-fleche {
+.fleche-evaporation {
     position: absolute;
-    top: 550px;
-    left: 990px;
     width: 200px;
     height: 200px;
     background: url(img/degrade-evaporation.png) repeat-y;
     animation: fleche-evaporation 4s infinite linear reverse;
     clip-path: url(#fleche-evaporation);
-    transform: scale(0.5);
+    transform: scale(0.8);
     background-size: 120%;
     mix-blend-mode: hard-light;
+}
+.fleche-evaporation.fleche1 {
+    top: 1000px;
+    left: 1950px;
+}
+.fleche-evaporation.fleche2 {
+    top: 880px;
+    left: 2750px;
+}
+.fleche-evaporation.fleche3 {
+    top: 1100px;
+    left: 1050px;
 }
 
 @keyframes fleche-evaporation {
