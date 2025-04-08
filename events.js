@@ -13,4 +13,6 @@ function onClickBulleAmenagement()
 
     bulle.toggleClass('active').attr('src');
     ficheAmenagement.toggleClass('active');
+
+    return false;
 }

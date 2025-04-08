@@ -4,7 +4,7 @@ var jwindow = $(window);
 
 var viewportScroll = $('#viewport-scroll');
 var bg = viewportScroll.find('.bg');
-var sceneWidth = bg.width();
+var sceneWidth = bg.width() / numMilieux;
 var sceneHeight = bg.height();
 
 var milieuxContainer = viewportScroll.find('#milieux');
@@ -35,7 +35,7 @@ function setupAmenagements()
     let amenagementEltTemplate = $(''
         + '<div class="amenagement">'
         +   '<div class="bulle-amenagement"></div>'
-    +       '<div class="fiche-amenagement">Fiche</div>'
+        +   '<div class="fiche-amenagement">Fiche</div>'
         + '</div>'
     );
 
