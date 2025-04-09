@@ -5,6 +5,8 @@
     --default-transition: all var(--default-transition-duration) var(--default-transition-effect);
 }
 
+/*********** Reset and Setup ***********/
+
 html, body {
     height:100%;
     font-family: "Degular Variable";
@@ -17,6 +19,9 @@ html, body {
     transform-origin:top left;
     transform:scale(0.555);
 }
+
+/*********** Viewport ***********/
+
 #viewport {
     position:fixed;
     top:0;
@@ -45,8 +50,10 @@ html, body {
     position:absolute;
     top:0;
 }
-
-#focus-overlay {
+body.focus #viewport-scroll {
+    filter: grayscale(.9) brightness(1.15);
+}
+/*#focus-overlay {
     position:absolute;
     z-index:1;
     top:0;
@@ -57,6 +64,18 @@ html, body {
     opacity:0;
     pointer-events: none;
     transition:.2s;
+}*/
+#focus-overlay {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: calc(100% / 0.55);
+    height: calc(100% / 0.55);
+    background: #d4ebf2;
+    opacity: 0;
+    pointer-events: none;
+    transition: .2s;
 }
 #focus-overlay.visible {
     opacity:.7;
@@ -67,13 +86,48 @@ html, body {
     z-index:2;
 }
 
-#nappe-phreatique {
-    position:absolute;
-    bottom:0;
-    left:0;
+/*********** Amenagements ***********/
+
+.amenagement .amenagement-image img{
+    position: absolute;
+    pointer-events: none;
 }
 
-.amenagement {
+.amenagement .amenagement-image .image-active {
+    display: none;
+}
+.amenagement.active .amenagement-image .image-active,
+.amenagement.focus .amenagement-image .image-active {
+    display: block;
+}
+.amenagement.focus:not(.active) .amenagement-image .image-inactive {
+    display: none;
+}
+
+.amenagement.focus:not(.active) .amenagement-image .image-active {
+    animation: blinking-amenagement-image 1300ms ease-in-out infinite;
+}
+
+@keyframes blinking-amenagement-image {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.amenagement .amenagement-image .image-inactive {
+    display: block;
+}
+.amenagement.active .amenagement-image .image-inactive {
+    display: none;
+}
+
+.amenagement-ui {
     position:absolute;
     display: flex;
     gap: 4px;
@@ -81,14 +135,14 @@ html, body {
     transform: translateY(-132px);
 }
 
-.amenagement .bulle-amenagement {
+.bulle-amenagement {
     background-image: url("img/UI/bulle_amenagement.png");
     height: 161px;
     aspect-ratio: 1;
     transition: .1s;
 }
 
-.amenagement .bulle-amenagement.light {
+.bulle-amenagement.light {
     /*opacity: 0.2;*/
 }
 
@@ -101,26 +155,29 @@ html, body {
 
 
 .amenagement .fiche-amenagement {
-    width: 730px;
     border-radius: 16px;
     background: linear-gradient(0deg, #3E5B5B 92.5%, #273D3D 100%);
     padding-top: 40px;
     margin-top: 22px;
-    transition: var(--default-transition);
+    transition: opacity .3s;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    width: 0;
+    height: 0;
 }
 .amenagement.active .fiche-amenagement {
     background: linear-gradient(360deg, #3EC46D 92%, #5FD388 100%);
 }
-.amenagement .fiche-amenagement {
-    opacity: 0;
-    visibility: hidden;
-}
 .amenagement.focus .fiche-amenagement {
+    width: 730px;
+    height: auto;
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
-.amenagement .fiche-amenagement .fiche-amenagement-content {
+.fiche-amenagement .fiche-amenagement-content {
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -175,6 +232,8 @@ html, body {
     position:absolute;
     background:yellow;
 }
+
+/*********** GUI ***********/
 
 #gui {
     /*position:absolute;*/
@@ -360,6 +419,8 @@ html, body {
     background:url(img/effect-down.png) no-repeat left center;
 }
 
+/*********** Animation Effects ***********/
+
 .fleche-evaporation {
     position: absolute;
     width: 200px;
@@ -391,4 +452,10 @@ html, body {
     100% {
         background-position-y:1000px;
     }
+}
+
+#nappe-phreatique {
+    position:absolute;
+    bottom:0;
+    left:0;
 }

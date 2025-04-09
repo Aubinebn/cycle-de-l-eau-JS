@@ -98,6 +98,9 @@ function onClickBulleAmenagement()
     //-- Remet l'aménagement en dernier dans son conteneur, pour qu'il prenne le max zIndex
     let focusClone = amenagementElt.clone().appendTo($('#focus-container'));
 
+    focusClone.data('amenagement', amenagementElt.data('amenagement'));
+    focusClone.data('amenagement-elt-base', amenagementElt);
+
     //-- Met le focus sur l'aménagement
     focusClone.addClass('focus');
 
@@ -106,13 +109,24 @@ function onClickBulleAmenagement()
     focusClone.find('.bulle-amenagement').removeClass('light');
 
     $('#focus-overlay').addClass('visible');
+    $('body').addClass('focus');
 
     return false;
 }
 
 function toggleAmenagement()
 {
-    $(this).closest('.amenagement').toggleClass('active');
+    let amenagementElt = $(this).closest('.amenagement');
+    let amenagement = amenagementElt.data('amenagement');
+
+    //-- ajoute l'élément de base (non cloné) au selecteur jquery, pour appliquer les modifications sur les deux en même temps
+    amenagementElt = amenagementElt.add(amenagementElt.data('amenagement-elt-base'));
+
+    amenagementElt.toggleClass('active');
+
+    updateEffects();
+    hideAllModals();
+
     return false;
 }
 
@@ -121,6 +135,7 @@ function hideAllModals()
     $('#focus-container').empty();
 
     $('#focus-overlay').removeClass('visible');
+    $('body').removeClass('focus');
 
     $('#gui-effect-more-info').hide();
 
