@@ -4,7 +4,8 @@
         label: "Parcs",
         x: 20,
         y: 10,
-        image: "parcs.png",
+        imageInactive: "nothing.png",
+        imageActive: "parcs.png",
         effects: {
             evaporation: +1,
             infiltration: +1,
@@ -25,7 +26,8 @@ const amenagements = [
         x: 29,
         y: 48,
         active: true,
-        image: "parc+zoneurbaine.png",
+        imageInactive: "zone-urbaine1.png",
+        imageActive: "parc+zoneurbaine.png",
         effects: {
             evaporation: +1,
             infiltration: +1,
@@ -41,7 +43,8 @@ const amenagements = [
         x: 20,
         y: 30,
         active: true,
-        image: "immeubles.png",
+        imageInactive: "nothing.png",
+        imageActive: "immeubles.png",
         effects: {
             infiltration: -1,
             ruissellement: -1,
@@ -57,7 +60,8 @@ const amenagements = [
         x: 38,
         y: 45,
         active: false,
-        image: "noue.png",
+        imageInactive: "nothing.png",
+        imageActive: "noue.png",
         effects: {
             evaporation: -1,
             infiltration: +1,
@@ -74,7 +78,8 @@ const amenagements = [
         x: 82,
         y: 63,
         active: false,
-        image: "infiltration-parcelle.png",
+        imageInactive: "nothing.png",
+        imageActive: "infiltration-parcelle.png",
         effects: {
             evaporation: -1,
             infiltration: +1,
@@ -91,7 +96,8 @@ const amenagements = [
         x: 70,
         y: 73,
         active: false,
-        image: "reseau-separatif.png",
+        imageInactive: "nothing.png",
+        imageActive: "reseau-separatif.png",
         effects: {
             qualiteEau: +1,
         },
@@ -103,7 +109,8 @@ const amenagements = [
         x: 79.5,
         y: 59,
         active: true,
-        image: "cuve-eau.png",
+        imageInactive: "nothing.png",
+        imageActive: "cuve-eau.png",
         effects: {
             ruissellement: -1,
             reseauEau: -1,
@@ -116,7 +123,8 @@ const amenagements = [
         x: 59,
         y: 47,
         active: false,
-        image: "bassin-retention.png",
+        imageInactive: "nothing.png",
+        imageActive: "bassin-retention.png",
         effects: {
             ruissellement: -1,
             reseauEau: -1,
@@ -126,10 +134,11 @@ const amenagements = [
     {
         milieu: "urbain",
         label: "Parking infiltrant",
-        x: 59,
-        y: 47,
+        x: 26,
+        y: 11,
         active: true,
-        image: "parcs.png",
+        imageInactive: "nothing.png",
+        imageActive: "parking-infiltrant.png",
         effects: {
             infiltration: +1,
             qualiteEau: +1,
@@ -142,11 +151,12 @@ const amenagements = [
     },
     {
         milieu: "urbain",
-        label: "Désimperméabilisation /Végétalisation",
+        label: "Végétalisation",
         x: 20,
         y: 10,
         active: false,
-        image: "parcs.png",
+        imageInactive: "nothing.png",
+        imageActive: "parking-vegetalise.png",
         effects: {
             evaporation: +1,
             infiltration: +1,
@@ -167,6 +177,7 @@ const amenagements = [
         x: 50,
         y: 50,
         active: true,
+        imageInactive: "nothing.png",
         effects: {
             evaporation: +1,
             ruissellement: +1
@@ -180,6 +191,7 @@ const amenagements = [
         x: 20,
         y: 70,
         active: false,
+        imageInactive: "nothing.png",
         effects: {
             evaporation: +1,
             ruissellement: +1
