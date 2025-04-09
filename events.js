@@ -8,6 +8,9 @@ function setupEventListeners()
     $(document).on('click', '.amenagement .toggle', toggleAmenagement);
 
     $('.gui-effect .gui-effect-more').click(onClickGuiEffectMore);
+
+    $('#gui-temperature .gui-btn').click(onClickTemperatureBtn);
+    $('#gui-rain .gui-btn').click(onClickRainBtn);
 }
 
 function onClickGuiEffectMore()
@@ -17,7 +20,7 @@ function onClickGuiEffectMore()
 
     let guiEffect = $(this).closest('.gui-effect');
 
-    let moreElt = $('#gui-effect-more-info').show();
+    let moreElt = $('#gui-effect-more-info').addClass('visible');
     moreElt.css('top', guiEffect.position().top / viewportScaleRatio);
 
     let effectName = guiEffect.data('name');
@@ -47,4 +50,24 @@ function onClickGuiEffectMore()
     moreElt.find('.gui-effect-detail').html(detail);
 
     return false;
+}
+
+function onClickTemperatureBtn()
+{
+    $('#gui-temperature .gui-btn').removeClass('active');
+    $(this).addClass('active');
+
+}
+
+function onClickRainBtn()
+{
+    $('#gui-rain .gui-btn').removeClass('active');
+    $(this).addClass('active');
+
+    let rainLevel = $(this).data('rain-level');
+
+    if (rainLevel == 0)
+        stopRain();
+    else
+        startRain(rainLevel);
 }

@@ -122,8 +122,60 @@ function hideAllModals()
 
     $('#focus-overlay').removeClass('visible');
 
-    $('#gui-effect-more-info').hide();
+    $('#gui-effect-more-info').removeClass('visible');
 
     $('.amenagement').removeClass('focus');
     $('.bulle-amenagement').removeClass('light');
+}
+
+function stopRain()
+{
+    if (isset(window.stopRainTimeout))
+        clearTimeout(window.stopRainTimeout);
+
+    $('body').removeClass('raining raining-low raining-high');
+
+    window.stopRainTimeout = setTimeout(function()
+    {
+        pJSDom[0].pJS.particles.move.enable = false;
+        pJSDom[1].pJS.particles.move.enable = false;
+    }, 3000);
+}
+
+function startRain(rainLevel)
+{
+    if (isset(window.stopRainTimeout))
+        clearTimeout(window.stopRainTimeout);
+
+    if (isset(window.rainIntensityInterval))
+        clearTimeout(window.rainIntensityInterval);
+
+    // pJSDom[0].pJS.particles.number.value = intensity * 80;
+
+    // pJSDom[0].pJS.particles.shape.image.src = intensity == 1
+    //     ? 'img/rain-low.png'
+    //     : 'img/rain-high.png';
+
+    // pJSDom[0].pJS.particles.move.enable = false;
+    // pJSDom[1].pJS.particles.move.enable = false;
+
+    let rainIndex = rainLevel == 'low' ? 0 : 1;
+
+    pJSDom[rainIndex].pJS.particles.move.enable = true;
+
+    pJSDom[rainIndex].pJS.fn.particlesRefresh();
+
+    //-- lance un timeout pour stopper l'autre pluie s'il y en avait une
+    if ($('body').hasClass('raining'))
+    {
+        let otherRainIndex = rainLevel == 'low' ? 1 : 0;
+
+        window.stopRainTimeout = setTimeout(function()
+        {
+            pJSDom[otherRainIndex].pJS.particles.move.enable = false;
+        }, 3000);
+    }
+
+    $('body').removeClass('raining-low raining-high');
+    $('body').addClass('raining raining-' + rainLevel);
 }

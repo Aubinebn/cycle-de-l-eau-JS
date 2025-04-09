@@ -20,6 +20,8 @@ function init()
     setupEffects();
     updateEffects();
 
+    setupRain();
+
     setupEventListeners();
 }
 
@@ -142,4 +144,51 @@ function setupEffectScore(effectName)
 function getViewportScaleRatio()
 {
     return parseFloat($('#viewport').css('transform').replace(/\(|\)|scale/g,'').split(',')[3]);
+}
+
+function setupRain()
+{
+    let rainLow = {
+        "particles": {
+            "number": {
+                "value": 80, "density": {"enable": true, "value_area": 800}
+            },
+            "color": {
+                "value": "#ffffff"
+            },
+            "shape": {
+                "type": "image",
+                "stroke": {"width": 0},
+                "polygon": {"nb_sides": 5},
+                "image": {"src": "img/rain-low.png", "width": 100, "height": 300}
+            },
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {"enable": false, "speed": 40, "size_min": 0.1, "sync": false}
+            },
+            "line_linked": {"enable": false},
+            "move": {
+                "enable": true,
+                "speed": 50,
+                "direction": "bottom",
+                "random": true,
+                randomMin: 0.3,
+                randomMax: 1,
+                "straight": true,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {"enable": false, "rotateX": 600, "rotateY": 1200}
+            }
+        },
+    };
+
+    let rainHigh = jQuery.extend(true, {}, rainLow);
+    rainHigh.particles.number.value = 400;
+    rainHigh.particles.shape.image.src = 'img/rain-high.png';
+
+    particlesJS("rain-low", rainLow);
+    particlesJS("rain-high", rainHigh);
+
+    stopRain();
 }
