@@ -41,11 +41,15 @@ function setupAmenagements()
     amenagements.forEach(function(amenagement)
     {
         //-- Crée un élément d'aménagement (bulle et fiche)
+        let inactiveImg = "";
+        if (isset(amenagement.imageInactive))
+            inactiveImg += '<img src="img/amenagements/' + amenagement.imageInactive + '" class="image-inactive">';
+
         let amenagementElt = $('' +
-            '<div class="amenagement">' +
+            '<div class="amenagement ' + amenagement.label + '">' +
                 '<div class="amenagement-image">' +
-                    '<img src="img/amenagements/' + amenagement.imageInactive + '" class="image-inactive">' +
                     '<img src="img/amenagements/' + amenagement.imageActive + '" class="image-active">' +
+                    inactiveImg +
                 '</div>' +
                 '<div class="amenagement-ui">' +
                     '<div class="bulle-amenagement"></div>' +

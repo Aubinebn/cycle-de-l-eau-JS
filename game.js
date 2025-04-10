@@ -1,3 +1,9 @@
+function logClickPos(e)
+{
+    //log('x = ' + (e.pageX / sceneWidth * 100) + '% , y = ' + (e.pageY / sceneHeight * 100) + "%" );
+    log((e.pageX/0.555)/sceneWidth*100, (e.pageY/0.555)/sceneHeight*100);
+}
+
 function changeMilieu(e)
 {
     currentMilieu++;
@@ -15,9 +21,6 @@ function changeMilieu(e)
     });
 
     updateEffects();
-
-    // var offset = $(this).offset();
-    // log('x = ' + ((e.pageX - offset.left) / $(this).outerWidth() * 100) + '% , y = ' + ((e.pageY - offset.top) / $(this).outerHeight() * 100) + "%" );
 
     hideAllModals();
 }

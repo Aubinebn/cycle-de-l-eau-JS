@@ -23,11 +23,10 @@ const amenagements = [
     {
         milieu: "urbain",
         label: "Parcs",
-        x: 29,
-        y: 48,
+        x: 31,
+        y: 49,
         active: true,
-        imageInactive: "zone-urbaine1.png",
-        imageActive: "parc+zoneurbaine.png",
+        imageActive: "parc.png",
         effects: {
             evaporation: +1,
             infiltration: +1,
@@ -43,7 +42,6 @@ const amenagements = [
         x: 20,
         y: 30,
         active: true,
-        imageInactive: "nothing.png",
         imageActive: "immeubles.png",
         effects: {
             infiltration: -1,
@@ -57,10 +55,9 @@ const amenagements = [
     {
         milieu: "urbain",
         label: "Noues d'infiltration",
-        x: 38,
-        y: 45,
+        x: 39,
+        y: 46,
         active: false,
-        imageInactive: "nothing.png",
         imageActive: "noue.png",
         effects: {
             evaporation: -1,
@@ -75,10 +72,9 @@ const amenagements = [
     {
         milieu: "urbain",
         label: "Infiltration à la parcelle",
-        x: 82,
-        y: 63,
+        x: 79,
+        y: 67,
         active: false,
-        imageInactive: "nothing.png",
         imageActive: "infiltration-parcelle.png",
         effects: {
             evaporation: -1,
@@ -96,7 +92,6 @@ const amenagements = [
         x: 70,
         y: 73,
         active: false,
-        imageInactive: "nothing.png",
         imageActive: "reseau-separatif.png",
         effects: {
             qualiteEau: +1,
@@ -106,10 +101,9 @@ const amenagements = [
     {
         milieu: "urbain",
         label: "Stockage des eaux de pluies",
-        x: 79.5,
-        y: 59,
+        x: 78,
+        y: 61,
         active: true,
-        imageInactive: "nothing.png",
         imageActive: "cuve-eau.png",
         effects: {
             ruissellement: -1,
@@ -121,9 +115,8 @@ const amenagements = [
         milieu: "urbain",
         label: "Bassin de rétention des eaux pluviales",
         x: 59,
-        y: 47,
+        y: 48,
         active: false,
-        imageInactive: "nothing.png",
         imageActive: "bassin-retention.png",
         effects: {
             ruissellement: -1,
@@ -134,10 +127,9 @@ const amenagements = [
     {
         milieu: "urbain",
         label: "Parking infiltrant",
-        x: 26,
-        y: 11,
+        x: 48,
+        y: 58,
         active: true,
-        imageInactive: "nothing.png",
         imageActive: "parking-infiltrant.png",
         effects: {
             infiltration: +1,
@@ -152,10 +144,9 @@ const amenagements = [
     {
         milieu: "urbain",
         label: "Végétalisation",
-        x: 20,
-        y: 10,
+        x: 35,
+        y: 60,
         active: false,
-        imageInactive: "nothing.png",
         imageActive: "parking-vegetalise.png",
         effects: {
             evaporation: +1,
@@ -171,31 +162,29 @@ const amenagements = [
             "- la réintroduction de la nature en ville : certaines techniques vertes vont dans le sens de la végétalisation de la ville.",
     },
 
-    {
-        milieu: "agricole",
-        label: "Test 3",
-        x: 50,
-        y: 50,
-        active: true,
-        imageInactive: "nothing.png",
-        effects: {
-            evaporation: +1,
-            ruissellement: +1
-        },
-        description: "",
-    },
-
-    {
-        milieu: "naturel",
-        label: "Test 5",
-        x: 20,
-        y: 70,
-        active: false,
-        imageInactive: "nothing.png",
-        effects: {
-            evaporation: +1,
-            ruissellement: +1
-        },
-        description: "",
-    }
+    // {
+    //     milieu: "agricole",
+    //     label: "Test 3",
+    //     x: 50,
+    //     y: 50,
+    //     active: true,
+    //     effects: {
+    //         evaporation: +1,
+    //         ruissellement: +1
+    //     },
+    //     description: "",
+    // },
+    //
+    // {
+    //     milieu: "naturel",
+    //     label: "Test 5",
+    //     x: 20,
+    //     y: 70,
+    //     active: false,
+    //     effects: {
+    //         evaporation: +1,
+    //         ruissellement: +1
+    //     },
+    //     description: "",
+    // }
 ];
