@@ -128,18 +128,22 @@ body.focus #viewport-scroll {
     pointer-events: none;
 }
 
-.amenagement .amenagement-image .image-active {
+.amenagement .amenagement-image .image-active,
+.amenagement .amenagement-image .image-focus {
     display: none;
 }
-.amenagement.active .amenagement-image .image-active,
-#focus-container .amenagement.focus .amenagement-image .image-active {
+.milieu .amenagement.active .amenagement-image .image-active {
     display: block;
 }
-#focus-container .amenagement.focus:not(.active) .amenagement-image .image-inactive {
+#focus-container .amenagement.focus .amenagement-image .image-focus,
+#focus-container .amenagement.active .amenagement-image .image-focus {
+    display: block;
+}
+#focus-container .amenagement.focus:not(.active) .image-focus .image-inactive {
     display: none;
 }
 
-#focus-container .amenagement.focus:not(.active) .amenagement-image .image-active {
+#focus-container .amenagement.focus:not(.active) .image-focus {
     animation: blinking-amenagement-image 1300ms ease-in-out infinite;
 }
 
