@@ -188,7 +188,6 @@ function startRain(rainLevel)
 
 function hideAllModals()
 {
-    log('hide');
     $('#focus-container').empty();
 
     $('#focus-overlay').removeClass('visible');

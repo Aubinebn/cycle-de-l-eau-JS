@@ -25,7 +25,7 @@ const amenagements = [
         label: "Parcs",
         x: 29,
         y: 48,
-        active: true,
+        active: false,
         imageInactive: "zone-urbaine1.png",
         imageActive: "parc+zoneurbaine.png",
         effects: {
@@ -64,22 +64,20 @@ const amenagements = [
         imageInactive: "nothing.png",
         imageActive: "immeubles.png",
         effects: {
-            effects: {
-                evaporation: {
-                    modifier: +1
-                },
-                infiltration: {
-                    modifier: +1
-                },
-                ruissellement: {
-                    modifier: -1
-                },
-                biodiversite: {
-                    modifier: +1
-                },
-                qualiteEau: {
-                    modifier: -10
-                },
+            evaporation: {
+                modifier: +1
+            },
+            infiltration: {
+                modifier: +1
+            },
+            ruissellement: {
+                modifier: -1
+            },
+            biodiversite: {
+                modifier: +1
+            },
+            qualiteEau: {
+                modifier: -10
             },
         },
         description: "\"L'augmentation du nombre de construction, la densification de l'habitat impactent le milieu naturel en empêchant les eaux de pluie de s'infiltrer et en créant des îlots de chaleur. Lorsque l'on urbanise fortement et que l'espace ne permet pas d'infiltrer les eaux de pluie à la parcelle, celles-ci sont collectés par des réseaux. Elles sont acheminées à la station d'épuration si le réseau est unitaire ou directement vers le milieu naturel si le réseau est séparatif. \n" +
@@ -94,22 +92,20 @@ const amenagements = [
         imageInactive: "nothing.png",
         imageActive: "noue.png",
         effects: {
-            effects: {
-                evaporation: {
-                    modifier: +1
-                },
-                infiltration: {
-                    modifier: +1
-                },
-                ruissellement: {
-                    modifier: -1
-                },
-                biodiversite: {
-                    modifier: +1
-                },
-                qualiteEau: {
-                    modifier: -10
-                },
+            evaporation: {
+                modifier: +1
+            },
+            infiltration: {
+                modifier: +1
+            },
+            ruissellement: {
+                modifier: -1
+            },
+            biodiversite: {
+                modifier: +1
+            },
+            qualiteEau: {
+                modifier: -10
             },
         },
         description: "Les noues et fossés d'infiltration facilitent la régulation des inondations et des macro-polluants. Ils peuvent également constituer un bon support de sensibilisation à la gestion des eaux pluviales, notamment dans les zones urbaines.",
@@ -123,22 +119,20 @@ const amenagements = [
         imageInactive: "nothing.png",
         imageActive: "infiltration-parcelle.png",
         effects: {
-            effects: {
-                evaporation: {
-                    modifier: +1
-                },
-                infiltration: {
-                    modifier: +1
-                },
-                ruissellement: {
-                    modifier: -1
-                },
-                biodiversite: {
-                    modifier: +1
-                },
-                qualiteEau: {
-                    modifier: -10
-                },
+            evaporation: {
+                modifier: +1
+            },
+            infiltration: {
+                modifier: +1
+            },
+            ruissellement: {
+                modifier: -1
+            },
+            biodiversite: {
+                modifier: +1
+            },
+            qualiteEau: {
+                modifier: -10
             },
         },
         description: "L'infiltration des eaux pluviales à la parcelle consiste à créer des aménagements permettant l'infiltration sur place de l'eau de pluie et donc une restitution au milieu naturel ou le stockage temporaire des eaux pluviales pour ainsi maitriser le déversement dans les réseaux d'assainissement collectif.",
@@ -152,22 +146,20 @@ const amenagements = [
         imageInactive: "nothing.png",
         imageActive: "reseau-separatif.png",
         effects: {
-            effects: {
-                evaporation: {
-                    modifier: +1
-                },
-                infiltration: {
-                    modifier: +1
-                },
-                ruissellement: {
-                    modifier: -1
-                },
-                biodiversite: {
-                    modifier: +1
-                },
-                qualiteEau: {
-                    modifier: -10
-                },
+            evaporation: {
+                modifier: +1
+            },
+            infiltration: {
+                modifier: +1
+            },
+            ruissellement: {
+                modifier: -1
+            },
+            biodiversite: {
+                modifier: +1
+            },
+            qualiteEau: {
+                modifier: -10
             },
         },
         description: "La séparation des eaux usées et des eaux pluviales permet de limiter l'engorgement des réseaux d'assainissement et d'éviter les débordements avec rejet au milieu naturel.",
@@ -181,22 +173,20 @@ const amenagements = [
         imageInactive: "nothing.png",
         imageActive: "cuve-eau.png",
         effects: {
-            effects: {
-                evaporation: {
-                    modifier: +1
-                },
-                infiltration: {
-                    modifier: +1
-                },
-                ruissellement: {
-                    modifier: -1
-                },
-                biodiversite: {
-                    modifier: +1
-                },
-                qualiteEau: {
-                    modifier: -10
-                },
+            evaporation: {
+                modifier: +1
+            },
+            infiltration: {
+                modifier: +1
+            },
+            ruissellement: {
+                modifier: -1
+            },
+            biodiversite: {
+                modifier: +1
+            },
+            qualiteEau: {
+                modifier: -10
             },
         },
         description: "Le stockage des eaux pluviales permet en période de sécheresse d'utiliser cette eau en substitution de l'eau potable. Cela réduit l'impact sur la ressource en eau potable lorsque la ressource est déjà en tension.",
@@ -210,22 +200,20 @@ const amenagements = [
         imageInactive: "nothing.png",
         imageActive: "bassin-retention.png",
         effects: {
-            effects: {
-                evaporation: {
-                    modifier: +1
-                },
-                infiltration: {
-                    modifier: +1
-                },
-                ruissellement: {
-                    modifier: -1
-                },
-                biodiversite: {
-                    modifier: +1
-                },
-                qualiteEau: {
-                    modifier: -10
-                },
+            evaporation: {
+                modifier: +1
+            },
+            infiltration: {
+                modifier: +1
+            },
+            ruissellement: {
+                modifier: -1
+            },
+            biodiversite: {
+                modifier: +1
+            },
+            qualiteEau: {
+                modifier: -10
             },
         },
         description: "Un bassin de rétention des eaux pluviales aussi appelé bassin tampon est une infrastructure essentielle dans la gestion des eaux pluviales, surtout pour les terrains soumis à un urbanisme croissant. Il sert à recueillir temporairement les excédents d'eau de pluie, évitant ainsi les inondations et la surcharge des réseaux d'assainissement. ",
@@ -239,22 +227,25 @@ const amenagements = [
         imageInactive: "nothing.png",
         imageActive: "parking-infiltrant.png",
         effects: {
-            effects: {
-                evaporation: {
-                    modifier: +1
-                },
-                infiltration: {
-                    modifier: +1
-                },
-                ruissellement: {
-                    modifier: -1
-                },
-                biodiversite: {
-                    modifier: +1
-                },
-                qualiteEau: {
-                    modifier: -10
-                },
+            evaporation: {
+                modifier: +1
+            },
+            infiltration: {
+                modifier: +1
+            },
+            ruissellement: {
+                modifier: -1,
+                indicator: {
+                    image: 'img/amenagements/ruissellement/ruissellement-parking.png',
+                    x: 43.5,
+                    y: 52
+                }
+            },
+            biodiversite: {
+                modifier: +1
+            },
+            qualiteEau: {
+                modifier: -10
             },
         },
         description: "\"Le parking perméable permet l'infiltration des eaux pluviales, évite un maximum le ruissellement de surface et désengorge le réseau d'assainissement. Le parking perméable végétalisé améliore le climat urbain et diminue l'effet îlot de chaleur en ville.\n" +
@@ -269,22 +260,20 @@ const amenagements = [
         imageInactive: "nothing.png",
         imageActive: "parking-vegetalise.png",
         effects: {
-            effects: {
-                evaporation: {
-                    modifier: +1
-                },
-                infiltration: {
-                    modifier: +1
-                },
-                ruissellement: {
-                    modifier: -1
-                },
-                biodiversite: {
-                    modifier: +1
-                },
-                qualiteEau: {
-                    modifier: -10
-                },
+            evaporation: {
+                modifier: +1
+            },
+            infiltration: {
+                modifier: +1
+            },
+            ruissellement: {
+                modifier: -1
+            },
+            biodiversite: {
+                modifier: +1
+            },
+            qualiteEau: {
+                modifier: -10
             },
         },
         description: "La désimperméabilisation concourt à l'adaptation au changement climatique par :\n" +
@@ -301,22 +290,20 @@ const amenagements = [
         active: true,
         imageInactive: "nothing.png",
         effects: {
-            effects: {
-                evaporation: {
-                    modifier: +1
-                },
-                infiltration: {
-                    modifier: +1
-                },
-                ruissellement: {
-                    modifier: -1
-                },
-                biodiversite: {
-                    modifier: +1
-                },
-                qualiteEau: {
-                    modifier: -10
-                },
+            evaporation: {
+                modifier: +1
+            },
+            infiltration: {
+                modifier: +1
+            },
+            ruissellement: {
+                modifier: -1
+            },
+            biodiversite: {
+                modifier: +1
+            },
+            qualiteEau: {
+                modifier: -10
             },
         },
         description: "",
@@ -330,22 +317,20 @@ const amenagements = [
         active: false,
         imageInactive: "nothing.png",
         effects: {
-            effects: {
-                evaporation: {
-                    modifier: +1
-                },
-                infiltration: {
-                    modifier: +1
-                },
-                ruissellement: {
-                    modifier: -1
-                },
-                biodiversite: {
-                    modifier: +1
-                },
-                qualiteEau: {
-                    modifier: -10
-                },
+            evaporation: {
+                modifier: +1
+            },
+            infiltration: {
+                modifier: +1
+            },
+            ruissellement: {
+                modifier: -1
+            },
+            biodiversite: {
+                modifier: +1
+            },
+            qualiteEau: {
+                modifier: -10
             },
         },
         description: "",

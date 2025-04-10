@@ -20,6 +20,7 @@ function init()
 {
     setupMilieux();
     setupAmenagements();
+
     // setupPointsInfo();
     setupEffects();
     updateEffects();
@@ -44,6 +45,7 @@ function setupMilieux()
 
 function setupAmenagements()
 {
+    let i = 0;
     amenagements.forEach(function(amenagement)
     {
         //-- Crée un élément d'aménagement (bulle et fiche)
@@ -59,9 +61,9 @@ function setupAmenagements()
                         '<div class="fiche-amenagement-content">' +
                             '<h2 class="amenagement-name">' + amenagement.label + '</h2>' +
                             '<div class="amenagement-description">' + amenagement.description + '</div>' +
-                            '<div class="amenagement-toggler">' +
-                                '<div class="toggle off">Supprimer</div>' +
-                                '<div class="toggle on">Ajouter</div>' +
+                            '<div class="toggle-button">' +
+                                '<div class="toggle-on-text">Ajouter</div>' +
+                                '<div class="toggle-off-text">Enlever</div>' +
                             '</div>' +
                         '</div>' +
                     '</div>' +
@@ -78,11 +80,15 @@ function setupAmenagements()
             if (isset(amenagement.effects[effectName].indicator))
             {
                 let indicator = amenagement.effects[effectName].indicator;
+
                 let indicatorElt = $('<div class="effect-indicator effect-indicator-' + effectName + '"></div>').appendTo(amenagementElt);
                 indicatorElt.css({
                     left: getSceneX(indicator.x),
                     top: getSceneY(indicator.y)
                 });
+
+                if (isset(indicator.image))
+                    indicatorElt.append('<img class="effect-indicator-image" src="' + indicator.image + '" />');
             }
         }
 
@@ -96,6 +102,8 @@ function setupAmenagements()
 
         //-- Ajoute l'élément d'aménagement dans le bon milieu
         milieuxContainer.find('.milieu-' + amenagement.milieu).append(amenagementElt);
+
+        i++;
     });
 }
 
@@ -224,6 +232,7 @@ function setupRain()
 
     stopRain();
 }
+
 
 function getSceneX(xPercent)
 {

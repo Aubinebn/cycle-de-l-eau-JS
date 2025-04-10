@@ -5,7 +5,7 @@ function setupEventListeners()
     $('#nav').click(changeMilieu);
 
     $(document).on('click', '.amenagement .bulle-amenagement', onClickBulleAmenagement);
-    $(document).on('click', '.amenagement .toggle', toggleAmenagement);
+    $(document).on('click', '.amenagement .toggle-button', toggleAmenagement);
 
     $('.gui-effect .gui-effect-more').click(onClickGuiEffectMore);
 

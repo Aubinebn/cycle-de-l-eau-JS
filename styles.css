@@ -239,20 +239,12 @@ body.focus #viewport-scroll {
 #focus-container .amenagement.focus .fiche-amenagement-content .amenagement-description {
     max-height: 450px;
 }
-.fiche-amenagement-content .amenagement-toggler {
-    display: flex;
-    gap: 24px;
-    justify-content: space-between;
-    width: 100%;
-}
-.fiche-amenagement-content .amenagement-toggler .toggle {
-    flex-grow: 1;
-}
 
-.toggle {
+.fiche-amenagement-content .toggle-button {
+    display: flex;
+    justify-content: center;
     padding-top: 16px;
     padding-bottom: 16px;
-    text-align: center;
     border-radius: 8px;
     background: linear-gradient(180deg, #D4D4D4 0%, #C7C7C7 100%);
     color: #DFEDE8;
@@ -260,19 +252,28 @@ body.focus #viewport-scroll {
     font-weight: 700;
     text-transform: uppercase;
     transition: var(--default-transition);
-    width:50%;
+    width:100%;
 }
 
-.amenagement:not(.active) .toggle.off{
-/*linear-gradient(180deg, #d3a05f 0%, #d77e3f 100%)*/
-/*    background: linear-gradient(0deg, #3E5B5B 92.5%, #273D3D 100%);*/
+.amenagement .toggle-button .toggle-off-text,
+.amenagement .toggle-button .toggle-on-text {
+    display: none;
 }
-.amenagement:not(.active) .toggle.on{
+.amenagement:not(.active) .toggle-button .toggle-on-text{
+    display: block;
+}
+.amenagement.active .toggle-button .toggle-off-text{
+    display: block;
+}
+
+
+.amenagement:not(.active) .toggle-button{
     background: linear-gradient(180deg, #5FD388 0%, #3EC46D 100%);
 }
-.amenagement.active .toggle.off{
+.amenagement.active .toggle-button{
     background: linear-gradient(180deg, #d3a05f 0%, #d77e3f 100%);
 }
+
 
 #rain-low,
 #rain-high {
