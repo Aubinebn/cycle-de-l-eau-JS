@@ -57,6 +57,8 @@ function onClickTemperatureBtn()
     $('#gui-temperature .gui-btn').removeClass('active');
     $(this).addClass('active');
 
+    $('body').removeClass('temperature-low temperature-high')
+        .addClass('temperature-' + $(this).data('temperature'));
 }
 
 function onClickRainBtn()
