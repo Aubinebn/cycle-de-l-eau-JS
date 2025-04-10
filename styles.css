@@ -34,11 +34,15 @@ html, body {
     background: #313438;
     /*overflow:hidden;*/
 }
+.temperature-low #viewport-scroll {
+    filter:brightness(1.15) saturate(0.5);
+}
 #viewport-scroll {
     position:absolute;
     top:0;
     left:0;
     height:100%;
+    transition:.5s;
 }
 #viewport-scroll .bg,
 #viewport-scroll .bg-sky,
@@ -71,7 +75,8 @@ html, body {
     top:0;
 }
 body.focus #viewport-scroll {
-    filter: grayscale(.9) brightness(1.15);
+/*    filter: grayscale(.9) brightness(1.15);*/
+    filter: brightness(1.15);
 }
 /*#focus-overlay {
     position:absolute;
@@ -95,7 +100,7 @@ body.focus #viewport-scroll {
     background: #d4ebf2;
     opacity: 0;
     pointer-events: none;
-    transition: .2s;
+    transition: .5s;
 }
 #focus-overlay.visible {
     opacity:.7;
@@ -127,14 +132,14 @@ body.focus #viewport-scroll {
     display: none;
 }
 .amenagement.active .amenagement-image .image-active,
-.amenagement.focus .amenagement-image .image-active {
+#focus-container .amenagement.focus .amenagement-image .image-active {
     display: block;
 }
-.amenagement.focus:not(.active) .amenagement-image .image-inactive {
+#focus-container .amenagement.focus:not(.active) .amenagement-image .image-inactive {
     display: none;
 }
 
-.amenagement.focus:not(.active) .amenagement-image .image-active {
+#focus-container .amenagement.focus:not(.active) .amenagement-image .image-active {
     animation: blinking-amenagement-image 1300ms ease-in-out infinite;
 }
 
@@ -169,7 +174,6 @@ body.focus #viewport-scroll {
     background-image: url("img/UI/bulle_amenagement.png");
     height: 161px;
     aspect-ratio: 1;
-    transition: .1s;
 }
 
 .bulle-amenagement.light {
@@ -189,7 +193,7 @@ body.focus #viewport-scroll {
     border-radius: 16px;
     background: linear-gradient(0deg, #3E5B5B 92.5%, #273D3D 100%);
     padding-top: 40px;
-    margin-top: 22px;
+    margin-top: -22px;
     transition: opacity .3s;
     opacity: 0;
     visibility: hidden;
@@ -200,7 +204,7 @@ body.focus #viewport-scroll {
 .amenagement.active .fiche-amenagement {
     background: linear-gradient(360deg, #3EC46D 92%, #5FD388 100%);
 }
-.amenagement.focus .fiche-amenagement {
+#focus-container .amenagement.focus .fiche-amenagement {
     width: 730px;
     height: auto;
     opacity: 1;
@@ -226,9 +230,14 @@ body.focus #viewport-scroll {
 .fiche-amenagement-content .amenagement-description {
     font-size: 20px;
     font-weight: 400;
-    max-height: 450px;
     overflow-y: auto;
     line-height:1.4;
+    max-height:0;
+    transition:.3s;
+    transition-delay:.5s;
+}
+#focus-container .amenagement.focus .fiche-amenagement-content .amenagement-description {
+    max-height: 450px;
 }
 .fiche-amenagement-content .amenagement-toggler {
     display: flex;
@@ -251,13 +260,18 @@ body.focus #viewport-scroll {
     font-weight: 700;
     text-transform: uppercase;
     transition: var(--default-transition);
+    width:50%;
 }
 
 .amenagement:not(.active) .toggle.off{
-    background: linear-gradient(0deg, #3E5B5B 92.5%, #273D3D 100%);
+/*linear-gradient(180deg, #d3a05f 0%, #d77e3f 100%)*/
+/*    background: linear-gradient(0deg, #3E5B5B 92.5%, #273D3D 100%);*/
 }
-.amenagement.active .toggle.on{
+.amenagement:not(.active) .toggle.on{
     background: linear-gradient(180deg, #5FD388 0%, #3EC46D 100%);
+}
+.amenagement.active .toggle.off{
+    background: linear-gradient(180deg, #d3a05f 0%, #d77e3f 100%);
 }
 
 #rain-low,
@@ -524,44 +538,33 @@ body.focus #viewport-scroll {
 
 /*********** Animation Effects ***********/
 
-.fleche-evaporation {
+.effect-indicator {
     position: absolute;
+    opacity:0;
+    pointer-events: none;
+    transition:.3s;
+}
+.effect-indicator.effect-indicator-evaporation {
     width: 200px;
     height: 200px;
+    transform: scale(0.8);
     background: url(img/degrade-evaporation.png) repeat-y;
+    background-size: 120%;
     animation: fleche-evaporation 4s infinite linear reverse;
     clip-path: url(#fleche-evaporation);
-    transform: scale(0.8);
-    background-size: 120%;
     mix-blend-mode: hard-light;
 }
-.fleche-evaporation.fleche1 {
-    top: 1000px;
-    left: 1950px;
-}
-.fleche-evaporation.fleche2 {
-    top: 880px;
-    left: 2750px;
-}
-.fleche-evaporation.fleche3 {
-    top: 1100px;
-    left: 1050px;
-}
-
-.fleche-infiltration {
-    position: absolute;
+.effect-indicator.effect-indicator-infiltration {
     width: 200px;
     height: 200px;
+    transform: scale(0.8);
     background: url(img/degrade-infiltration.png) repeat-y;
+    background-size: 120%;
     animation: fleche-evaporation 4s infinite linear;
     clip-path: url(#fleche-infiltration);
-    transform: scale(0.8);
-    background-size: 120%;
-    /*mix-blend-mode: hard-light;*/
 }
-.fleche-infiltration.fleche1 {
-    top: 1201px;
-    left: 490px;
+body:not(.focus) .amenagement.active .effect-indicator {
+    opacity:1;
 }
 
 @keyframes fleche-evaporation {

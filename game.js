@@ -74,7 +74,7 @@ function calcEffect(effectName, effect)
             || !isset(amenagement.effects[effectName]))
             continue;
 
-        let modifier = amenagement.effects[effectName];
+        let modifier = amenagement.effects[effectName].modifier;
         effectValue += modifier;
 
         hasModifiers = true;
@@ -105,14 +105,16 @@ function onClickBulleAmenagement()
     focusClone.data('amenagement-elt-base', amenagementElt);
 
     //-- Met le focus sur l'aménagement
+    amenagementElt.addClass('focus');
     focusClone.addClass('focus');
 
     //-- Baisse l'opacité des autres bulles
     $('.bulle-amenagement').addClass('light');
     focusClone.find('.bulle-amenagement').removeClass('light');
 
-    $('#focus-overlay').addClass('visible');
     $('body').addClass('focus');
+    $('#focus-overlay').addClass('visible');
+    $('#focus-container').hide().delay(100).fadeIn(500);
 
     return false;
 }
@@ -189,6 +191,7 @@ function startRain(rainLevel)
 
 function hideAllModals()
 {
+    log('hide');
     $('#focus-container').empty();
 
     $('#focus-overlay').removeClass('visible');

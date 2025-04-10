@@ -1,12 +1,16 @@
+const totalWidth = 11520;
+const totalHeight = 2160;
+
 var currentMilieu = 0;
 var numMilieux = 3;
+var sceneWidth = totalWidth / numMilieux;
+var sceneHeight = totalHeight;
+
 var jwindow = $(window);
 var viewport = $('#viewport');
 var viewportScroll = $('#viewport-scroll');
 var viewportScaleRatio = getViewportScaleRatio();
 var bg = viewportScroll.find('.bg');
-var sceneWidth = bg.width() / numMilieux;
-var sceneHeight = bg.height();
 
 var milieuxContainer = viewportScroll.find('#milieux');
 
@@ -23,6 +27,8 @@ function init()
     setupRain();
 
     setupEventListeners();
+
+    $('.gui-temperature .gui-btn.active').click();
 }
 
 function setupMilieux()
@@ -58,8 +64,8 @@ function setupAmenagements()
                             '<h2 class="amenagement-name">' + amenagement.label + '</h2>' +
                             '<div class="amenagement-description">' + amenagement.description + '</div>' +
                             '<div class="amenagement-toggler">' +
-                                '<div class="toggle off">Inactif</div>' +
-                                '<div class="toggle on">Actif</div>' +
+                                '<div class="toggle off">Supprimer</div>' +
+                                '<div class="toggle on">Ajouter</div>' +
                             '</div>' +
                         '</div>' +
                     '</div>' +
@@ -67,12 +73,29 @@ function setupAmenagements()
             '</div>'
         );
 
+        if (amenagement.active)
+            amenagementElt.addClass('active');
+
+        //-- Indicateurs des effets d'eau
+        for (var effectName in amenagement.effects)
+        {
+            if (isset(amenagement.effects[effectName].indicator))
+            {
+                let indicator = amenagement.effects[effectName].indicator;
+                let indicatorElt = $('<div class="effect-indicator effect-indicator-' + effectName + '"></div>').appendTo(amenagementElt);
+                indicatorElt.css({
+                    left: getSceneX(indicator.x),
+                    top: getSceneY(indicator.y)
+                });
+            }
+        }
+
         amenagementElt.data('amenagement', amenagement);
 
         //-- Place l'ui
         amenagementElt.find('.amenagement-ui').css({
-            left: amenagement.x * sceneWidth / 100,
-            top: amenagement.y * sceneHeight / 100
+            left: getSceneX(amenagement.x),
+            top: getSceneY(amenagement.y)
         });
 
         //-- Ajoute l'élément d'aménagement dans le bon milieu
@@ -204,4 +227,14 @@ function setupRain()
     particlesJS("rain-high", rainHigh);
 
     stopRain();
+}
+
+function getSceneX(xPercent)
+{
+    return xPercent * sceneWidth / 100;
+}
+
+function getSceneY(yPercent)
+{
+    return yPercent * sceneHeight / 100;
 }
