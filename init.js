@@ -51,10 +51,16 @@ function setupAmenagements()
         if (isset(amenagement.imageInactive))
             inactiveImg += '<img src="img/amenagements/' + amenagement.imageInactive + '" class="image-inactive">';
 
+        //-- Image focus : soit l'image "active", soit une image différente si imageFocus est passé en paramètre
+        let focusImg = amenagement.imageActive;
+        if (isset(amenagement.imageFocus))
+                focusImg = amenagement.imageFocus;
+
         let amenagementElt = $('' +
-            '<div class="amenagement ' + amenagement.label + '">' +
+            '<div class="amenagement" data-label="' + amenagement.label + '">' +
                 '<div class="amenagement-image">' +
                     '<img src="img/amenagements/' + amenagement.imageActive + '" class="image-active">' +
+                    '<img src="img/amenagements/' + focusImg + '" class="image-focus">' +
                     inactiveImg +
                 '</div>' +
                 '<div class="amenagement-ui">' +

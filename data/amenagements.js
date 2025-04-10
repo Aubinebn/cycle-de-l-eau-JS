@@ -27,6 +27,7 @@ const amenagements = [
         y: 49,
         active: true,
         imageActive: "parc.png",
+        imageFocus: "parc-focus.png",
         effects: {
             evaporation: {
                 modifier: +1,
@@ -145,6 +146,7 @@ const amenagements = [
         x: 70,
         y: 73,
         active: false,
+        imageInactive: "reseau-commun.png",
         imageActive: "reseau-separatif.png",
         effects: {
             effects: {
