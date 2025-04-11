@@ -4,7 +4,7 @@ const urbain = [
         label: "Parcs",
         x: 31,
         y: 49,
-        active: true,
+        active: false,
         imageActive: "urbain/parc.png",
         imageFocus: "urbain/parc-focus.png",
         effects: {
@@ -39,7 +39,7 @@ const urbain = [
         label: "Densification urbaine",
         x: 20,
         y: 30,
-        active: true,
+        active: false,
         imageInactive: "urbain/colline-ville.png",
         imageActive: "urbain/immeubles.png",
         effects: {
@@ -134,7 +134,7 @@ const urbain = [
         label: "Stockage des eaux de pluies",
         x: 78,
         y: 61,
-        active: true,
+        active: false,
         imageActive: "urbain/cuve-eau.png",
         effects: {
             evaporation: {
@@ -186,7 +186,7 @@ const urbain = [
         label: "Parking infiltrant",
         x: 48,
         y: 58,
-        active: true,
+        active: false,
         imageActive: "urbain/parking-infiltrant.png",
         effects: {
             evaporation: {
