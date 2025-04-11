@@ -53,25 +53,3 @@ function onClickGuiEffectMore()
 
     return false;
 }
-
-function onClickTemperatureBtn()
-{
-    $('#gui-temperature .gui-btn').removeClass('active');
-    $(this).addClass('active');
-
-    $('body').removeClass('temperature-low temperature-high')
-        .addClass('temperature-' + $(this).data('temperature'));
-}
-
-function onClickRainBtn()
-{
-    $('#gui-rain .gui-btn').removeClass('active');
-    $(this).addClass('active');
-
-    let rainLevel = $(this).data('rain-level');
-
-    if (rainLevel == 0)
-        stopRain();
-    else
-        startRain(rainLevel);
-}

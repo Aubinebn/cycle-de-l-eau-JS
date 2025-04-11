@@ -29,6 +29,8 @@ function updateEffects()
 {
     Object.keys(effects.progress).forEach(updateProgressEffect);
     Object.keys(effects.score).forEach(udpateScoreEffect);
+
+    updateAmenagementsEffects();
 }
 
 function updateProgressEffect(effectName)
@@ -60,6 +62,40 @@ function udpateScoreEffect(effectName)
     guiEffect.find('.gui-effect-more').toggleClass('active', effectRes.hasModifiers);
 }
 
+function updateAmenagementsEffects()
+{
+    log('updateAmenagementsEffects');
+
+    // for (let i in amenagements)
+    // {
+    //     let amenagement = amenagements[i];
+    //
+        for (let effectName in allEffects)
+        {
+    //         let amenagementEffect = amenagement.effects[effectName];
+    //
+    //         if (!isset(amenagementEffect.indicator))
+    //             continue;
+
+            let effect = allEffects[effectName];
+
+            if (!isset(effect.modifiers))
+                continue;
+
+            let weatherModifier = effect.modifiers[currentTemperature]['rain_' + currentRain];
+            let indicatorVisible = weatherModifier > 0;
+            let indicatorScale = weatherModifier == 0
+                ? 0
+                : .5 + weatherModifier * .5;
+
+            $('.effect-indicator-' + effectName)
+                .toggleClass('visible', indicatorVisible)
+                .css('transform', 'scale(' + indicatorScale + ')')
+                .attr('data-scale', indicatorScale);
+        }
+    // }
+}
+
 function calcEffect(effectName, effect)
 {
     let effectValue = effect.default;
@@ -77,9 +113,24 @@ function calcEffect(effectName, effect)
         let modifier = amenagement.effects[effectName].modifier;
         effectValue += modifier;
 
+        // if (effectName == 'infiltration')
+        //     log('modifier ', amenagement.label);
+
         hasModifiers = true;
     }
 
+    //-- modifiers météo ?
+    if (isset(effect.modifiers) && isset(effect.modifiers[currentTemperature]['rain_' + currentRain]))
+    {
+        let weatherModifier = effect.modifiers[currentTemperature]['rain_' + currentRain];
+
+        // if (effectName == 'infiltration')
+        //     log('modifier for ', effect.label, 'value=', effectValue, 'modifier=', weatherModifier);
+
+        effectValue *= weatherModifier;
+    }
+
+    //-- normalisation
     if (effectValue < 0)
         effectValue = 0;
     else if (effectValue > 5)
@@ -116,6 +167,11 @@ function onClickBulleAmenagement()
     $('#focus-overlay').addClass('visible');
     $('#focus-container').hide().delay(100).fadeIn(500);
 
+    window.showBulleTimeout = setTimeout(function()
+    {
+        focusClone.find('.image-focus').addClass('animate');
+    }, 1000);
+
     return false;
 }
 
@@ -137,58 +193,6 @@ function toggleAmenagement()
     return false;
 }
 
-function stopRain()
-{
-    if (isset(window.stopRainTimeout))
-        clearTimeout(window.stopRainTimeout);
-
-    $('body').removeClass('raining raining-low raining-high');
-
-    window.stopRainTimeout = setTimeout(function()
-    {
-        pJSDom[0].pJS.particles.move.enable = false;
-        pJSDom[1].pJS.particles.move.enable = false;
-    }, 3000);
-}
-
-function startRain(rainLevel)
-{
-    if (isset(window.stopRainTimeout))
-        clearTimeout(window.stopRainTimeout);
-
-    if (isset(window.rainIntensityInterval))
-        clearTimeout(window.rainIntensityInterval);
-
-    // pJSDom[0].pJS.particles.number.value = intensity * 80;
-
-    // pJSDom[0].pJS.particles.shape.image.src = intensity == 1
-    //     ? 'img/rain-low.png'
-    //     : 'img/rain-high.png';
-
-    // pJSDom[0].pJS.particles.move.enable = false;
-    // pJSDom[1].pJS.particles.move.enable = false;
-
-    let rainIndex = rainLevel == 'low' ? 0 : 1;
-
-    pJSDom[rainIndex].pJS.particles.move.enable = true;
-
-    pJSDom[rainIndex].pJS.fn.particlesRefresh();
-
-    //-- lance un timeout pour stopper l'autre pluie s'il y en avait une
-    if ($('body').hasClass('raining'))
-    {
-        let otherRainIndex = rainLevel == 'low' ? 1 : 0;
-
-        window.stopRainTimeout = setTimeout(function()
-        {
-            pJSDom[otherRainIndex].pJS.particles.move.enable = false;
-        }, 3000);
-    }
-
-    $('body').removeClass('raining-low raining-high');
-    $('body').addClass('raining raining-' + rainLevel);
-}
-
 function hideAllModals()
 {
     $('#focus-container').empty();
@@ -200,4 +204,7 @@ function hideAllModals()
 
     $('.amenagement').removeClass('focus');
     $('.bulle-amenagement').removeClass('light');
+
+    if (isset(window.showBulleTimeout))
+        clearTimeout(window.showBulleTimeout);
 }

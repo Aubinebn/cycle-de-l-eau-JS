@@ -34,9 +34,9 @@ html, body {
     background: #313438;
     /*overflow:hidden;*/
 }
-.temperature-low #viewport-scroll {
-    filter:brightness(1.15) saturate(0.5);
-}
+/*.temperature-cold #viewport-scroll {*/
+/*    filter:brightness(1.15) saturate(0.5);*/
+/*}*/
 #viewport-scroll {
     position:absolute;
     top:0;
@@ -53,7 +53,17 @@ html, body {
     position:absolute;
     top:0;
     left:0;
-    transition:3s;
+    transition:2s;
+    pointer-events: none;
+}
+#viewport-scroll .bg-cold {
+     opacity:0;
+}
+.temperature-cold #viewport-scroll .bg-cold {
+    opacity:1;
+}
+.temperature-hot #viewport-scroll .bg-hot {
+    opacity:1;
 }
 #viewport-scroll .bg-sky-rain {
     opacity:0;
@@ -67,7 +77,8 @@ html, body {
 .raining.raining-low #viewport-scroll .bg {
     filter: brightness(0.9);
 }
-.raining.raining-high #viewport-scroll .bg {
+.raining.raining-high #viewport-scroll .bg,
+.raining.raining-high #viewport-scroll .amenagement-image {
     filter: brightness(0.8);
 }
 #milieux .milieu {
@@ -116,6 +127,7 @@ body.focus #viewport-scroll {
     position:absolute;
     bottom: -1500px;
     left:0;
+    pointer-events: none;
 }
 #nappe-phreatique {
     opacity:0;
@@ -123,6 +135,13 @@ body.focus #viewport-scroll {
 
 /*********** Amenagements ***********/
 
+.amenagement-image {
+    transition:filter 2s;
+    filter: brightness(1) saturate(1);
+}
+.temperature-low .amenagement-image {
+    filter:brightness(1.15) saturate(0.5);
+}
 .amenagement .amenagement-image img{
     position: absolute;
     pointer-events: none;
@@ -130,32 +149,32 @@ body.focus #viewport-scroll {
 
 .amenagement .amenagement-image .image-active,
 .amenagement .amenagement-image .image-focus {
-    display: none;
+    opacity:0;
 }
 .milieu .amenagement.active .amenagement-image .image-active {
-    display: block;
+    opacity:1;
 }
-#focus-container .amenagement.focus .amenagement-image .image-focus,
 #focus-container .amenagement.active .amenagement-image .image-focus {
-    display: block;
+    opacity:1;
 }
 #focus-container .amenagement.focus:not(.active) .image-focus .image-inactive {
-    display: none;
+    opacity:0;
 }
 
-#focus-container .amenagement.focus:not(.active) .image-focus {
-    animation: blinking-amenagement-image 1300ms ease-in-out infinite;
+#focus-container .amenagement.focus:not(.active) .image-focus.animate {
+    opacity:1;
+    animation: blinking-amenagement-image 1800ms ease-in-out infinite;
 }
 
 @keyframes blinking-amenagement-image {
     0% {
-        opacity: 0.5;
+        opacity: 0;
     }
     50% {
-        opacity: 0.2;
+        opacity: 0.65;
     }
     100% {
-        opacity: 0.5;
+        opacity: 0;
     }
 }
 
@@ -172,6 +191,7 @@ body.focus #viewport-scroll {
     gap: 4px;
     transform: translateX(-26px);
     transform: translateY(-132px);
+    z-index: 1;
 }
 
 .bulle-amenagement {
@@ -281,7 +301,7 @@ body.focus #viewport-scroll {
 
 #rain-low,
 #rain-high {
-    position: absolute;
+    position: fixed;
     top:0;
     left:0;
     width:calc(100vw / var(--viewport-scale-value));
@@ -311,16 +331,19 @@ body.focus #viewport-scroll {
     /*left:0;*/
     /*right:0;*/
     /*bottom:0;*/
+}
+#gui .gui-elt {
+    background:#273D3D;
+    border-radius:8px;
+    padding:24px;
 
     text-transform:uppercase;
     font-weight:bold;
     font-size:24px;
     color:#fff;
 }
-#gui .gui-elt {
-    background:#273D3D;
-    border-radius:8px;
-    padding:24px;
+#gui .gui-label {
+    margin-bottom:10px;
 }
 #gui #gui-bottom {
     position:absolute;
@@ -359,9 +382,13 @@ body.focus #viewport-scroll {
     width:33.3333%;
     opacity:1;
 }
-#gui #gui-bottom  #gui-temperature, #gui-rain {
-    display:flex;
-    gap:30px;
+#gui #gui-bottom .gui-label {
+    text-align: center;
+    position:relative;
+    top:-5px;
+}
+#gui #gui-bottom  #gui-temperature,
+#gui #gui-bottom  #gui-rain {
     align-self: end;
 }
 #gui #gui-bottom  #gui-temperature {
@@ -374,6 +401,10 @@ body.focus #viewport-scroll {
     border-bottom-right-radius: 0;
     border-top-left-radius: 0;
 }
+#gui #gui-bottom .gui-btns {
+    display:flex;
+    gap:30px;
+}
 #gui #gui-bottom .gui-btn {
     width:104px;
     height:104px;
@@ -381,6 +412,9 @@ body.focus #viewport-scroll {
     align-items: center;
     justify-content: center;
     border-radius:8px;
+}
+#gui #gui-bottom #gui-temperature .gui-btn {
+    width:171px;
 }
 #gui #gui-bottom .gui-btn.active {
     background:#fff;
@@ -391,13 +425,13 @@ body.focus #viewport-scroll {
 #gui #gui-bottom .gui-btn.active path {
     fill:#273D3D;
 }
-#gui #gui-bottom #gui-temperature .gui-temperature-low.active .temperature-indicator {
+#gui #gui-bottom #gui-temperature .gui-temperature-cold.active .temperature-indicator {
     fill:#5DCCE2;
 }
-#gui #gui-bottom #gui-temperature .gui-temperature-medium.active .temperature-indicator {
+#gui #gui-bottom #gui-temperature .gui-temperature-normal.active .temperature-indicator {
     fill:#5FD388;
 }
-#gui #gui-bottom #gui-temperature .gui-temperature-high.active .temperature-indicator {
+#gui #gui-bottom #gui-temperature .gui-temperature-hot.active .temperature-indicator {
     fill:#FE6363;
 }
 
@@ -416,9 +450,6 @@ body.focus #viewport-scroll {
 }
 #gui #gui-top .gui-effect:last-child {
     margin-bottom:0;
-}
-#gui #gui-top .gui-effect .gui-effect-label {
-    margin-bottom:10px;
 }
 #gui #gui-top .gui-effect .gui-effect-bar-container {
     display:flex;
@@ -547,26 +578,37 @@ body.focus #viewport-scroll {
     position: absolute;
     opacity:0;
     pointer-events: none;
-    transition:.3s;
+    transition:2s ease-in-out;
 }
 .effect-indicator.effect-indicator-evaporation {
     width: 200px;
     height: 200px;
     transform: scale(0.8);
+    mix-blend-mode: hard-light;
+    transform-origin: center bottom;
+    /*overflow:hidden;*/
+}
+.effect-indicator.effect-indicator-evaporation .effect-indicator-img {
     background: url(img/degrade-evaporation.png) repeat-y;
     background-size: 120%;
     animation: fleche-evaporation 4s infinite linear reverse;
     clip-path: url(#fleche-evaporation);
-    mix-blend-mode: hard-light;
+    width:100%;
+    height:100%;
 }
 .effect-indicator.effect-indicator-infiltration {
     width: 200px;
     height: 200px;
     transform: scale(0.8);
+    transform-origin: center top;
+}
+.effect-indicator.effect-indicator-infiltration .effect-indicator-img {
     background: url(img/degrade-infiltration.png) repeat-y;
     background-size: 120%;
     animation: fleche-evaporation 4s infinite linear;
     clip-path: url(#fleche-infiltration);
+    width:100%;
+    height:100%;
 }
 body:not(.focus) .amenagement.active .effect-indicator {
     opacity:1;

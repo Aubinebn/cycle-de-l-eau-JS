@@ -25,7 +25,7 @@ const amenagements = [
         label: "Parcs",
         x: 31,
         y: 49,
-        active: true,
+        active: false,
         imageActive: "parc.png",
         imageFocus: "parc-focus.png",
         effects: {
@@ -60,7 +60,7 @@ const amenagements = [
         label: "Densification urbaine",
         x: 20,
         y: 30,
-        active: true,
+        active: false,
         imageActive: "immeubles.png",
         effects: {
             evaporation: {
@@ -166,7 +166,7 @@ const amenagements = [
         label: "Stockage des eaux de pluies",
         x: 78,
         y: 61,
-        active: true,
+        active: false,
         imageActive: "cuve-eau.png",
         effects: {
             evaporation: {
@@ -218,7 +218,7 @@ const amenagements = [
         label: "Parking infiltrant",
         x: 48,
         y: 58,
-        active: true,
+        active: false,
         imageActive: "parking-infiltrant.png",
         effects: {
             evaporation: {
@@ -280,7 +280,7 @@ const amenagements = [
         label: "Test 3",
         x: 50,
         y: 50,
-        active: true,
+        active: false,
         effects: {
             evaporation: {
                 modifier: +1

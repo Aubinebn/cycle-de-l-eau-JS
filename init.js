@@ -6,7 +6,13 @@ var numMilieux = 3;
 var sceneWidth = totalWidth / numMilieux;
 var sceneHeight = totalHeight;
 
+var initComplete = false;
+
+var currentTemperature;
+var currentRain;
+
 var jwindow = $(window);
+var jbody = $('body');
 var viewport = $('#viewport');
 var viewportScroll = $('#viewport-scroll');
 var viewportScaleRatio = getViewportScaleRatio();
@@ -23,13 +29,17 @@ function init()
 
     // setupPointsInfo();
     setupEffects();
-    updateEffects();
 
     setupRain();
 
     setupEventListeners();
 
-    $('.gui-temperature .gui-btn.active').click();
+    $('#gui-temperature .gui-btn.active').click();
+    $('#gui-rain .gui-btn.active').click();
+
+    initComplete = true;
+
+    updateEffects();
 }
 
 function setupMilieux()
@@ -91,7 +101,7 @@ function setupAmenagements()
             {
                 let indicator = amenagement.effects[effectName].indicator;
 
-                let indicatorElt = $('<div class="effect-indicator effect-indicator-' + effectName + '"></div>').appendTo(amenagementElt);
+                let indicatorElt = $('<div class="effect-indicator effect-indicator-' + effectName + '"><div class="effect-indicator-img"></div></div>').appendTo(amenagementElt);
                 indicatorElt.css({
                     left: getSceneX(indicator.x),
                     top: getSceneY(indicator.y)
@@ -102,7 +112,11 @@ function setupAmenagements()
             }
         }
 
+        //-- Référence à l'aménagement dans l'objet jQuery
         amenagementElt.data('amenagement', amenagement);
+
+        //-- Référence à l'objet jQuery dans l'aménagement
+        amenagement.elt = amenagementElt;
 
         //-- Place l'ui
         amenagementElt.find('.amenagement-ui').css({
@@ -148,7 +162,7 @@ function setupEffectProgress(effectName)
 
     let effectElt =
         '<div class="gui-effect gui-effect-' + effectName + '" data-name="' + effectName + '">' +
-            '<div class="gui-effect-label">' + effect.label + '</div>' +
+            '<div class="gui-label">' + effect.label + '</div>' +
             '<div class="gui-effect-bar-container">' +
                 '<div class="gui-effect-bar">' +
                     '<div class="gui-effect-bar-bg"></div>' +
@@ -178,7 +192,7 @@ function setupEffectScore(effectName)
 
     let effectElt =
         '<div class="gui-effect gui-effect-' + effectName + '" data-name="' + effectName + '">' +
-            '<div class="gui-effect-label">' + effect.label + '</div>' +
+            '<div class="gui-label">' + effect.label + '</div>' +
             '<div class="gui-effect-bar-container">' +
                 '<div class="gui-effect-bar">' +
                     '<img class="gui-effect-bar-bg" src="img/effect-bar-quality-bg.svg" />' +
