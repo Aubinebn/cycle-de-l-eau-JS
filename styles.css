@@ -1,6 +1,7 @@
 /* variables */
 :root {
-    --viewport-scale-value: 0.555;
+    --viewport-scale-value: 1;
+    /*--viewport-scale-value: 0.555;*/
 
     --default-transition-effect: ease-in-out;
     --default-transition-duration: 400ms;
@@ -365,7 +366,7 @@ body.focus #viewport-scroll {
 #gui #gui-bottom #nav #nav-current {
     height:calc(976px * 0.1875);
     background:#fff;
-    background-image:url(img/bg.png);
+    background-image:url(img/fond-nav.png);
     background-size:cover;
     background-repeat: no-repeat;
     background-position:left bottom;

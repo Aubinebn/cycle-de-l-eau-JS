@@ -1,10 +1,10 @@
 function setupEventListeners()
 {
-    $('body').click(logClickPos);
+    //$('body').click(logClickPos);
 
     $(document).click(hideAllModals);
 
-    $('#nav').click(changeMilieu);
+    setupNavEventListeners();
 
     $(document).on('click', '.amenagement .bulle-amenagement', onClickBulleAmenagement);
     $(document).on('click', '.amenagement .toggle-button', toggleAmenagement);
@@ -52,4 +52,64 @@ function onClickGuiEffectMore()
     moreElt.find('.gui-effect-detail').html(detail);
 
     return false;
+}
+
+function setupNavEventListeners()
+{
+    // $('#nav').click(changeMilieu);
+
+    $('#nav').on('mousedown touchstart', (e) =>
+    {
+        mouseOffset = getPointerPos(e);
+        mouseOffset.x -= $('#nav-current').position().left;
+        mouseOffset.y -= $('#nav-current').position().top;
+
+        mousePos = getPointerPos(e);
+
+        isMouseDown = true;
+
+        requestAnimationFrame(navDragEnterFrame);
+    });
+
+    $(document).on('mouseup touchend', () =>
+    {
+        isMouseDown = false;
+    });
+    // $(document).on('mouseleave touchleave', () => {
+    //     isMouseDown = false;
+    // });
+
+    $(document).on('mousemove touchmove', (e) =>
+    {
+        if (!isMouseDown) return;
+
+        mousePos = getPointerPos(e);
+    });
+};
+
+function navDragEnterFrame()
+{
+    if (!isMouseDown)
+        return;
+
+    log('enter')
+
+    //-- Déplace .nav-current pour suivre la souris, avec des bornes pour rester dans le nav
+    let navElt = $('#nav');
+    let navCurrentElt = navElt.find('#nav-current');
+    let navPos = navElt.position();
+
+    let newX = (mousePos.x) - mouseOffset.x;
+
+    if (newX < 0)
+        newX = 0;
+    else if (newX > navElt.width() - navCurrentElt.width())
+        newX = navElt.width() - navCurrentElt.width();
+
+    navCurrentElt.css('left', newX);
+
+
+
+
+    requestAnimationFrame(navDragEnterFrame);
 }
