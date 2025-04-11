@@ -70,10 +70,7 @@ html, body {
 .raining.raining-high #viewport-scroll .bg {
     filter: brightness(0.8);
 }
-#milieux .milieu {
-    position:absolute;
-    top:0;
-}
+
 body.focus #viewport-scroll {
 /*    filter: grayscale(.9) brightness(1.15);*/
     filter: brightness(1.15);
@@ -139,7 +136,7 @@ body.focus #viewport-scroll {
 #focus-container .amenagement.active .amenagement-image .image-focus {
     display: block;
 }
-#focus-container .amenagement.focus:not(.active) .image-focus .image-inactive {
+#focus-container .amenagement.focus:not(.active) .image-inactive {
     display: none;
 }
 

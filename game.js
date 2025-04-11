@@ -13,6 +13,11 @@ function changeMilieu(e)
 
     viewportScroll.animate({
         left: -currentMilieu * sceneWidth,
+    }, {
+        complete: function()
+        {
+            $('#focus-container').css('left', -currentMilieu * sceneWidth);
+        }
     });
 
     $('#nav-current').animate({

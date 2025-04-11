@@ -93,7 +93,7 @@ function setupAmenagements()
 
                 let indicatorElt = $('<div class="effect-indicator effect-indicator-' + effectName + '"></div>').appendTo(amenagementElt);
                 indicatorElt.css({
-                    left: getSceneX(indicator.x),
+                    left: getSceneX(indicator.x) + amenagement.milieu,
                     top: getSceneY(indicator.y)
                 });
 
@@ -106,7 +106,7 @@ function setupAmenagements()
 
         //-- Place l'ui
         amenagementElt.find('.amenagement-ui').css({
-            left: getSceneX(amenagement.x),
+            left: getSceneX(amenagement.x) + getMilieuIndex(amenagement.milieu) * sceneWidth,
             top: getSceneY(amenagement.y)
         });
 
@@ -252,4 +252,13 @@ function getSceneX(xPercent)
 function getSceneY(yPercent)
 {
     return yPercent * sceneHeight / 100;
+}
+
+function getMilieuIndex(milieuName)
+{
+    for (let i = 0; i < milieux.length; i++) {
+        if (milieux[i].name === milieuName) {
+            return i;
+        }
+    }
 }
