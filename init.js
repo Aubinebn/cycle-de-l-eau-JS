@@ -63,22 +63,29 @@ function setupAmenagements()
     let i = 0;
     amenagements.forEach(function(amenagement)
     {
-        //-- Crée un élément d'aménagement (bulle et fiche)
-        let inactiveImg = "";
-        if (isset(amenagement.imageInactive))
-            inactiveImg += '<img src="img/amenagements/' + amenagement.imageInactive + '" class="image-inactive">';
+        // if (i > 0)
+        //     return;
+
+        let imageActiveElt = '<img src="img/amenagements/' + amenagement.imageActive.path + '" class="image-active" ' +
+                'style="left: ' + amenagement.imageActive.x + 'px; top: ' + amenagement.imageActive.y + 'px">';
 
         //-- Image focus : soit l'image "active", soit une image différente si imageFocus est passé en paramètre
-        let focusImg = amenagement.imageActive;
-        if (isset(amenagement.imageFocus))
-                focusImg = amenagement.imageFocus;
+        let imageFocus = isset(amenagement.imageFocus) ? amenagement.imageFocus : amenagement.imageActive;
+        let imageFocusElt = '<img src="img/amenagements/' + imageFocus.path + '" class="image-focus" ' +
+                        'style="left: ' + imageFocus.x + 'px; top: ' + imageFocus.y + 'px">';
+
+        //-- Image inactive
+        let inactiveImageElt = '';
+        if (isset(amenagement.imageInactive))
+            inactiveImageElt = '<img src="img/amenagements/' + amenagement.imageInactive.path + '" class="image-inactive" ' +
+                    'style="left: ' + amenagement.imageInactive.x + 'px; top: ' + amenagement.imageInactive.y + 'px">';
 
         let amenagementElt = $('' +
             '<div class="amenagement" data-label="' + amenagement.label + '">' +
                 '<div class="amenagement-image">' +
-                    '<img src="img/amenagements/' + amenagement.imageActive + '" class="image-active">' +
-                    '<img src="img/amenagements/' + focusImg + '" class="image-focus">' +
-                    inactiveImg +
+                    imageActiveElt +
+                    imageFocusElt +
+                    inactiveImageElt +
                 '</div>' +
                 '<div class="amenagement-ui">' +
                     '<div class="bulle-amenagement"></div>' +

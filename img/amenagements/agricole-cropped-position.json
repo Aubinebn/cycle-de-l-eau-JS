@@ -1,0 +1,128 @@
+{
+    "labour-superficiel.png": {
+        "x_pixel": 4489,
+        "y_pixel": 1198,
+        "x_percent": 38.97,
+        "y_percent": 55.46,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            1299,
+            30
+        ]
+    },
+    "elevage-classique-barriere.png": {
+        "x_pixel": 6295,
+        "y_pixel": 826,
+        "x_percent": 54.64,
+        "y_percent": 38.24,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            1340,
+            587
+        ]
+    },
+    "elevage-classique-haies.png": {
+        "x_pixel": 6289,
+        "y_pixel": 807,
+        "x_percent": 54.59,
+        "y_percent": 37.36,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            1361,
+            606
+        ]
+    },
+    "diversite-cultures.png": {
+        "x_pixel": 3842,
+        "y_pixel": 587,
+        "x_percent": 33.35,
+        "y_percent": 27.18,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            2798,
+            639
+        ]
+    },
+    "elevage-extensif-haies.png": {
+        "x_pixel": 6244,
+        "y_pixel": 506,
+        "x_percent": 54.2,
+        "y_percent": 23.43,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            1406,
+            875
+        ]
+    },
+    "haies.png": {
+        "x_pixel": 3836,
+        "y_pixel": 563,
+        "x_percent": 33.3,
+        "y_percent": 26.06,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            3550,
+            808
+        ]
+    },
+    "elevage-extensif-barrieres.png": {
+        "x_pixel": 6243,
+        "y_pixel": 512,
+        "x_percent": 54.19,
+        "y_percent": 23.7,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            1392,
+            869
+        ]
+    },
+    "labour-classique.png": {
+        "x_pixel": 4489,
+        "y_pixel": 1166,
+        "x_percent": 38.97,
+        "y_percent": 53.98,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            1295,
+            60
+        ]
+    },
+    "monoculture.png": {
+        "x_pixel": 3868,
+        "y_pixel": 601,
+        "x_percent": 33.58,
+        "y_percent": 27.82,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            2645,
+            723
+        ]
+    }
+}

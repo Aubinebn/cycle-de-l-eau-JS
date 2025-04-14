@@ -5,8 +5,16 @@ const urbain = [
         x: 31,
         y: 49,
         active: false,
-        imageActive: "urbain/parc.png",
-        imageFocus: "urbain/parc-focus.png",
+        imageActive: {
+            path: "urbain-cropped/parc.png",
+            x: 234,
+            y: 781
+        },
+        imageFocus: {
+            path: "urbain-cropped/parc-focus.png",
+            x: 234,
+            y: 781
+        },
         effects: {
             evaporation: {
                 modifier: +1,
@@ -40,8 +48,16 @@ const urbain = [
         x: 20,
         y: 30,
         active: false,
-        imageInactive: "urbain/colline-ville.png",
-        imageActive: "urbain/immeubles.png",
+        imageInactive: {
+            path: "urbain-cropped/colline-ville.png",
+            x: 0,
+            y: 502
+        },
+        imageActive: {
+            path: "urbain-cropped/immeubles.png",
+            x: 133,
+            y: 290
+        },
         effects: {
             evaporation: {
                 modifier: +1
@@ -68,7 +84,11 @@ const urbain = [
         x: 39,
         y: 46,
         active: false,
-        imageActive: "urbain/noue.png",
+        imageActive: {
+            path: "urbain-cropped/noue.png",
+            x: 986,
+            y: 861
+        },
         effects: {
             evaporation: {
                 modifier: +1
@@ -94,7 +114,11 @@ const urbain = [
         x: 79,
         y: 67,
         active: false,
-        imageActive: "urbain/infiltration-parcelle.png",
+        imageActive: {
+            path: "urbain-cropped/infiltration-parcelle.png",
+            x: 2927,
+            y: 1357
+        },
         effects: {
             evaporation: {
                 modifier: +1
@@ -120,8 +144,16 @@ const urbain = [
         x: 70,
         y: 73,
         active: false,
-        imageInactive: "urbain/reseau-commun.png",
-        imageActive: "urbain/reseau-separatif.png",
+        imageInactive: {
+            path: "urbain-cropped/reseau-commun.png",
+            x: 2162,
+            y: 1034
+        },
+        imageActive: {
+            path: "urbain-cropped/reseau-separatif.png",
+            x: 1676,
+            y: 1034
+        },
         effects: {
             qualiteEau: {
                 modifier: +1
@@ -135,7 +167,11 @@ const urbain = [
         x: 78,
         y: 61,
         active: false,
-        imageActive: "urbain/cuve-eau.png",
+        imageActive: {
+            path: "urbain-cropped/cuve-eau.png",
+            x: 2623,
+            y: 903
+        },
         effects: {
             evaporation: {
                 modifier: +1
@@ -161,7 +197,11 @@ const urbain = [
         x: 59,
         y: 48,
         active: false,
-        imageActive: "urbain/bassin-retention.png",
+        imageActive: {
+            path: "urbain-cropped/bassin-retention.png",
+            x: 2017,
+            y: 991
+        },
         effects: {
             evaporation: {
                 modifier: +1
@@ -187,7 +227,11 @@ const urbain = [
         x: 48,
         y: 58,
         active: false,
-        imageActive: "urbain/parking-infiltrant.png",
+        imageActive: {
+            path: "urbain-cropped/parking-infiltrant.png",
+            x: 1325,
+            y: 1152
+        },
         effects: {
             evaporation: {
                 modifier: +1
@@ -219,7 +263,11 @@ const urbain = [
         x: 35,
         y: 60,
         active: false,
-        imageActive: "urbain/parking-vegetalise.png",
+        imageActive: {
+            path: "urbain-cropped/parking-vegetalise.png",
+            x: 1121,
+            y: 844
+        },
         effects: {
             evaporation: {
                 modifier: +1
@@ -251,8 +299,16 @@ const agricole = [
         x: 11,
         y: 50,
         active: false,
-        imageActive: "agricole/diversite-cultures.png",
-        imageInactive: "agricole/monoculture.png",
+        imageActive: {
+            path: "agricole-cropped/diversite-cultures.png",
+            x: 3842,
+            y: 587
+        },
+        imageInactive: {
+            path: "agricole-cropped/monoculture.png",
+            x: 3868,
+            y: 601
+        },
         effects: {
             evaporation: {
                 modifier: -1
@@ -281,8 +337,16 @@ const agricole = [
         x: 38,
         y: 56,
         active: false,
-        imageActive: "agricole/labour-superficiel.png",
-        imageInactive: "agricole/labour-classique.png",
+        imageActive: {
+            path: "agricole-cropped/labour-superficiel.png",
+            x: 4489,
+            y: 1198
+        },
+        imageInactive: {
+            path: "agricole-cropped/labour-classique.png",
+            x: 4489,
+            y: 1166
+        },
         effects: {
             evaporation: {
                 modifier: +1
@@ -308,8 +372,16 @@ const agricole = [
         x: 82,
         y: 48,
         active: false,
-        imageActive: "agricole/elevage-extensif-barrieres.png",
-        imageInactive: "agricole/elevage-classique-barriere.png",
+        imageActive: {
+            path: "agricole-cropped/elevage-extensif-barrieres.png",
+            x: 6243,
+            y: 512
+        },
+        imageInactive: {
+            path: "agricole-cropped/elevage-classique-barriere.png",
+            x: 6295,
+            y: 826
+        },
         effects: {
             infiltration: {
                 modifier: +1
@@ -336,7 +408,11 @@ const agricole = [
         x: 50.7,
         y: 50,
         active: false,
-        imageActive: "agricole/haies.png",
+        imageActive: {
+            path: "agricole-cropped/haies.png",
+            x: 3836,
+            y: 563
+        },
         effects: {
             infiltration: {
                 modifier: +1
@@ -365,7 +441,11 @@ const naturel = [
         x: 59,
         y: 34,
         active: true,
-        imageActive: "naturel/peupliers.png",
+        imageActive: {
+            path: "naturel-cropped/peupliers.png",
+            x: 9642,
+            y: 609
+        },
         effects: {
             evaporation: {
                 modifier: +1
@@ -400,8 +480,16 @@ const naturel = [
         x: 47,
         y: 54,
         active: true,
-        imageInactive: "naturel/zone_humide.png",
-        imageActive: "naturel/rattachement-bras-morts.png",
+        imageInactive: {
+            path: "naturel-cropped/zone_humide.png",
+            x: 8292,
+            y: 1061
+        },
+        imageActive: {
+            path: "naturel-cropped/rattachement-bras-morts.png",
+            x: 8208,
+            y: 996
+        },
         effects: {
             infiltration: {
                 modifier: +1
@@ -430,8 +518,16 @@ const naturel = [
         x: 8,
         y: 58,
         active: true,
-        imageInactive: "naturel/riviere-classique.png",
-        imageActive: "naturel/riviere-remeandree.png",
+        imageInactive: {
+            path: "naturel-cropped/riviere-classique.png",
+            x: 7422,
+            y: 734
+        },
+        imageActive: {
+            path: "naturel-cropped/riviere-remeandree.png",
+            x: 7422,
+            y: 733
+        },
         effects: {
             qualiteEau: {
                 modifier: +1
@@ -456,7 +552,11 @@ const naturel = [
         x: 18,
         y: 45,
         active: true,
-        imageActive: "naturel/ripisylve.png",
+        imageActive: {
+            path: "naturel-cropped/ripisylve.png",
+            x: 7562,
+            y: 840
+        },
         effects: {
             evaporation: {
                 modifier: -1
@@ -488,7 +588,11 @@ const naturel = [
         x: 72,
         y: 27,
         active: false,
-        imageActive: "naturel/sapins.png",
+        imageActive: {
+            path: "naturel-cropped/sapins.png",
+            x: 10137,
+            y: 413
+        },
         effects: {
             evaporation: {
                 modifier: +1
@@ -547,8 +651,16 @@ const naturel = [
         x: 83,
         y: 55,
         active: false,
-        imageInactive: "naturel/foret-1.png",
-        imageActive: "naturel/coupe-rase.png",
+        imageInactive: {
+            path: "naturel-cropped/foret-1.png",
+            x: 10340,
+            y: 578
+        },
+        imageActive: {
+            path: "naturel-cropped/coupe-rase.png",
+            x: 10340,
+            y: 989
+        },
         effects: {
             evaporation: {
                 modifier: +1
