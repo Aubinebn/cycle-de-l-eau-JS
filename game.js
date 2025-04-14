@@ -17,6 +17,11 @@ function changeMilieu(newMilieuIndex)
         }
     });
 
+    $('#nav-current').animate({
+        left: currentMilieu * $('#nav').width() / numMilieux,
+        'background-position-x': -currentMilieu * $('#nav').width() / numMilieux
+    });
+
     updateEffects();
 
     hideAllModals();

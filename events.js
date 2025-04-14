@@ -56,19 +56,9 @@ function onClickGuiEffectMore()
 
 function setupNavEventListeners()
 {
-    // $('#nav').click(changeMilieu);
-
     $('#nav').on('mousedown touchstart', (e) =>
     {
-        mouseOffset = getPointerPos(e);
-        mouseOffset.x -= $('#nav-current').position().left;
-        mouseOffset.y -= $('#nav-current').position().top;
-
-        mousePos = getPointerPos(e);
-
         isMouseDown = true;
-
-        requestAnimationFrame(navDragEnterFrame);
     });
 
     $(document).on('mouseup touchend', () =>
@@ -80,45 +70,16 @@ function setupNavEventListeners()
     {
         if (!isMouseDown) return;
 
-        mousePos = getPointerPos(e);
+        let mousePos = getPointerPos(e);
+        let mouseInNavPos = mousePos.x - nav.offset().left;
 
-        navTargetX = (mousePos.x) - mouseOffset.x;
-
-        // borne le x a un multiple de nav width / 3
         let milieuWidth = nav.width() / numMilieux;
-        let milieuIndex = Math.round(navTargetX / milieuWidth);
+        let mouseMilieuIndex = Math.floor(mouseInNavPos / milieuWidth);
 
-        navTargetX = milieuIndex * milieuWidth;
+        //-- borne au nombre de milieux
+        mouseMilieuIndex = Math.max(0, Math.min(numMilieux - 1, mouseMilieuIndex));
 
-        //-- Borne les valeurs à la largeur du nav
-        if (navTargetX < 0)
-            navTargetX = 0;
-        else if (navTargetX > nav.width() - navCurrent.width())
-            navTargetX = nav.width() - navCurrent.width();
+        if (currentMilieu !== mouseMilieuIndex)
+            changeMilieu(mouseMilieuIndex);
     });
-};
-
-function navDragEnterFrame()
-{
-    let currentX = navCurrent.position().left;
-    let newX = currentX + (navTargetX - currentX) * 0.1;
-
-    //-- Ajoute un effet de magnétisme sur les milieux
-    // let milieuWidth = navElt.width() / numMilieux;
-    // let milieuIndex = Math.floor(newX / (nav.width() / numMilieux));
-    // let milieuStartX = milieuIndex * milieuWidth;
-    // let milieuEndX = milieuStartX + milieuWidth;
-
-    navCurrent.css('left', newX)
-
-    //-- Déplace le background-position pour donner l'illusion de glisser
-    navCurrent.css('background-position-x', navStartX - newX);
-
-    // if (milieuIndex != currentMilieu)
-    //     changeMilieu(milieuIndex);
-
-    if (!isMouseDown && Math.abs(newX - currentX) < 0.05)
-        return;
-
-    requestAnimationFrame(navDragEnterFrame);
 }

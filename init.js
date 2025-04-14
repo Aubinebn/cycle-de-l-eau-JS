@@ -3,9 +3,6 @@ const totalHeight = 2160;
 
 var currentMilieu = 0;
 var isMouseDown = false;
-var navTargetX = 0;
-var mouseOffset = { x: 0, y: 0 };
-var mousePos = { x: 0, y: 0 };
 
 var numMilieux = 3;
 var sceneWidth = totalWidth / numMilieux;
