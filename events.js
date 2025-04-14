@@ -75,41 +75,50 @@ function setupNavEventListeners()
     {
         isMouseDown = false;
     });
-    // $(document).on('mouseleave touchleave', () => {
-    //     isMouseDown = false;
-    // });
 
     $(document).on('mousemove touchmove', (e) =>
     {
         if (!isMouseDown) return;
 
         mousePos = getPointerPos(e);
+
+        navTargetX = (mousePos.x) - mouseOffset.x;
+
+        // borne le x a un multiple de nav width / 3
+        let milieuWidth = nav.width() / numMilieux;
+        let milieuIndex = Math.round(navTargetX / milieuWidth);
+
+        navTargetX = milieuIndex * milieuWidth;
+
+        //-- Borne les valeurs à la largeur du nav
+        if (navTargetX < 0)
+            navTargetX = 0;
+        else if (navTargetX > nav.width() - navCurrent.width())
+            navTargetX = nav.width() - navCurrent.width();
     });
 };
 
 function navDragEnterFrame()
 {
-    if (!isMouseDown)
+    let currentX = navCurrent.position().left;
+    let newX = currentX + (navTargetX - currentX) * 0.1;
+
+    //-- Ajoute un effet de magnétisme sur les milieux
+    // let milieuWidth = navElt.width() / numMilieux;
+    // let milieuIndex = Math.floor(newX / (nav.width() / numMilieux));
+    // let milieuStartX = milieuIndex * milieuWidth;
+    // let milieuEndX = milieuStartX + milieuWidth;
+
+    navCurrent.css('left', newX)
+
+    //-- Déplace le background-position pour donner l'illusion de glisser
+    navCurrent.css('background-position-x', navStartX - newX);
+
+    // if (milieuIndex != currentMilieu)
+    //     changeMilieu(milieuIndex);
+
+    if (!isMouseDown && Math.abs(newX - currentX) < 0.05)
         return;
-
-    log('enter')
-
-    //-- Déplace .nav-current pour suivre la souris, avec des bornes pour rester dans le nav
-    let navElt = $('#nav');
-    let navCurrentElt = navElt.find('#nav-current');
-    let navPos = navElt.position();
-
-    let newX = (mousePos.x) - mouseOffset.x;
-
-    if (newX < 0)
-        newX = 0;
-    else if (newX > navElt.width() - navCurrentElt.width())
-        newX = navElt.width() - navCurrentElt.width();
-
-    navCurrentElt.css('left', newX);
-
-
-
 
     requestAnimationFrame(navDragEnterFrame);
 }

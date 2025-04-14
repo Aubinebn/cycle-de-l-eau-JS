@@ -4,12 +4,9 @@ function logClickPos(e)
     log((e.pageX/0.555)/sceneWidth*100, (e.pageY/0.555)/sceneHeight*100);
 }
 
-function changeMilieu(e)
+function changeMilieu(newMilieuIndex)
 {
-    currentMilieu++;
-
-    if (currentMilieu >= numMilieux)
-        currentMilieu = 0;
+    currentMilieu = newMilieuIndex;
 
     viewportScroll.animate({
         left: -currentMilieu * sceneWidth,
@@ -18,11 +15,6 @@ function changeMilieu(e)
         {
             $('#focus-container').css('left', -currentMilieu * sceneWidth);
         }
-    });
-
-    $('#nav-current').animate({
-        left: currentMilieu * $('#nav').width() / numMilieux,
-        'background-position-x': -currentMilieu * $('#nav').width() / numMilieux
     });
 
     updateEffects();

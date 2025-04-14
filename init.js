@@ -3,6 +3,7 @@ const totalHeight = 2160;
 
 var currentMilieu = 0;
 var isMouseDown = false;
+var navTargetX = 0;
 var mouseOffset = { x: 0, y: 0 };
 var mousePos = { x: 0, y: 0 };
 
@@ -21,6 +22,9 @@ var viewport = $('#viewport');
 var viewportScroll = $('#viewport-scroll');
 var viewportScaleRatio = getViewportScaleRatio();
 var bg = viewportScroll.find('.bg');
+var nav = $('#nav');
+var navCurrent = $('#nav-current');
+var navStartX = navCurrent.position().left;
 
 var milieuxContainer = viewportScroll.find('#milieux');
 
