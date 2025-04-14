@@ -35,7 +35,7 @@ function init()
     // setupPointsInfo();
     setupEffects();
 
-    setupRain();
+    // setupRain();
 
     setupEventListeners();
 
@@ -108,7 +108,7 @@ function setupAmenagements()
 
                 let indicatorElt = $('<div class="effect-indicator effect-indicator-' + effectName + '"><div class="effect-indicator-img"></div></div>').appendTo(amenagementElt);
                 indicatorElt.css({
-                    left: getSceneX(indicator.x) + amenagement.milieu,
+                    left: getSceneX(indicator.x) + getMilieuIndex(amenagement.milieu) * sceneWidth,
                     top: getSceneY(indicator.y)
                 });
 

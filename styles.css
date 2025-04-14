@@ -1,7 +1,7 @@
 /* variables */
 :root {
-    --viewport-scale-value: 1;
-    /*--viewport-scale-value: 0.555;*/
+    /*--viewport-scale-value: 1;*/
+    --viewport-scale-value: 0.555;
 
     --default-transition-effect: ease-in-out;
     --default-transition-duration: 400ms;
@@ -48,14 +48,14 @@ html, body {
 #viewport-scroll .bg,
 #viewport-scroll .bg-sky,
 #viewport-scroll .bg-sky-rain {
-    /*height:100%;*/
-    /*object-fit: contain;*/
-    /*object-position: left;*/
     position:absolute;
     top:0;
     left:0;
     transition:2s;
     pointer-events: none;
+    white-space: nowrap;
+    display:flex;
+    align-items: start;
 }
 #viewport-scroll .bg-cold {
      opacity:0;
@@ -169,7 +169,7 @@ body.focus #viewport-scroll {
         opacity: 0;
     }
     50% {
-        opacity: 0.65;
+        opacity: 0.75;
     }
     100% {
         opacity: 0;
@@ -297,22 +297,26 @@ body.focus #viewport-scroll {
 }
 
 
-#rain-low,
-#rain-high {
+#rain {
     position: fixed;
     top:0;
     left:0;
     width:calc(100vw / var(--viewport-scale-value));
     height:calc(100vh / var(--viewport-scale-value));
-    pointer-events: none;
+    object-fit: cover;
+    mix-blend-mode: screen;
+    filter: saturate(0.75) hue-rotate(288deg);
+    mask: url(img/rain-mask.png);
+    mask-size: 337%;
     opacity:0;
     transition:3s;
-    mask:url(img/rain-mask.png);
+    pointer-events: none;
 }
-.raining-low #rain-low {
-    opacity:1;
+.raining-low #rain {
+    opacity:.45;
+    transform:scaleX(-1);
 }
-.raining-high #rain-high {
+.raining-high #rain {
     opacity:1;
 }
 
@@ -413,6 +417,10 @@ body.focus #viewport-scroll {
 }
 #gui #gui-bottom #gui-temperature .gui-btn {
     width:171px;
+}
+#gui #gui-bottom #gui-temperature .gui-btn svg {
+    position: relative;
+    left: -3px;
 }
 #gui #gui-bottom .gui-btn.active {
     background:#fff;
@@ -576,7 +584,7 @@ body.focus #viewport-scroll {
     position: absolute;
     opacity:0;
     pointer-events: none;
-    transition:2s ease-in-out;
+    transition:transform 2s ease-in-out, opacity .5s ease-in-out;
 }
 .effect-indicator.effect-indicator-evaporation {
     width: 200px;
@@ -608,7 +616,7 @@ body.focus #viewport-scroll {
     width:100%;
     height:100%;
 }
-body:not(.focus) .amenagement.active .effect-indicator {
+body:not(.focus) .amenagement.active .effect-indicator.visible {
     opacity:1;
 }
 

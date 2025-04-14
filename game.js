@@ -66,8 +66,6 @@ function udpateScoreEffect(effectName)
 
 function updateAmenagementsEffects()
 {
-    log('updateAmenagementsEffects');
-
     // for (let i in amenagements)
     // {
     //     let amenagement = amenagements[i];
@@ -86,9 +84,7 @@ function updateAmenagementsEffects()
 
             let weatherModifier = effect.modifiers[currentTemperature]['rain_' + currentRain];
             let indicatorVisible = weatherModifier > 0;
-            let indicatorScale = weatherModifier == 0
-                ? 0
-                : .5 + weatherModifier * .5;
+            let indicatorScale = .5 + weatherModifier * .5;
 
             $('.effect-indicator-' + effectName)
                 .toggleClass('visible', indicatorVisible)
