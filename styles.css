@@ -161,7 +161,7 @@ body.focus #viewport-scroll {
 
 #focus-container .amenagement.focus:not(.active) .image-focus.animate {
     opacity:1;
-    animation: blinking-amenagement-image 1800ms ease-in-out infinite;
+    animation: blinking-amenagement-image 1s ease-in-out infinite;
 }
 
 @keyframes blinking-amenagement-image {
@@ -264,12 +264,6 @@ body.focus #viewport-scroll {
     font-weight: 400;
     overflow-y: auto;
     line-height:1.4;
-    max-height:0;
-    transition:.3s;
-    transition-delay:.5s;
-}
-#focus-container .amenagement.focus .fiche-amenagement-content .amenagement-description {
-    max-height: 450px;
 }
 
 .fiche-amenagement-content .toggle-button {
