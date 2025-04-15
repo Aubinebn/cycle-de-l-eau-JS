@@ -10,11 +10,20 @@ function changeMilieu(newMilieuIndex)
 
     viewportScroll.transition(
         { x: -currentMilieu * sceneWidth },
-        { complete: function(){log('miaou');$('#focus-container').css('transform', `translateX(${-currentMilieu * sceneWidth}px)`) }});
+        {
+            complete: function() {
+                $('#focus-container').css('transform', `translateX(${-currentMilieu * sceneWidth}px)`)
+            }
+        }
+    );
 
-    $('#nav-current').animate({
-        'left': currentMilieu * $('#nav').width() / numMilieux,
-        'background-position-x': -currentMilieu * $('#nav').width() / numMilieux
+    $('#nav-current').transition({
+            x: currentMilieu * $('#nav').width() / numMilieux,
+            'background-position-x': -currentMilieu * $('#nav').width() / numMilieux
+    });
+
+    $('#rain').transition({
+        '-webkit-mask-position-x' : -currentMilieu * sceneWidth
     });
 
     updateEffects();

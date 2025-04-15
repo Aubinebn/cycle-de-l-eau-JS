@@ -307,14 +307,11 @@ body.focus #viewport-scroll {
     mix-blend-mode: screen;
     filter: saturate(0.75) hue-rotate(288deg);
     mask: url(img/rain-mask.png);
-    mask-size: 337%;
     opacity:0;
-    transition:3s;
     pointer-events: none;
 }
 .raining-low #rain {
     opacity:.45;
-    transform:scaleX(-1);
 }
 .raining-high #rain {
     opacity:1;
