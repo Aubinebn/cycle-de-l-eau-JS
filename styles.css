@@ -197,7 +197,6 @@ body.focus #viewport-scroll {
     position:absolute;
     display: flex;
     gap: 4px;
-    transform: translateX(-26px);
     transform: translateY(-132px);
     z-index: 1;
 }
