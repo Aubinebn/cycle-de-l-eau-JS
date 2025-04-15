@@ -113,6 +113,7 @@ const urbain = [
         label: "Infiltration à la parcelle",
         x: 79,
         y: 67,
+        positionFiche: 'left',
         active: false,
         imageActive: {
             path: "urbain-cropped/infiltration-parcelle.png",
@@ -143,6 +144,7 @@ const urbain = [
         label: "Séparation Eaux usées / Eaux pluviales",
         x: 70,
         y: 73,
+        positionFiche: 'top',
         active: false,
         imageInactive: {
             path: "urbain-cropped/reseau-commun.png",
@@ -166,6 +168,7 @@ const urbain = [
         label: "Stockage des eaux de pluies",
         x: 78,
         y: 61,
+        positionFiche: 'left',
         active: false,
         imageActive: {
             path: "urbain-cropped/cuve-eau.png",
@@ -226,6 +229,7 @@ const urbain = [
         label: "Parking infiltrant",
         x: 48,
         y: 58,
+        positionFiche: 'top',
         active: false,
         imageActive: {
             path: "urbain-cropped/parking-infiltrant.png",
@@ -262,6 +266,7 @@ const urbain = [
         label: "Végétalisation",
         x: 35,
         y: 60,
+        positionFiche: 'top',
         active: false,
         imageActive: {
             path: "urbain-cropped/parking-vegetalise.png",
@@ -371,6 +376,7 @@ const agricole = [
         label: "Pâturage extensif",
         x: 82,
         y: 48,
+        positionFiche: 'left',
         active: false,
         imageActive: {
             path: "agricole-cropped/elevage-extensif-barrieres.png",
@@ -479,6 +485,7 @@ const naturel = [
         label: "Travaux reconnexion bras morts",
         x: 47,
         y: 54,
+        positionFiche: 'top',
         active: true,
         imageInactive: {
             path: "naturel-cropped/zone_humide.png",
@@ -650,6 +657,7 @@ const naturel = [
         label: "Coupe rase",
         x: 83,
         y: 55,
+        positionFiche: 'left',
         active: false,
         imageInactive: {
             path: "naturel-cropped/foret-1.png",

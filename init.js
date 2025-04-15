@@ -63,9 +63,6 @@ function setupAmenagements()
     let i = 0;
     amenagements.forEach(function(amenagement)
     {
-        // if (i > 0)
-        //     return;
-
         let imageActiveElt = '<img src="img/amenagements/' + amenagement.imageActive.path + '" class="image-active" ' +
                 'style="left: ' + amenagement.imageActive.x + 'px; top: ' + amenagement.imageActive.y + 'px">';
 
@@ -80,6 +77,12 @@ function setupAmenagements()
             inactiveImageElt = '<img src="img/amenagements/' + amenagement.imageInactive.path + '" class="image-inactive" ' +
                     'style="left: ' + amenagement.imageInactive.x + 'px; top: ' + amenagement.imageInactive.y + 'px">';
 
+        let amenagementUIClass = '';
+        if (isset(amenagement.positionFiche))
+            amenagementUIClass += amenagement.positionFiche;
+
+        log('amenagementUIClass', amenagementUIClass);
+
         let amenagementElt = $('' +
             '<div class="amenagement" data-label="' + amenagement.label + '">' +
                 '<div class="amenagement-image">' +
@@ -87,7 +90,7 @@ function setupAmenagements()
                     imageFocusElt +
                     inactiveImageElt +
                 '</div>' +
-                '<div class="amenagement-ui">' +
+                '<div class="amenagement-ui ' + amenagementUIClass + '">' +
                     '<div class="bulle-amenagement"></div>' +
                     '<div class="fiche-amenagement">' +
                         '<div class="fiche-amenagement-content">' +

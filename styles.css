@@ -171,7 +171,7 @@ body.focus #viewport-scroll {
 
 #focus-container .amenagement.focus:not(.active) .image-focus.animate {
     opacity:1;
-    animation: blinking-amenagement-image 1800ms ease-in-out infinite;
+    animation: blinking-amenagement-image 1s ease-in-out infinite;
 }
 
 @keyframes blinking-amenagement-image {
@@ -195,7 +195,6 @@ body.focus #viewport-scroll {
 
 .amenagement-ui {
     position:absolute;
-    display: flex;
     gap: 4px;
     transform: translateY(-132px);
     z-index: 1;
@@ -218,26 +217,37 @@ body.focus #viewport-scroll {
     background-image: url("img/UI/bulle_amenagement_green.png");
 }
 
-
 .amenagement .fiche-amenagement {
     width: 730px;
+    height: auto;
+    position: absolute;
+    top: 20px;
+    left: 100%;
     border-radius: 16px;
     background: linear-gradient(0deg, #3E5B5B 92.5%, #273D3D 100%);
     padding-top: 40px;
-    margin-top: -22px;
     transition: opacity .3s;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    width: 0;
-    height: 0;
 }
+
+.amenagement-ui.top .fiche-amenagement {
+    top: auto;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.amenagement-ui.left .fiche-amenagement {
+    right: 100%;
+    left: auto;
+}
+
 .amenagement.active .fiche-amenagement {
     background: linear-gradient(360deg, #3EC46D 92%, #5FD388 100%);
 }
-#focus-container .amenagement.focus .fiche-amenagement {
-    width: 730px;
-    height: auto;
+
+.amenagement.focus .fiche-amenagement {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -263,12 +273,6 @@ body.focus #viewport-scroll {
     font-weight: 400;
     overflow-y: auto;
     line-height:1.4;
-    max-height:0;
-    transition:.3s;
-    transition-delay:.5s;
-}
-#focus-container .amenagement.focus .fiche-amenagement-content .amenagement-description {
-    max-height: 450px;
 }
 
 .fiche-amenagement-content .toggle-button {
