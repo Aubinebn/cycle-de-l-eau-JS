@@ -6,29 +6,33 @@ function logClickPos(e)
 
 function changeMilieu(newMilieuIndex)
 {
-    currentMilieu = newMilieuIndex;
-
-    viewportScroll.transition(
-        { x: -currentMilieu * sceneWidth },
-        {
-            complete: function() {
-                $('#focus-container').css('transform', `translateX(${-currentMilieu * sceneWidth}px)`)
-            }
-        }
-    );
-
-    $('#nav-current').transition({
-            x: currentMilieu * $('#nav').width() / numMilieux,
-            'background-position-x': -currentMilieu * $('#nav').width() / numMilieux
+    requestAnimationFrame(function()
+    {
+        currentMilieu = newMilieuIndex;
+        
+        jbody.attr('data-milieu', currentMilieu+1);
+        
+        // viewportScroll.transition(
+        //         { x: -currentMilieu * sceneWidth },
+        //         {
+        //             complete: function() {
+        //                 $('#focus-container').css('transform', `translateX(${-currentMilieu * sceneWidth}px)`)
+        //             }
+        //         }
+        // );
+        
+        // $('#nav-current').transition({
+        //     x: currentMilieu * $('#nav').width() / numMilieux,
+        //     'background-position-x': -currentMilieu * $('#nav').width() / numMilieux
+        // });
+        
+        // $('#rain').transition({
+        //     '-webkit-mask-position-x' : -currentMilieu * sceneWidth
+        // });
+        
+        updateEffects();
+        hideAllModals();
     });
-
-    $('#rain').transition({
-        '-webkit-mask-position-x' : -currentMilieu * sceneWidth
-    });
-
-    updateEffects();
-
-    hideAllModals();
 }
 
 function updateEffects()

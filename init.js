@@ -20,8 +20,8 @@ var viewportScroll = $('#viewport-scroll');
 var viewportScaleRatio = getViewportScaleRatio();
 var bg = viewportScroll.find('.bg');
 var nav = $('#nav');
-var navCurrent = $('#nav-current');
-var navStartX = navCurrent.position().left;
+// var navCurrent = $('#nav-current');
+// var navStartX = navCurrent.position().left;
 
 var milieuxContainer = viewportScroll.find('#milieux');
 

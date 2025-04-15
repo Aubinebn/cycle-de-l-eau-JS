@@ -3,9 +3,9 @@
     /*--viewport-scale-value: 1;*/
     --viewport-scale-value: 0.555;
 
-    --default-transition-effect: ease-in-out;
-    --default-transition-duration: 400ms;
-    --default-transition: all var(--default-transition-duration) var(--default-transition-effect);
+    --change-milieu-transition-ease : ease-in-out;
+    --change-milieu-transition-duration : 500ms;
+
 }
 
 /*********** Reset and Setup ***********/
@@ -43,7 +43,17 @@ html, body {
     top:0;
     left:0;
     height:100%;
-    transition:.5s;
+    transition:transform var(--change-milieu-transition-duration) var(--change-milieu-transition-ease);
+    will-change: transform;
+}
+body[data-milieu="1"] #viewport-scroll {
+    transform:translateX(0);
+}
+body[data-milieu="2"] #viewport-scroll {
+    transform:translateX(-3840px);
+}
+body[data-milieu="3"] #viewport-scroll {
+    transform:translateX(-7680px);
 }
 #viewport-scroll .bg,
 #viewport-scroll .bg-sky,
@@ -70,7 +80,7 @@ html, body {
     opacity:0;
 }
 .raining.raining-low #viewport-scroll .bg-sky-rain {
-    opacity:.2;
+    opacity:.3;
 }
 .raining.raining-high #viewport-scroll .bg-sky-rain {
     opacity:1;
@@ -273,7 +283,7 @@ body.focus #viewport-scroll {
     font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
-    transition: var(--default-transition);
+    transition: all 400ms ease-in-out;
     width:100%;
 }
 
@@ -309,6 +319,18 @@ body.focus #viewport-scroll {
     mask: url(img/rain-mask.png);
     opacity:0;
     pointer-events: none;
+    will-change:mask-position;
+    transition:mask-position var(--change-milieu-transition-duration) var(--change-milieu-transition-ease),
+               opacity 2s ease-in;
+}
+body[data-milieu="1"] #rain {
+    mask-position: 0px 0px;
+}
+body[data-milieu="2"] #rain {
+    mask-position: -3840px 0px;
+}
+body[data-milieu="3"] #rain {
+    mask-position: -7680px 0px;
 }
 .raining-low #rain {
     opacity:.45;
@@ -361,25 +383,53 @@ body.focus #viewport-scroll {
     position:relative;
 }
 #gui #gui-bottom #nav #nav-bg {
-    width:976px;
+    width:975px;
 }
-#gui #gui-bottom #nav #nav-bg,
-#gui #gui-bottom #nav #nav-current {
-    height:calc(976px * 0.1875);
+#gui #gui-bottom #nav #nav-bg {
+    height:calc(975px * 0.1875);
     background:#fff;
     background-image:url(img/fond-nav.png);
     background-size:cover;
     background-repeat: no-repeat;
     background-position:left bottom;
     border-radius:inherit;
-    opacity:.4;
+    /*opacity:.4;*/
 }
-#gui #gui-bottom #nav #nav-current {
+#gui #gui-bottom #nav:before,
+#gui #gui-bottom #nav:after {
+    content:'';
+    background:#273D3D;
+    opacity:.7;
     position:absolute;
     top:0;
+    bottom:0;
+    will-change:width;
+    transition:width var(--change-milieu-transition-duration) var(--change-milieu-transition-ease);
+}
+#gui #gui-bottom #nav:before {
     left:0;
-    width:33.3333%;
-    opacity:1;
+}
+#gui #gui-bottom #nav:after {
+    right:0;
+}
+body[data-milieu="1"] #gui #gui-bottom #nav:before {
+    width:0px;
+}
+body[data-milieu="2"] #gui #gui-bottom #nav:before {
+    width:325px;
+}
+body[data-milieu="3"] #gui #gui-bottom #nav:before {
+    width:650px;
+}
+
+body[data-milieu="1"] #gui #gui-bottom #nav:after {
+    width:650px;
+}
+body[data-milieu="2"] #gui #gui-bottom #nav:after {
+    width:325px;
+}
+body[data-milieu="3"] #gui #gui-bottom #nav:after {
+    width:0px;
 }
 #gui #gui-bottom .gui-label {
     text-align: center;
