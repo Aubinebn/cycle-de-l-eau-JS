@@ -8,17 +8,12 @@ function changeMilieu(newMilieuIndex)
 {
     currentMilieu = newMilieuIndex;
 
-    viewportScroll.animate({
-        left: -currentMilieu * sceneWidth,
-    }, {
-        complete: function()
-        {
-            $('#focus-container').css('left', -currentMilieu * sceneWidth);
-        }
-    });
+    viewportScroll.transition(
+        { x: -currentMilieu * sceneWidth },
+        { complete: function(){log('miaou');$('#focus-container').css('transform', `translateX(${-currentMilieu * sceneWidth}px)`) }});
 
     $('#nav-current').animate({
-        left: currentMilieu * $('#nav').width() / numMilieux,
+        'left': currentMilieu * $('#nav').width() / numMilieux,
         'background-position-x': -currentMilieu * $('#nav').width() / numMilieux
     });
 

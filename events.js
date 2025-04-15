@@ -74,7 +74,7 @@ function setupNavEventListeners()
         let mouseInNavPos = mousePos.x - nav.offset().left;
 
         let milieuWidth = nav.width() / numMilieux;
-        let mouseMilieuIndex = Math.floor(mouseInNavPos / milieuWidth);
+        let mouseMilieuIndex = Math.floor(mouseInNavPos / milieuWidth / viewportScaleRatio);
 
         //-- borne au nombre de milieux
         mouseMilieuIndex = Math.max(0, Math.min(numMilieux - 1, mouseMilieuIndex));
