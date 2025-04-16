@@ -35,16 +35,17 @@ html, body {
     background: #313438;
     /*overflow:hidden;*/
 }
-/*.temperature-cold #viewport-scroll {*/
-/*    filter:brightness(1.15) saturate(0.5);*/
-/*}*/
 #viewport-scroll {
     position:absolute;
     top:0;
     left:0;
     height:100%;
-    transition:transform var(--change-milieu-transition-duration) var(--change-milieu-transition-ease);
+    transition:transform var(--change-milieu-transition-duration) var(--change-milieu-transition-ease),
+               filter 2s;
     will-change: transform;
+}
+.temperature-cold #viewport-scroll {
+    filter:brightness(1.15) saturate(0.7);
 }
 body[data-milieu="1"] #viewport-scroll {
     transform:translateX(0);
@@ -58,17 +59,17 @@ body[data-milieu="3"] #viewport-scroll {
 #viewport-scroll .bg,
 #viewport-scroll .bg-sky,
 #viewport-scroll .bg-sky-rain {
-    position:absolute;
-    top:0;
-    left:0;
-    transition:2s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 2s;
     pointer-events: none;
     white-space: nowrap;
-    display:flex;
+    display: flex;
     align-items: start;
 }
-#viewport-scroll .bg-cold {
-     opacity:0;
+#viewport-scroll .bg.bg-cold {
+    opacity:0;
 }
 .temperature-cold #viewport-scroll .bg-cold {
     opacity:1;

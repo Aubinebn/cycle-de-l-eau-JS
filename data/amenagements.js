@@ -152,8 +152,8 @@ const urbain = [
             y: 1034
         },
         imageActive: {
-            path: "urbain-cropped/reseau-separatif.png",
-            x: 1676,
+            path: "urbain-cropped/reseau-separatif-v2.png",
+            x: 2011,
             y: 1034
         },
         effects: {
@@ -343,14 +343,14 @@ const agricole = [
         y: 56,
         active: false,
         imageActive: {
-            path: "agricole-cropped/labour-superficiel.png",
-            x: 4489,
-            y: 1198
+            path: "agricole-cropped/labour-superficiel-V2.png",
+            x: 4499,
+            y: 842
         },
         imageInactive: {
-            path: "agricole-cropped/labour-classique.png",
-            x: 4489,
-            y: 1166
+            path: "agricole-cropped/labour-classique-V2.png",
+            x: 4492,
+            y: 838
         },
         effects: {
             evaporation: {
@@ -526,12 +526,12 @@ const naturel = [
         y: 58,
         active: true,
         imageInactive: {
-            path: "naturel-cropped/riviere-classique.png",
-            x: 7422,
+            path: "naturel-cropped/riviere-classique-v2.png",
+            x: 7884,
             y: 734
         },
         imageActive: {
-            path: "naturel-cropped/riviere-remeandree.png",
+            path: "naturel-cropped/riviere-remeandree-v2.png",
             x: 7422,
             y: 733
         },

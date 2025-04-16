@@ -124,5 +124,33 @@
             2645,
             723
         ]
+    },
+    "labour-superficiel-V2.png": {
+        "x_pixel": 4499,
+        "y_pixel": 842,
+        "x_percent": 39.05,
+        "y_percent": 38.98,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            1348,
+            383
+        ]
+    },
+    "labour-classique-V2.png": {
+        "x_pixel": 4492,
+        "y_pixel": 838,
+        "x_percent": 38.99,
+        "y_percent": 38.8,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            1347,
+            397
+        ]
     }
 }

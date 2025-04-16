@@ -124,5 +124,33 @@
             1194,
             699
         ]
+    },
+    "riviere-remeandree-v2.png": {
+        "x_pixel": 7422,
+        "y_pixel": 733,
+        "x_percent": 64.43,
+        "y_percent": 33.94,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            1194,
+            699
+        ]
+    },
+    "riviere-classique-v2.png": {
+        "x_pixel": 7884,
+        "y_pixel": 734,
+        "x_percent": 68.44,
+        "y_percent": 33.98,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            732,
+            697
+        ]
     }
 }

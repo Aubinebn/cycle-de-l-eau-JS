@@ -80,7 +80,7 @@ function setupAmenagements()
         let amenagementUIClass = '';
         if (isset(amenagement.positionFiche))
             amenagementUIClass += amenagement.positionFiche;
-        
+
         let amenagementElt = $('' +
             '<div class="amenagement" data-label="' + amenagement.label + '">' +
                 '<div class="amenagement-image">' +

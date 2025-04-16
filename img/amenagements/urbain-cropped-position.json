@@ -208,5 +208,19 @@
             699,
             300
         ]
+    },
+    "reseau-separatif-v2.png": {
+        "x_pixel": 2011,
+        "y_pixel": 1244,
+        "x_percent": 17.46,
+        "y_percent": 57.59,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            1405,
+            670
+        ]
     }
 }
