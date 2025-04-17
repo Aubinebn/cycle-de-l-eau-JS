@@ -111,9 +111,9 @@ const urbain = [
     {
         milieu: "urbain",
         label: "Infiltration à la parcelle",
-        x: 79,
-        y: 67,
-        positionFiche: 'left',
+        x: 84,
+        y: 64,
+        positionFiche: 'top',
         active: false,
         imageActive: {
             path: "urbain-cropped/infiltration-parcelle.png",

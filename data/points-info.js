@@ -11,6 +11,7 @@ const pointsInfo = [
     {
         milieu: "urbain",
         label: "Chateau d'eau",
+        positionFiche: 'left',
         x: 95.2,
         y: 23,
         description: "Le château d'eau est une construction destinée à entreproser l'eau en hauteur pour permettre de la distribuer sous pression par gravité. \n" +
