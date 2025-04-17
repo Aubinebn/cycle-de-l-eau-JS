@@ -80,9 +80,33 @@ function setupAmenagements()
         let amenagementUIClass = '';
         if (isset(amenagement.positionFiche))
             amenagementUIClass += amenagement.positionFiche;
-
-        log('amenagementUIClass', amenagementUIClass);
-
+        
+        let amenagementEffects = '';
+        if (isset(amenagement.effects))
+        {
+            let positiveEffects = '';
+            let negativeEffects = '';
+            for (var effectName in amenagement.effects)
+            {
+                let modifier = amenagement.effects[effectName].modifier;
+                let effect = allEffects[effectName];
+                let effectElt =
+                        '<div class="amenagement-effect-item ' + (modifier > 0 ? 'positive' : 'negative') + '">' +
+                        '<span class="effect-label">' + effect.label + '</span>' +
+                        '</div>';
+                
+                if (modifier > 0)
+                    positiveEffects += effectElt;
+                else
+                    negativeEffects += effectElt;
+            }
+            
+            if (positiveEffects != '')
+                amenagementEffects += '<div class="positive-effects amenagement-effects-inner">' + positiveEffects + '</div>';
+            if (negativeEffects != '')
+                amenagementEffects += '<div class="negative-effects amenagement-effects-inner">' + negativeEffects + '</div>';
+        }
+        
         let amenagementElt = $('' +
             '<div class="amenagement" data-label="' + amenagement.label + '">' +
                 '<div class="amenagement-image">' +
@@ -96,6 +120,7 @@ function setupAmenagements()
                         '<div class="fiche-amenagement-content">' +
                             '<h2 class="amenagement-name">' + amenagement.label + '</h2>' +
                             '<div class="amenagement-description">' + amenagement.description + '</div>' +
+                            '<div class="amenagement-effects">' + amenagementEffects + '</div>' +
                             '<div class="toggle-button">' +
                                 '<div class="toggle-on-text">Ajouter</div>' +
                                 '<div class="toggle-off-text">Enlever</div>' +
