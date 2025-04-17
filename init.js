@@ -25,10 +25,17 @@ var nav = $('#nav');
 
 var milieuxContainer = viewportScroll.find('#milieux');
 
+var amenagementList = [];
+
+
 init();
 
 function init()
 {
+    //-- Aménagements = politiques de gestion + aménagements
+    amenagementList = amenagementList.concat(amenagements);
+    amenagementList = amenagementList.concat(politiquesGestion);
+
     setupMilieux();
     setupAmenagements();
 
@@ -61,26 +68,39 @@ function setupMilieux()
 function setupAmenagements()
 {
     let i = 0;
-    amenagements.forEach(function(amenagement)
+    amenagementList.forEach(function(amenagement)
     {
-        let imageActiveElt = '<img src="img/amenagements/' + amenagement.imageActive.path + '" class="image-active" ' +
+        let isPolitiqueGestion = amenagement.isPolitiqueGestion;
+
+        //-- Images
+        let imageElt = '';
+        if (!isPolitiqueGestion)
+        {
+            imageElt += '<img src="img/amenagements/' + amenagement.imageActive.path + '" class="image-active" ' +
                 'style="left: ' + amenagement.imageActive.x + 'px; top: ' + amenagement.imageActive.y + 'px">';
 
-        //-- Image focus : soit l'image "active", soit une image différente si imageFocus est passé en paramètre
-        let imageFocus = isset(amenagement.imageFocus) ? amenagement.imageFocus : amenagement.imageActive;
-        let imageFocusElt = '<img src="img/amenagements/' + imageFocus.path + '" class="image-focus" ' +
-                        'style="left: ' + imageFocus.x + 'px; top: ' + imageFocus.y + 'px">';
+            //-- Image focus : soit l'image "active", soit une image différente si imageFocus est passé en paramètre
+            let imageFocus = isset(amenagement.imageFocus) ? amenagement.imageFocus : amenagement.imageActive;
+                imageElt += '<img src="img/amenagements/' + imageFocus.path + '" class="image-focus" ' +
+                            'style="left: ' + imageFocus.x + 'px; top: ' + imageFocus.y + 'px">';
 
-        //-- Image inactive
-        let inactiveImageElt = '';
-        if (isset(amenagement.imageInactive))
-            inactiveImageElt = '<img src="img/amenagements/' + amenagement.imageInactive.path + '" class="image-inactive" ' +
-                    'style="left: ' + amenagement.imageInactive.x + 'px; top: ' + amenagement.imageInactive.y + 'px">';
+            //-- Image inactive
+            if (isset(amenagement.imageInactive))
+                imageElt += '<img src="img/amenagements/' + amenagement.imageInactive.path + '" class="image-inactive" ' +
+                        'style="left: ' + amenagement.imageInactive.x + 'px; top: ' + amenagement.imageInactive.y + 'px">';
+        }
 
+        //-- Class
+        let amenagementClass = 'amenagement';
+        if (isPolitiqueGestion)
+            amenagementClass += ' politique-gestion';
+
+        //-- Position UI
         let amenagementUIClass = '';
         if (isset(amenagement.positionFiche))
             amenagementUIClass += amenagement.positionFiche;
 
+        //-- Effets
         let amenagementEffects = '';
         if (isset(amenagement.effects))
         {
@@ -108,11 +128,9 @@ function setupAmenagements()
         }
 
         let amenagementElt = $('' +
-            '<div class="amenagement" data-label="' + amenagement.label + '">' +
+            '<div class="' + amenagementClass + '" data-label="' + amenagement.label + '">' +
                 '<div class="amenagement-image">' +
-                    imageActiveElt +
-                    imageFocusElt +
-                    inactiveImageElt +
+                    imageElt +
                 '</div>' +
                 '<div class="amenagement-ui ' + amenagementUIClass + '">' +
                     '<div class="bulle-amenagement"></div>' +
@@ -120,6 +138,7 @@ function setupAmenagements()
                         '<div class="fiche-amenagement-content">' +
                             '<h2 class="amenagement-name">' + amenagement.label + '</h2>' +
                             '<div class="amenagement-description">' + amenagement.description + '</div>' +
+                            '<div class="amenagement-effects">' + amenagementEffects + '</div>' +
                             '<div class="toggle-button">' +
                                 '<div class="toggle-on-text">Ajouter</div>' +
                                 '<div class="toggle-off-text">Enlever</div>' +
@@ -130,6 +149,7 @@ function setupAmenagements()
             '</div>'
         );
 
+        //-- Etat par défaut (actif/inactif)
         if (amenagement.active)
             amenagementElt.addClass('active');
 

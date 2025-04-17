@@ -107,9 +107,9 @@ function calcEffect(effectName, effect)
     let effectValue = effect.default;
     let hasModifiers = false;
 
-    for (let i in amenagements)
+    for (let i in amenagementList)
     {
-        let amenagement = amenagements[i];
+        let amenagement = amenagementList[i];
 
         if (amenagement.milieu != milieux[currentMilieu].name
             || !amenagement.active

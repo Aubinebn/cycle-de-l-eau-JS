@@ -1,7 +1,5 @@
 function setupEventListeners()
 {
-    //$('body').click(logClickPos);
-
     $(document).click(hideAllModals);
 
     setupNavEventListeners();
@@ -30,9 +28,9 @@ function onClickGuiEffectMore()
     let label = guiEffect.find('.gui-effect-label').text();
     let detail = '';
 
-    for (let i in amenagements)
+    for (let i in amenagementList)
     {
-        let amenagement = amenagements[i];
+        let amenagement = amenagementList[i];
 
         if (amenagement.milieu != milieux[currentMilieu].name
             || !amenagement.active)

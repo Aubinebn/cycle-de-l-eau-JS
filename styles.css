@@ -213,11 +213,13 @@ body[data-milieu="3"] #focus-container {
 
 .point-info .bulle-amenagement {
     background-image: url("img/UI/bulle_point_info.png");
+    background-image: url("img/UI/bulle_point_info_yellow.png");
     height: 152px;
 }
 
-.bulle-amenagement.light {
-    /*opacity: 0.2;*/
+.politique-gestion .bulle-amenagement {
+    background-image: url("img/UI/bulle_politique_gestion.png");
+    height: 168px;
 }
 
 .amenagement.focus .bulle-amenagement,
@@ -228,8 +230,16 @@ body[data-milieu="3"] #focus-container {
 .amenagement.point-info .bulle-amenagement:active {
     background-image: url("img/UI/bulle_point_info_black.png");
 }
+.amenagement.politique-gestion.focus .bulle-amenagement,
+.amenagement.politique-gestion .bulle-amenagement:active {
+    background-image: url("img/UI/bulle_politique_gestion_black.png");
+}
+
 .amenagement.active .bulle-amenagement {
     background-image: url("img/UI/bulle_amenagement_green.png");
+}
+.amenagement.politique-gestion.active .bulle-amenagement {
+    background-image: url("img/UI/bulle_politique_gestion_green.png");
 }
 
 .amenagement .fiche-amenagement {
