@@ -81,6 +81,32 @@ function setupAmenagements()
         if (isset(amenagement.positionFiche))
             amenagementUIClass += amenagement.positionFiche;
 
+        let amenagementEffects = '';
+        if (isset(amenagement.effects))
+        {
+            let positiveEffects = '';
+            let negativeEffects = '';
+            for (var effectName in amenagement.effects)
+            {
+                let modifier = amenagement.effects[effectName].modifier;
+                let effect = allEffects[effectName];
+                let effectElt =
+                        '<div class="amenagement-effect-item ' + (modifier > 0 ? 'positive' : 'negative') + '">' +
+                        '<span class="effect-label">' + effect.label + '</span>' +
+                        '</div>';
+
+                if (modifier > 0)
+                    positiveEffects += effectElt;
+                else
+                    negativeEffects += effectElt;
+            }
+
+            if (positiveEffects != '')
+                amenagementEffects += '<div class="positive-effects amenagement-effects-inner">' + positiveEffects + '</div>';
+            if (negativeEffects != '')
+                amenagementEffects += '<div class="negative-effects amenagement-effects-inner">' + negativeEffects + '</div>';
+        }
+
         let amenagementElt = $('' +
             '<div class="amenagement" data-label="' + amenagement.label + '">' +
                 '<div class="amenagement-image">' +

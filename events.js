@@ -37,14 +37,15 @@ function onClickGuiEffectMore()
         if (amenagement.milieu != milieux[currentMilieu].name
             || !amenagement.active)
             continue;
-
-        let modifier = amenagement.effects[effectName] | 0;
-
-        if (modifier != 0)
+        
+        if (isset(amenagement.effects[effectName]))
+        {
+            let modifier = amenagement.effects[effectName].modifier;
             detail +=
-                '<div class="gui-effect-detail-item ' + (modifier > 0 ? 'positive' : 'negative') + '">' +
-                    amenagement.label +
-                '</div>';
+                    '<div class="gui-effect-detail-item ' + (modifier > 0 ? 'positive' : 'negative') + '">' +
+                        amenagement.label +
+                    '</div>';
+        }
     }
 
     // moreElt.find('.gui-effect-label').text(label);

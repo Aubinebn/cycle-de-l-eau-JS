@@ -176,7 +176,7 @@ function onClickBulleAmenagement()
     window.showBulleTimeout = setTimeout(function()
     {
         focusClone.find('.image-focus').addClass('animate');
-    }, 1000);
+    }, 500);
 
     return false;
 }

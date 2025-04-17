@@ -120,7 +120,7 @@ body.focus #viewport-scroll {
     background: #d4ebf2;
     opacity: 0;
     pointer-events: none;
-    transition: .5s;
+    transition:opacity .5s;
 }
 #focus-overlay.visible {
     opacity:.7;
@@ -129,6 +129,12 @@ body.focus #viewport-scroll {
 #focus-container {
     position:absolute;
     z-index:2;
+}
+body[data-milieu="2"] #focus-container {
+    transform:translateX(-3840px);
+}
+body[data-milieu="3"] #focus-container {
+    transform:translateX(-7680px);
 }
 
 #nappe-phreatique-empty,
@@ -165,7 +171,7 @@ body.focus #viewport-scroll {
 
 #focus-container .amenagement.focus:not(.active) .image-focus.animate {
     opacity:1;
-    animation: blinking-amenagement-image 1s ease-in-out infinite;
+    animation: blinking-amenagement-image 1.8s ease-in-out infinite;
 }
 
 @keyframes blinking-amenagement-image {
@@ -228,7 +234,7 @@ body.focus #viewport-scroll {
     width: 730px;
     height: auto;
     position: absolute;
-    top: 20px;
+    top: -20px;
     left: 100%;
     border-radius: 16px;
     background: linear-gradient(0deg, #3E5B5B 92.5%, #273D3D 100%);
@@ -254,7 +260,7 @@ body.focus #viewport-scroll {
     background: linear-gradient(360deg, #3EC46D 92%, #5FD388 100%);
 }
 
-.amenagement.focus .fiche-amenagement {
+#focus-container .amenagement.focus .fiche-amenagement {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -276,12 +282,26 @@ body.focus #viewport-scroll {
     text-transform: uppercase;
 }
 .fiche-amenagement-content .amenagement-description {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 400;
     overflow-y: auto;
     line-height:1.4;
 }
-
+.amenagement .fiche-amenagement-content .amenagement-effects {
+    display:flex;
+    flex-wrap:wrap;
+    gap:100px;
+}
+.amenagement .fiche-amenagement-content .amenagement-effects .amenagement-effects-inner {
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+.amenagement .fiche-amenagement-content .amenagement-effects .amenagement-effect-item {
+    padding-left:40px;
+    font-size: 24px;
+    text-transform:uppercase;
+}
 .fiche-amenagement-content .toggle-button {
     display: flex;
     justify-content: center;
@@ -628,10 +648,12 @@ body[data-milieu="3"] #gui #gui-bottom #nav:after {
     padding-left:40px;
     white-space: nowrap;
 }
-#gui #gui-top #gui-effect-more-info .gui-effect-detail-item.positive {
+#gui #gui-top #gui-effect-more-info .gui-effect-detail-item.positive,
+.amenagement .amenagement-effects .amenagement-effect-item.positive {
     background:url(img/effect-up.png) no-repeat left center;
 }
-#gui #gui-top #gui-effect-more-info .gui-effect-detail-item.negative {
+#gui #gui-top #gui-effect-more-info .gui-effect-detail-item.negative,
+.amenagement .amenagement-effects .amenagement-effect-item.negative {
     background:url(img/effect-down.png) no-repeat left center;
 }
 
