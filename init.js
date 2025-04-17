@@ -32,7 +32,7 @@ function init()
     setupMilieux();
     setupAmenagements();
 
-    // setupPointsInfo();
+    setupPointsInfo();
     setupEffects();
 
     // setupRain();
@@ -148,16 +148,31 @@ function setupPointsInfo()
 {
     pointsInfo.forEach(function(pointInfo)
     {
-        let pointInfoElt = $(''
-            + '<div class="point-info">'
-            +   '<h2>' + pointInfo.label + '</h2>'
-            + '</div>'
+        let position = '';
+        if (isset(pointInfo.positionFiche))
+            position += pointInfo.positionFiche;
+
+        console.log(position);
+
+        let pointInfoElt = $('' +
+            '<div class="point-info amenagement" data-label="' + pointInfo.label + '">' +
+                '<div class="amenagement-ui ' + position + '">' +
+                    '<div class="bulle-amenagement"></div>' +
+                    '<div class="fiche-amenagement">' +
+                        '<div class="fiche-amenagement-content">' +
+                            '<h2 class="amenagement-name">' + pointInfo.label + '</h2>' +
+                            '<div class="amenagement-description">' + pointInfo.description + '</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>'
         );
 
-        pointInfoElt.css({
-            left: pointInfo.x * sceneWidth / 100,
-            top: pointInfo.y * sceneHeight / 100
-        })
+        //-- Place l'ui
+        pointInfoElt.find('.amenagement-ui').css({
+            left: getSceneX(pointInfo.x) + getMilieuIndex(pointInfo.milieu) * sceneWidth,
+            top: getSceneY(pointInfo.y)
+        });
 
         milieuxContainer.find('.milieu-' + pointInfo.milieu).append(pointInfoElt);
     });

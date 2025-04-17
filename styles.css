@@ -144,13 +144,6 @@ body.focus #viewport-scroll {
 
 /*********** Amenagements ***********/
 
-.amenagement-image {
-    transition:filter 2s;
-    filter: brightness(1) saturate(1);
-}
-.temperature-low .amenagement-image {
-    filter:brightness(1.15) saturate(0.5);
-}
 .amenagement .amenagement-image img{
     position: absolute;
     pointer-events: none;
@@ -197,9 +190,13 @@ body.focus #viewport-scroll {
 .amenagement-ui {
     position:absolute;
     gap: 4px;
-    transform: translateX(-26px);
     transform: translateY(-132px);
     z-index: 1;
+}
+
+.point-info .amenagement-ui {
+    transform: translateY(-144px)
+                translateX(-50%);
 }
 
 .bulle-amenagement {
@@ -208,12 +205,20 @@ body.focus #viewport-scroll {
     aspect-ratio: 1;
 }
 
+.point-info .bulle-amenagement {
+    background-image: url("img/UI/bulle_point_info.png");
+    height: 152px;
+}
+
 .bulle-amenagement.light {
     /*opacity: 0.2;*/
 }
 
 .amenagement.focus .bulle-amenagement {
     background-image: url("img/UI/bulle_amenagement_black.png");
+}
+.amenagement.point-info.focus .bulle-amenagement {
+    background-image: url("img/UI/bulle_point_info_black.png");
 }
 .amenagement.active .bulle-amenagement {
     background-image: url("img/UI/bulle_amenagement_green.png");

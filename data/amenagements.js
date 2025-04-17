@@ -411,8 +411,8 @@ const agricole = [
     {
         milieu: "agricole",
         label: "Haies",
-        x: 50.7,
-        y: 50,
+        x: 25,
+        y: 35,
         active: false,
         imageActive: {
             path: "agricole-cropped/haies.png",
