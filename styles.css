@@ -220,10 +220,12 @@ body[data-milieu="3"] #focus-container {
     /*opacity: 0.2;*/
 }
 
-.amenagement.focus .bulle-amenagement {
+.amenagement.focus .bulle-amenagement,
+.amenagement .bulle-amenagement:active {
     background-image: url("img/UI/bulle_amenagement_black.png");
 }
-.amenagement.point-info.focus .bulle-amenagement {
+.amenagement.point-info.focus .bulle-amenagement,
+.amenagement.point-info .bulle-amenagement:active {
     background-image: url("img/UI/bulle_point_info_black.png");
 }
 .amenagement.active .bulle-amenagement {
@@ -499,12 +501,14 @@ body[data-milieu="3"] #gui #gui-bottom #nav:after {
     position: relative;
     left: -3px;
 }
-#gui #gui-bottom .gui-btn.active {
+#gui #gui-bottom .gui-btn.active,
+#gui #gui-bottom .gui-btn:active {
     background:#fff;
 }
 #gui #gui-bottom .gui-btn path {
     fill:#DFEDE8;
 }
+#gui #gui-bottom .gui-btn:active path,
 #gui #gui-bottom .gui-btn.active path {
     fill:#273D3D;
 }
@@ -608,6 +612,10 @@ body[data-milieu="3"] #gui #gui-bottom #nav:after {
     pointer-events: none;
     transition:all .3s;
 }
+#gui #gui-top .gui-effect .gui-effect-more:active {
+    color:#395e62;
+    background: #fff;
+}
 #gui #gui-top .gui-effect .gui-effect-more.active {
     opacity:1;
     pointer-events: all;
@@ -624,7 +632,7 @@ body[data-milieu="3"] #gui #gui-bottom #nav:after {
     color:#273D3D;
     opacity:0;
     pointer-events: none;
-    transition:.2s;
+    transition:.2s cubic-bezier(0.99,-0.28, 0, 0.77);
 }
 #gui #gui-top #gui-effect-more-info.visible {
     opacity:1;
