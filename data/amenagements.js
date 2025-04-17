@@ -446,7 +446,7 @@ const naturel = [
         label: "Plantation d'une peupleraie",
         x: 59,
         y: 34,
-        active: true,
+        active: false,
         imageActive: {
             path: "naturel-cropped/peupliers.png",
             x: 9642,
@@ -486,7 +486,7 @@ const naturel = [
         x: 47,
         y: 54,
         positionFiche: 'top',
-        active: true,
+        active: false,
         imageInactive: {
             path: "naturel-cropped/zone_humide.png",
             x: 8292,
@@ -524,7 +524,7 @@ const naturel = [
         label: "Reméandrement de la rivière et effacement des ouvrages",
         x: 8,
         y: 58,
-        active: true,
+        active: false,
         imageInactive: {
             path: "naturel-cropped/riviere-classique-v2.png",
             x: 7884,
@@ -558,7 +558,7 @@ const naturel = [
         label: "Maintien de la ripisylve",
         x: 18,
         y: 45,
-        active: true,
+        active: false,
         imageActive: {
             path: "naturel-cropped/ripisylve.png",
             x: 7562,

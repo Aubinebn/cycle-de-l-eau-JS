@@ -178,8 +178,6 @@ function setupPointsInfo()
         if (isset(pointInfo.positionFiche))
             position += pointInfo.positionFiche;
 
-        console.log(position);
-
         let pointInfoElt = $('' +
             '<div class="point-info amenagement" data-label="' + pointInfo.label + '">' +
                 '<div class="amenagement-ui ' + position + '">' +
