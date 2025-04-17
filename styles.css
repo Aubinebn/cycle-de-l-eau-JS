@@ -1,7 +1,7 @@
 /* variables */
 :root {
-    /*--viewport-scale-value: 1;*/
     --viewport-scale-value: 0.555;
+    /*--viewport-scale-value: 1;*/
 
     --change-milieu-transition-ease : ease-in-out;
     --change-milieu-transition-duration : 500ms;
@@ -243,7 +243,7 @@ body[data-milieu="3"] #focus-container {
 }
 
 .amenagement .fiche-amenagement {
-    width: 730px;
+    width: 840px;
     height: auto;
     position: absolute;
     top: -20px;
@@ -267,6 +267,9 @@ body[data-milieu="3"] #focus-container {
     right: 100%;
     left: auto;
 }
+.amenagement-ui.higher .fiche-amenagement {
+    top: -240px;
+}
 
 .amenagement.active .fiche-amenagement {
     background: linear-gradient(360deg, #3EC46D 92%, #5FD388 100%);
@@ -281,23 +284,25 @@ body[data-milieu="3"] #focus-container {
 .fiche-amenagement .fiche-amenagement-content {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 44px;
     border-radius: 16px;
     background-color: #DFEDE8;
-    padding: 24px;
+    padding: 30px;
 }
 .fiche-amenagement-content .amenagement-name {
-    font-size: 32px;
+    font-size: 39px;
     font-weight: 700;
     color: #273D3D;
     text-align: center;
     text-transform: uppercase;
 }
 .fiche-amenagement-content .amenagement-description {
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 400;
     overflow-y: auto;
-    line-height:1.4;
+    line-height: 1.4;
+    max-height: 553px;
+    padding-right: 30px;
 }
 .amenagement .fiche-amenagement-content .amenagement-effects {
     display:flex;
@@ -322,7 +327,7 @@ body[data-milieu="3"] #focus-container {
     border-radius: 8px;
     background: linear-gradient(180deg, #D4D4D4 0%, #C7C7C7 100%);
     color: #DFEDE8;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 700;
     text-transform: uppercase;
     transition: all 400ms ease-in-out;
@@ -415,6 +420,7 @@ body[data-milieu="3"] #rain {
     right:0;
     justify-content: center;
     display:flex;
+    /*transform: scale(1.15);*/
     transform-origin:center bottom;
 }
 #gui #gui-bottom #gui-nav {
@@ -537,6 +543,8 @@ body[data-milieu="3"] #gui #gui-bottom #nav:after {
     width:517px;
     top:15px;
     left:15px;
+    /*transform: scale(1.15);*/
+    /*transform-origin: top left;*/
 }
 #gui #gui-top .gui-elt {
     margin-bottom:15px;
@@ -673,6 +681,13 @@ body[data-milieu="3"] #gui #gui-bottom #nav:after {
 #gui #gui-top #gui-effect-more-info .gui-effect-detail-item.negative,
 .amenagement .amenagement-effects .amenagement-effect-item.negative {
     background:url(img/effect-down.png) no-repeat left center;
+}
+
+.amenagement:not(.active) .amenagement-effects .amenagement-effect-item .effect-label{
+    opacity: 0.5;
+}
+.amenagement:not(.active) .amenagement-effects .amenagement-effect-item {
+    filter: grayscale(1);
 }
 
 /*********** Animation Effects ***********/

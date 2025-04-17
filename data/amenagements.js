@@ -524,6 +524,7 @@ const naturel = [
         label: "Reméandrement de la rivière et effacement des ouvrages",
         x: 8,
         y: 58,
+        positionFiche: 'higher',
         active: false,
         imageInactive: {
             path: "naturel-cropped/riviere-classique-v2.png",
@@ -558,6 +559,7 @@ const naturel = [
         label: "Maintien de la ripisylve",
         x: 18,
         y: 45,
+        positionFiche: 'higher',
         active: false,
         imageActive: {
             path: "naturel-cropped/ripisylve.png",
@@ -657,7 +659,7 @@ const naturel = [
         label: "Coupe rase",
         x: 83,
         y: 55,
-        positionFiche: 'left',
+        positionFiche: 'left higher',
         active: false,
         imageInactive: {
             path: "naturel-cropped/foret-1.png",
