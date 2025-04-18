@@ -3,7 +3,11 @@ const effects = {
     {
         infiltration: {
             label: 'Infiltration',
-            default: 2.5,
+            default: {
+                'urbain' : 1,
+                'agricole' : 2.5,
+                'naturel' : 4
+            },
             modifiers: {
                 cold: {
                     rain_none: 0,
@@ -20,7 +24,11 @@ const effects = {
         ,
         evaporation: {
             label: 'Évaporation',
-            default: 3,
+            default: {
+                'urbain' : 1,
+                'agricole' : 2.5,
+                'naturel' : 4
+            },
             modifiers: {
                 cold: {
                     rain_none: 0,
@@ -37,7 +45,11 @@ const effects = {
         ,
         ruissellement: {
             label: 'Ruissellement',
-            default: 5,
+            default: {
+                'urbain' : 5,
+                'agricole' : 3.5,
+                'naturel' : 1
+            },
             modifiers: {
                 cold: {
                     rain_none: 0,
@@ -56,17 +68,29 @@ const effects = {
     {
         qualiteEau: {
             label: 'Qualité de l\'eau',
-            default: 3
+            default: {
+                'urbain' : 5,
+                'agricole' : 1,
+                'naturel' : 3
+            },
         }
         ,
         biodiversite: {
             label: 'Biodiversité',
-            default:  3
+            default: {
+                'urbain' : 1,
+                'agricole' : 2,
+                'naturel' : 5
+            },
         }
         ,
         reseauEau: {
             label: 'Réseau d\'eau',
-            default: 5,
+            default: {
+                'urbain' : 2.5,
+                'agricole' : 0,
+                'naturel' : 0
+            },
             modifiers: {
                 cold: {
                     rain_none: 0,

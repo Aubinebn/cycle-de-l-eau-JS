@@ -110,14 +110,16 @@ function updateAmenagementsEffects()
 
 function calcEffect(effectName, effect)
 {
-    let effectValue = effect.default;
+    let currentMilieuName = milieux[currentMilieu].name;
+    
+    let effectValue = effect.default[currentMilieuName];
     let hasModifiers = false;
-
+    
     for (let i in amenagementList)
     {
         let amenagement = amenagementList[i];
 
-        if (amenagement.milieu != milieux[currentMilieu].name
+        if (amenagement.milieu != currentMilieuName
             || !amenagement.active
             || !isset(amenagement.effects[effectName]))
             continue;
