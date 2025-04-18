@@ -2,6 +2,7 @@ const pointsInfo = [
     {
         milieu: "urbain",
         label: "Artificialisation des sols",
+        positionFiche: 'top',
         x: 54,
         y: 37,
         description: "L'artificialisation des sols est définie comme l'altération durable de tout ou partie des fonctions écologiques d'un sol, en particulier de ses fonctions biologiques, hydriques et climatiques, ainsi que de son potentiel agronomique par son occupation ou son usage. \n" +
@@ -11,7 +12,7 @@ const pointsInfo = [
     {
         milieu: "urbain",
         label: "Chateau d'eau",
-        positionFiche: 'left',
+        positionFiche: 'top',
         x: 95.2,
         y: 23,
         description: "Le château d'eau est une construction destinée à entreproser l'eau en hauteur pour permettre de la distribuer sous pression par gravité. \n" +
@@ -22,6 +23,7 @@ const pointsInfo = [
     {
         milieu: "urbain",
         label: "Bassin versant",
+        positionFiche: 'top',
         x: 73,
         y: 24,
         description: "Un bassin versant est une portion d'espace terrestre à l'intérieur de laquelle tous les écoulements, en surface ou en profondeur, se dirigent vers le même exutoire (cours d'eau, lac, mer). La ligne de délimitation du bassin versant avec ces voisins est appelée ligne de partage des eaux.",
@@ -29,6 +31,7 @@ const pointsInfo = [
     {
         milieu: "agricole",
         label: "Eaux souterraines",
+        positionFiche: 'top',
         x: 25,
         y: 70,
         description: "Les eaux souterraines sont constituées des réserves d'eau stockées dans les roches poreuses et perméables du sous-sol. Les nappes d'eau souterraine ne sont ni des lacs ni des cours d'eau souterrains : c'est de l'eau contenue dans les roches poreuses saturées par les eaux de pluie qui se sont infliltrées. Elles communiquent plus ou moins avec les milieux aquatiques de surface. Les nappes libres communiquent avec la surface car une couche perméable les recouvre. Les nappes captives sont recouvertes par au moins une couche géologique imperméable qui confine l'eau.",
@@ -36,6 +39,7 @@ const pointsInfo = [
     {
         milieu: "agricole",
         label: "Intrants",
+        positionFiche: 'top',
         x: 57,
         y: 44,
         description: "Un intrant peut tout autant être un pesticide de synthèse qui va avoir un impact négatif sur la qualité de l'eau tout comme un apport d'inoculum mycorhizien pour favoriser la tolérance de la culture vis à vis de la sécheresse. Ou encore, un amendement organique peut permettre d'accroitre la réserve utile des sols, améliore la perméabilité de la surface du sol, l'infiltration de l'eau et le ressuyage des sols ..." +
@@ -44,6 +48,7 @@ const pointsInfo = [
     {
         milieu: "agricole",
         label: "Prairies",
+        positionFiche: 'top',
         x: 67,
         y: 34,
         description: "Quelle que soit la nature de la prairie, son mode de conduite et sa localisation, une prairie joue un rôle important au regard de la protection de l'eau du fait qu'elle présente une couverture végétale permanente toute l'année et qu'elle est moins consommatrice d'intrants. Qui plus est, dans le cadre d'une prairie temporaire, elle permet de casser le cycle des adventices, d'apporter de l'azote et donc de diminuer l'usage d'intrants de synthèse pour les cultures qui lui succèdent.",
@@ -51,6 +56,7 @@ const pointsInfo = [
     {
         milieu: "naturel",
         label: "Libre évolution",
+        positionFiche: 'top',
         x: 47,
         y: 40,
         description: "Une zone humide laissée en libre évolution évolue naturellement selon plusieurs facteurs, notamment le climat, la topographie et les dynamiques écologiques locales. Voici les principales étapes et tendances possibles :\n" +
@@ -72,6 +78,7 @@ const pointsInfo = [
     {
         milieu: "naturel",
         label: "Plan d'aménagement forestier",
+        positionFiche: 'top',
         x: 81,
         y: 41,
         positionFiche: 'left',

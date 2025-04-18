@@ -94,7 +94,9 @@ function setupAmenagements()
         let amenagementClass = 'amenagement';
         if (isPolitiqueGestion)
             amenagementClass += ' politique-gestion';
-
+        else
+            amenagementClass += ' point-amenagement';
+        
         //-- Position UI
         let amenagementUIClass = '';
         if (isset(amenagement.positionFiche))
@@ -115,7 +117,7 @@ function setupAmenagements()
                         '<span class="effect-label">' + effect.label + '</span>' +
                         '</div>';
 
-                if (effectName == '')
+                if (modifier > 0)
                     positiveEffects += effectElt;
                 else
                     negativeEffects += effectElt;
@@ -126,7 +128,7 @@ function setupAmenagements()
             if (negativeEffects != '')
                 amenagementEffects += '<div class="negative-effects amenagement-effects-inner">' + negativeEffects + '</div>';
         }
-
+        
         let amenagementElt = $('' +
             '<div class="' + amenagementClass + '" data-label="' + amenagement.label + '">' +
                 '<div class="amenagement-image">' +

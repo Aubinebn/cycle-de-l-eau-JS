@@ -170,7 +170,10 @@ function onClickBulleAmenagement()
     focusClone.find('.bulle-amenagement').removeClass('light');
 
     $('body').addClass('focus');
-    $('#focus-overlay').addClass('visible');
+    
+    if (!amenagementElt.is('.point-info'))
+        $('#focus-overlay').addClass('visible');
+    
     $('#focus-container').hide().delay(100).fadeIn(500);
 
     window.showBulleTimeout = setTimeout(function()
@@ -194,7 +197,7 @@ function toggleAmenagement()
     amenagement.active = amenagementElt.is('.active');
 
     updateEffects();
-    hideAllModals();
+    // hideAllModals();
 
     return false;
 }
