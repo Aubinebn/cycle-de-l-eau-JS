@@ -58,6 +58,8 @@ function setupNavEventListeners()
     $('#nav').on('mousedown touchstart', (e) =>
     {
         isMouseDown = true;
+        
+        mouseMoved(e);
     });
 
     $(document).on('mouseup touchend', () =>
@@ -68,17 +70,22 @@ function setupNavEventListeners()
     $(document).on('mousemove touchmove', (e) =>
     {
         if (!isMouseDown) return;
-
-        let mousePos = getPointerPos(e);
-        let mouseInNavPos = mousePos.x - nav.offset().left;
-
-        let milieuWidth = nav.width() / numMilieux;
-        let mouseMilieuIndex = Math.floor(mouseInNavPos / milieuWidth / viewportScaleRatio);
-
-        //-- borne au nombre de milieux
-        mouseMilieuIndex = Math.max(0, Math.min(numMilieux - 1, mouseMilieuIndex));
-
-        if (currentMilieu !== mouseMilieuIndex)
-            changeMilieu(mouseMilieuIndex);
+        
+        mouseMoved(e);
     });
+}
+
+function mouseMoved(e)
+{
+    let mousePos = getPointerPos(e);
+    let mouseInNavPos = mousePos.x - nav.offset().left;
+    
+    let milieuWidth = nav.width() / numMilieux;
+    let mouseMilieuIndex = Math.floor(mouseInNavPos / milieuWidth / viewportScaleRatio);
+    
+    //-- borne au nombre de milieux
+    mouseMilieuIndex = Math.max(0, Math.min(numMilieux - 1, mouseMilieuIndex));
+    
+    if (currentMilieu !== mouseMilieuIndex)
+        changeMilieu(mouseMilieuIndex);
 }

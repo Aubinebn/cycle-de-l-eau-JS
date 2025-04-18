@@ -115,7 +115,7 @@ function setupAmenagements()
                         '<span class="effect-label">' + effect.label + '</span>' +
                         '</div>';
 
-                if (modifier > 0)
+                if (effectName == '')
                     positiveEffects += effectElt;
                 else
                     negativeEffects += effectElt;
