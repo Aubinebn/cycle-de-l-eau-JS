@@ -6,12 +6,12 @@ const urbain = [
         y: 49,
         active: false,
         imageActive: {
-            path: "urbain-cropped/parc.png",
+            path: "amenagements/urbain-cropped/parc.png",
             x: 234,
             y: 781
         },
         imageFocus: {
-            path: "urbain-cropped/parc-focus.png",
+            path: "amenagements/urbain-cropped/parc-focus.png",
             x: 234,
             y: 781
         },
@@ -24,7 +24,7 @@ const urbain = [
                 }
             },
             infiltration: {
-                modifier: +1,
+                modifier: -1,
                 indicator: {
                     x: 19,
                     y: 58
@@ -35,10 +35,7 @@ const urbain = [
             },
             biodiversite: {
                 modifier: +1
-            },
-            qualiteEau: {
-                modifier: -10
-            },
+            }
         },
         description: "En ville, les parcs végétalisés permettent de créer une zone perméable (qui laisse traverser l'eau) ce qui permet de laisser l'eau intégrer le sol et remplir les nappes phréatiques. De plus ces espaces sont des refuges pour la biodiversité qui peine à trouver sa place en ville.",
     },
@@ -49,30 +46,36 @@ const urbain = [
         y: 30,
         active: false,
         imageInactive: {
-            path: "urbain-cropped/colline-ville.png",
+            path: "amenagements/urbain-cropped/colline-ville.png",
             x: 0,
             y: 502
         },
         imageActive: {
-            path: "urbain-cropped/immeubles.png",
+            path: "amenagements/urbain-cropped/immeubles.png",
             x: 133,
             y: 290
         },
         effects: {
-            evaporation: {
-                modifier: +1
-            },
             infiltration: {
-                modifier: +1
+                modifier: +1,
+                indicator: {
+                    x: 20,
+                    y: 30
+                }
             },
             ruissellement: {
-                modifier: -1
+                modifier: +1,
+                indicator: {
+                    image: 'img/indicators/ruissellements-cropped/ruissellement-immeubles.png',
+                    x: 210,
+                    y: 616
+                }
+            },
+            reseauEau: {
+                modifier: +1
             },
             biodiversite: {
                 modifier: +1
-            },
-            qualiteEau: {
-                modifier: -10
             },
         },
         description: "\"L'augmentation du nombre de construction, la densification de l'habitat impactent le milieu naturel en empêchant les eaux de pluie de s'infiltrer et en créant des îlots de chaleur. Lorsque l'on urbanise fortement et que l'espace ne permet pas d'infiltrer les eaux de pluie à la parcelle, celles-ci sont collectés par des réseaux. Elles sont acheminées à la station d'épuration si le réseau est unitaire ou directement vers le milieu naturel si le réseau est séparatif. \n" +
@@ -85,25 +88,32 @@ const urbain = [
         y: 46,
         active: false,
         imageActive: {
-            path: "urbain-cropped/noue.png",
+            path: "amenagements/urbain-cropped/noue.png",
             x: 986,
             y: 861
         },
         effects: {
             evaporation: {
-                modifier: +1
+                modifier: -1
             },
             infiltration: {
+                modifier: +1,
+                indicator: {
+                    x: 39,
+                    y: 46
+                }
+            },
+            qualiteEau: {
                 modifier: +1
             },
             ruissellement: {
                 modifier: -1
             },
+            reseauEau: {
+                modifier: -1
+            },
             biodiversite: {
                 modifier: +1
-            },
-            qualiteEau: {
-                modifier: -10
             },
         },
         description: "Les noues et fossés d'infiltration facilitent la régulation des inondations et des macro-polluants. Ils peuvent également constituer un bon support de sensibilisation à la gestion des eaux pluviales, notamment dans les zones urbaines.",
@@ -116,25 +126,32 @@ const urbain = [
         positionFiche: 'top',
         active: false,
         imageActive: {
-            path: "urbain-cropped/infiltration-parcelle.png",
+            path: "amenagements/urbain-cropped/infiltration-parcelle.png",
             x: 2927,
             y: 1357
         },
         effects: {
             evaporation: {
-                modifier: +1
+                modifier: -1
             },
             infiltration: {
+                modifier: +1,
+                indicator: {
+                    x: 84,
+                    y: 64
+                }
+            },
+            qualiteEau: {
                 modifier: +1
             },
             ruissellement: {
                 modifier: -1
             },
-            biodiversite: {
-                modifier: +1
+            reseauEau: {
+                modifier: -1
             },
-            qualiteEau: {
-                modifier: -10
+            biodiversite: {
+                modifier: -1
             },
         },
         description: "L'infiltration des eaux pluviales à la parcelle consiste à créer des aménagements permettant l'infiltration sur place de l'eau de pluie et donc une restitution au milieu naturel ou le stockage temporaire des eaux pluviales pour ainsi maitriser le déversement dans les réseaux d'assainissement collectif.",
@@ -147,12 +164,12 @@ const urbain = [
         positionFiche: 'top',
         active: false,
         imageInactive: {
-            path: "urbain-cropped/reseau-commun.png",
+            path: "amenagements/urbain-cropped/reseau-commun.png",
             x: 2162,
             y: 1034
         },
         imageActive: {
-            path: "urbain-cropped/reseau-separatif-v2.png",
+            path: "amenagements/urbain-cropped/reseau-separatif-v2.png",
             x: 2011,
             y: 1034
         },
@@ -171,25 +188,16 @@ const urbain = [
         positionFiche: 'left',
         active: false,
         imageActive: {
-            path: "urbain-cropped/cuve-eau.png",
+            path: "amenagements/urbain-cropped/cuve-eau.png",
             x: 2623,
             y: 903
         },
         effects: {
-            evaporation: {
-                modifier: +1
-            },
-            infiltration: {
-                modifier: +1
-            },
             ruissellement: {
                 modifier: -1
             },
-            biodiversite: {
-                modifier: +1
-            },
-            qualiteEau: {
-                modifier: -10
+            reseauEau: {
+                modifier: -1
             },
         },
         description: "Le stockage des eaux pluviales permet en période de sécheresse d'utiliser cette eau en substitution de l'eau potable. Cela réduit l'impact sur la ressource en eau potable lorsque la ressource est déjà en tension.",
@@ -201,25 +209,16 @@ const urbain = [
         y: 48,
         active: false,
         imageActive: {
-            path: "urbain-cropped/bassin-retention.png",
+            path: "amenagements/urbain-cropped/bassin-retention.png",
             x: 2017,
             y: 991
         },
         effects: {
-            evaporation: {
-                modifier: +1
-            },
-            infiltration: {
-                modifier: +1
-            },
             ruissellement: {
                 modifier: -1
             },
-            biodiversite: {
-                modifier: +1
-            },
-            qualiteEau: {
-                modifier: -10
+            reseauEau: {
+                modifier: -1
             },
         },
         description: "Un bassin de rétention des eaux pluviales aussi appelé bassin tampon est une infrastructure essentielle dans la gestion des eaux pluviales, surtout pour les terrains soumis à un urbanisme croissant. Il sert à recueillir temporairement les excédents d'eau de pluie, évitant ainsi les inondations et la surcharge des réseaux d'assainissement. ",
@@ -232,30 +231,32 @@ const urbain = [
         positionFiche: 'top',
         active: false,
         imageActive: {
-            path: "urbain-cropped/parking-infiltrant.png",
+            path: "amenagements/urbain-cropped/parking-infiltrant.png",
             x: 1325,
             y: 1152
         },
         effects: {
-            evaporation: {
-                modifier: +1
-            },
             infiltration: {
+                modifier: +1,
+                indicator: {
+                    x: 48,
+                    y: 58
+                }
+            },
+            qualiteEau: {
                 modifier: +1
             },
             ruissellement: {
                 modifier: -1,
                 indicator: {
-                    image: 'img/amenagements/ruissellement/ruissellement-parking.png',
-                    x: 43.5,
-                    y: 52
+                    inactiveIndicator: true,
+                    image: 'img/indicators/ruissellements-cropped/ruissellement-parking.png',
+                    x: 1667,
+                    y: 1112
                 }
             },
-            biodiversite: {
-                modifier: +1
-            },
-            qualiteEau: {
-                modifier: -10
+            reseauEau: {
+                modifier: -1,
             },
         },
         description: "\"Le parking perméable permet l'infiltration des eaux pluviales, évite un maximum le ruissellement de surface et désengorge le réseau d'assainissement. Le parking perméable végétalisé améliore le climat urbain et diminue l'effet îlot de chaleur en ville.\n" +
@@ -269,25 +270,36 @@ const urbain = [
         positionFiche: 'top',
         active: false,
         imageActive: {
-            path: "urbain-cropped/parking-vegetalise.png",
+            path: "amenagements/urbain-cropped/parking-vegetalise.png",
             x: 1121,
             y: 844
         },
         effects: {
             evaporation: {
-                modifier: +1
+                modifier: +1,
+                indicator: {
+                    x: 35,
+                    y: 60
+                }
             },
             infiltration: {
+                modifier: +1,
+                indicator: {
+                    x: 35,
+                    y: 60
+                }
+            },
+            qualiteEau: {
                 modifier: +1
             },
             ruissellement: {
                 modifier: -1
             },
+            reseauEau: {
+                modifier: -1
+            },
             biodiversite: {
                 modifier: +1
-            },
-            qualiteEau: {
-                modifier: -10
             },
         },
         description: "La désimperméabilisation concourt à l'adaptation au changement climatique par :\n" +
@@ -305,21 +317,25 @@ const agricole = [
         y: 50,
         active: false,
         imageActive: {
-            path: "agricole-cropped/diversite-cultures.png",
+            path: "amenagements/agricole-cropped/diversite-cultures.png",
             x: 3842,
             y: 587
         },
         imageInactive: {
-            path: "agricole-cropped/monoculture.png",
+            path: "amenagements/agricole-cropped/monoculture.png",
             x: 3868,
             y: 601
         },
         effects: {
             evaporation: {
-                modifier: -1
+                modifier: -1,
             },
             infiltration: {
-                modifier: +1
+                modifier: +1,
+                indicator: {
+                    x: 11,
+                    y: 50
+                }
             },
             qualiteEau: {
                 modifier: +1
@@ -343,21 +359,29 @@ const agricole = [
         y: 56,
         active: false,
         imageActive: {
-            path: "agricole-cropped/labour-superficiel-V2.png",
+            path: "amenagements/agricole-cropped/labour-superficiel-V2.png",
             x: 4499,
             y: 842
         },
         imageInactive: {
-            path: "agricole-cropped/labour-classique-V2.png",
+            path: "amenagements/agricole-cropped/labour-classique-V2.png",
             x: 4492,
             y: 838
         },
         effects: {
             evaporation: {
-                modifier: +1
+                modifier: +1,
+                indicator: {
+                    x: 38,
+                    y: 56
+                }
             },
             infiltration: {
-                modifier: +1
+                modifier: +1,
+                indicator: {
+                    x: 38,
+                    y: 56
+                }
             },
             ruissellement: {
                 modifier: -1
@@ -379,24 +403,28 @@ const agricole = [
         positionFiche: 'left',
         active: false,
         imageActive: {
-            path: "agricole-cropped/elevage-extensif-barrieres.png",
+            path: "amenagements/agricole-cropped/elevage-extensif-barrieres.png",
             x: 6243,
             y: 512
         },
         imageInactive: {
-            path: "agricole-cropped/elevage-classique-barriere.png",
+            path: "amenagements/agricole-cropped/elevage-classique-barriere.png",
             x: 6295,
             y: 826
         },
         effects: {
             infiltration: {
-                modifier: +1
+                modifier: +1,
+                indicator: {
+                    x: 82,
+                    y: 48
+                }
             },
             qualiteEau: {
                 modifier: +1
             },
             ruissellement: {
-                modifier: -1
+                modifier: -1,
             },
             reseauEau: {
                 modifier: -1
@@ -415,13 +443,17 @@ const agricole = [
         y: 35,
         active: false,
         imageActive: {
-            path: "agricole-cropped/haies.png",
+            path: "amenagements/agricole-cropped/haies.png",
             x: 3836,
             y: 563
         },
         effects: {
             infiltration: {
-                modifier: +1
+                modifier: +1,
+                indicator: {
+                    x: 25,
+                    y: 35
+                }
             },
             qualiteEau: {
                 modifier: +1
@@ -448,13 +480,17 @@ const naturel = [
         y: 34,
         active: false,
         imageActive: {
-            path: "naturel-cropped/peupliers.png",
+            path: "amenagements/naturel-cropped/peupliers.png",
             x: 9642,
             y: 609
         },
         effects: {
             evaporation: {
-                modifier: +1
+                modifier: +1,
+                indicator: {
+                    x: 59,
+                    y: 34
+                }
             },
             infiltration: {
                 modifier: -1
@@ -463,7 +499,7 @@ const naturel = [
                 modifier: -1
             },
             ruissellement: {
-                modifier: +1
+                modifier: +1,
             },
             reseauEau: {
                 modifier: +1
@@ -488,18 +524,22 @@ const naturel = [
         positionFiche: 'top',
         active: false,
         imageInactive: {
-            path: "naturel-cropped/zone_humide.png",
+            path: "amenagements/naturel-cropped/zone_humide.png",
             x: 8292,
             y: 1061
         },
         imageActive: {
-            path: "naturel-cropped/rattachement-bras-morts.png",
+            path: "amenagements/naturel-cropped/rattachement-bras-morts.png",
             x: 8208,
             y: 996
         },
         effects: {
             infiltration: {
-                modifier: +1
+                modifier: +1,
+                indicator: {
+                    x: 47,
+                    y: 54
+                }
             },
             qualiteEau: {
                 modifier: +1
@@ -527,12 +567,12 @@ const naturel = [
         positionFiche: 'higher',
         active: false,
         imageInactive: {
-            path: "naturel-cropped/riviere-classique-v2.png",
+            path: "amenagements/naturel-cropped/riviere-classique-v2.png",
             x: 7884,
             y: 734
         },
         imageActive: {
-            path: "naturel-cropped/riviere-remeandree-v2.png",
+            path: "amenagements/naturel-cropped/riviere-remeandree-v2.png",
             x: 7422,
             y: 733
         },
@@ -562,7 +602,7 @@ const naturel = [
         positionFiche: 'higher',
         active: false,
         imageActive: {
-            path: "naturel-cropped/ripisylve.png",
+            path: "amenagements/naturel-cropped/ripisylve.png",
             x: 7562,
             y: 840
         },
@@ -571,7 +611,11 @@ const naturel = [
                 modifier: -1
             },
             infiltration: {
-                modifier: +1
+                modifier: +1,
+                indicator: {
+                    x: 18,
+                    y: 45
+                }
             },
             qualiteEau: {
                 modifier: +1
@@ -598,13 +642,17 @@ const naturel = [
         y: 27,
         active: false,
         imageActive: {
-            path: "naturel-cropped/sapins.png",
+            path: "amenagements/naturel-cropped/sapins.png",
             x: 10137,
             y: 413
         },
         effects: {
             evaporation: {
-                modifier: +1
+                modifier: +1,
+                indicator: {
+                    x: 72,
+                    y: 27
+                }
             },
             infiltration: {
                 modifier: -1
@@ -662,18 +710,22 @@ const naturel = [
         positionFiche: 'left higher',
         active: false,
         imageInactive: {
-            path: "naturel-cropped/foret-1.png",
+            path: "amenagements/naturel-cropped/foret-1.png",
             x: 10340,
             y: 578
         },
         imageActive: {
-            path: "naturel-cropped/coupe-rase.png",
+            path: "amenagements/naturel-cropped/coupe-rase.png",
             x: 10340,
             y: 989
         },
         effects: {
             evaporation: {
-                modifier: +1
+                modifier: +1,
+                indicator: {
+                    x: 83,
+                    y: 55
+                }
             },
             infiltration: {
                 modifier: -1
@@ -682,7 +734,12 @@ const naturel = [
                 modifier: -1
             },
             ruissellement: {
-                modifier: +1
+                modifier: +3,
+                indicator: {
+                    image: 'img/indicators/ruissellements-cropped/ruissellement-coupe-rase.png',
+                    x: 10698,
+                    y: 1003
+                }
             },
             reseauEau: {
                 modifier: +1

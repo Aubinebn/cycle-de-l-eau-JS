@@ -76,17 +76,17 @@ function setupAmenagements()
         let imageElt = '';
         if (!isPolitiqueGestion)
         {
-            imageElt += '<img src="img/amenagements/' + amenagement.imageActive.path + '" class="image-active" ' +
+            imageElt += '<img src="img/' + amenagement.imageActive.path + '" class="image-active" ' +
                 'style="left: ' + amenagement.imageActive.x + 'px; top: ' + amenagement.imageActive.y + 'px">';
 
             //-- Image focus : soit l'image "active", soit une image différente si imageFocus est passé en paramètre
             let imageFocus = isset(amenagement.imageFocus) ? amenagement.imageFocus : amenagement.imageActive;
-                imageElt += '<img src="img/amenagements/' + imageFocus.path + '" class="image-focus" ' +
+                imageElt += '<img src="img/' + imageFocus.path + '" class="image-focus" ' +
                             'style="left: ' + imageFocus.x + 'px; top: ' + imageFocus.y + 'px">';
 
             //-- Image inactive
             if (isset(amenagement.imageInactive))
-                imageElt += '<img src="img/amenagements/' + amenagement.imageInactive.path + '" class="image-inactive" ' +
+                imageElt += '<img src="img/' + amenagement.imageInactive.path + '" class="image-inactive" ' +
                         'style="left: ' + amenagement.imageInactive.x + 'px; top: ' + amenagement.imageInactive.y + 'px">';
         }
 
@@ -162,11 +162,24 @@ function setupAmenagements()
             {
                 let indicator = amenagement.effects[effectName].indicator;
 
-                let indicatorElt = $('<div class="effect-indicator effect-indicator-' + effectName + '"><div class="effect-indicator-img"></div></div>').appendTo(amenagementElt);
+                let indicatorClass = 'effect-indicator effect-indicator-' + effectName;
+
+                if (isset(indicator.inactiveIndicator) && indicator.inactiveIndicator)
+                        indicatorClass += ' inactive-indicator';
+                else
+                        indicatorClass += ' active-indicator';
+
+                let indicatorElt = $('' +
+                        '<div class="' + indicatorClass +'">' +
+                            '<div class="effect-indicator-img"></div>' +
+                        '</div>');
+
                 indicatorElt.css({
-                    left: getSceneX(indicator.x) + getMilieuIndex(amenagement.milieu) * sceneWidth,
-                    top: getSceneY(indicator.y)
+                    left: indicator.x + 'px',
+                    top: indicator.y + 'px'
                 });
+
+                indicatorElt.appendTo(amenagementElt);
 
                 if (isset(indicator.image))
                     indicatorElt.append('<img class="effect-indicator-image" src="' + indicator.image + '" />');

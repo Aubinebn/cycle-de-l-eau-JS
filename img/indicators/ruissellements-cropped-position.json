@@ -1,0 +1,86 @@
+{
+    "ruissellement-parking.png": {
+        "x_pixel": 1667,
+        "y_pixel": 1112,
+        "x_percent": 14.47,
+        "y_percent": 51.48,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            262,
+            164
+        ]
+    },
+    "ruissellement-couperase.png": {
+        "x_pixel": 10698,
+        "y_pixel": 1003,
+        "x_percent": 92.86,
+        "y_percent": 46.44,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            788,
+            312
+        ]
+    },
+    "ruissellement-ville.png": {
+        "x_pixel": 193,
+        "y_pixel": 652,
+        "x_percent": 1.68,
+        "y_percent": 30.19,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            2386,
+            325
+        ]
+    },
+    "ruissellements-labour.png": {
+        "x_pixel": 4607,
+        "y_pixel": 863,
+        "x_percent": 39.99,
+        "y_percent": 39.95,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            1210,
+            354
+        ]
+    },
+    "ruissellement-elevageclassique.png": {
+        "x_pixel": 6441,
+        "y_pixel": 932,
+        "x_percent": 55.91,
+        "y_percent": 43.15,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            952,
+            260
+        ]
+    },
+    "ruissellement-immeubles.png": {
+        "x_pixel": 210,
+        "y_pixel": 616,
+        "x_percent": 1.82,
+        "y_percent": 28.52,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            1180,
+            213
+        ]
+    }
+}
