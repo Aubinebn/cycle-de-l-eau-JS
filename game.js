@@ -51,6 +51,8 @@ function updateProgressEffect(effectName)
     let effectRatio = effectValue / 5;
 
     let guiEffect = $('.gui-effect-' + effectName);
+    guiEffect.data('effect-value', effectValue);
+    guiEffect.data('effect-ratio', effectRatio);
 
     guiEffect.find('.gui-effect-bar-progress').width(effectRatio * 100 + '%');
 
@@ -74,32 +76,36 @@ function udpateScoreEffect(effectName)
 
 function updateAmenagementsEffects()
 {
-    // for (let i in amenagements)
-    // {
-    //     let amenagement = amenagements[i];
-    //
         for (let effectName in allEffects)
         {
-    //         let amenagementEffect = amenagement.effects[effectName];
-    //
-    //         if (!isset(amenagementEffect.indicator))
-    //             continue;
-
             let effect = allEffects[effectName];
 
             if (!isset(effect.modifiers))
                 continue;
 
-            let weatherModifier = effect.modifiers[currentTemperature]['rain_' + currentRain];
-            let indicatorVisible = weatherModifier > 0;
-            let indicatorScale = .5 + weatherModifier * .5;
+            let indicatorElt = $('.effect-indicator-' + effectName);
 
-            $('.effect-indicator-' + effectName)
+            let weatherModifier = effect.modifiers[currentTemperature]['rain_' + currentRain];
+
+            let indicatorVisible = weatherModifier > 0;
+
+            let indicatorRatio = .5 + weatherModifier * .5;
+
+            if (effectName === 'ruissellement')
+            {
+                indicatorRatio = 1;
+
+                //-- pour le ruissellement, on ne montre pas l'indicateur si la valeur de l'effet est trop faible
+                let globalEffectValue = $('.gui-effect-' + effectName).data('effect-ratio');
+                indicatorRatio = weatherModifier * globalEffectValue;
+                indicatorRatio = easeOutQuad(indicatorRatio);
+            }
+
+            indicatorElt
                 .toggleClass('visible', indicatorVisible)
-                .css('transform', 'scale(' + indicatorScale + ')')
-                .attr('data-scale', indicatorScale);
+                .css('opacity', indicatorRatio)
+                // .css('transform', 'scale(' + indicatorScale + ')');
         }
-    // }
 }
 
 function calcEffect(effectName, effect)
@@ -164,6 +170,9 @@ function onClickBulleAmenagement()
     //-- Met le focus sur l'aménagement
     amenagementElt.addClass('focus');
     focusClone.addClass('focus');
+
+    //-- Supprime les indicateurs d'effets
+    focusClone.find('.effect-indicator').remove();
 
     //-- Baisse l'opacité des autres bulles
     $('.bulle-amenagement').addClass('light');

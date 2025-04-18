@@ -694,10 +694,12 @@ body[data-milieu="3"] #gui #gui-bottom #nav:after {
 
 .effect-indicator {
     position: absolute;
-    opacity:0;
     pointer-events: none;
-    transition:transform 2s ease-in-out, opacity .5s ease-in-out;
+    opacity:0;
+    visibility: hidden;
+    transition:transform 2s ease-in-out, opacity 1s ease-in-out;
 }
+
 .effect-indicator.effect-indicator-evaporation {
     width: 200px;
     height: 200px;
@@ -728,8 +730,10 @@ body[data-milieu="3"] #gui #gui-bottom #nav:after {
     width:100%;
     height:100%;
 }
-body:not(.focus) .amenagement.active .effect-indicator.visible {
+.amenagement.active .effect-indicator.active-indicator.visible,
+.amenagement:not(.active) .effect-indicator.inactive-indicator.visible{
     opacity:1;
+    visibility: visible;
 }
 
 @keyframes fleche-evaporation {

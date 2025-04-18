@@ -37,7 +37,7 @@ const effects = {
         ,
         ruissellement: {
             label: 'Ruissellement',
-            default: 2.5,
+            default: 5,
             modifiers: {
                 cold: {
                     rain_none: 0,
