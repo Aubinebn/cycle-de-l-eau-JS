@@ -140,12 +140,17 @@ body[data-milieu="3"] #focus-container {
 #nappe-phreatique-empty,
 #nappe-phreatique {
     position:absolute;
-    bottom: -1500px;
+    bottom: 0;
     left:0;
     pointer-events: none;
+    display:flex;
 }
 #nappe-phreatique {
     opacity:0;
+}
+#nappe-phreatique-empty img {
+    width:3840px;
+    height:auto;
 }
 
 /*********** Amenagements ***********/
