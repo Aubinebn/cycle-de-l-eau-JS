@@ -749,6 +749,11 @@ body[data-milieu="3"] #gui #gui-bottom #nav:after {
     opacity:1;
     visibility: visible;
 }
+/*.amenagement.active .effect-indicator.active-indicator,*/
+/*.amenagement:not(.active) .effect-indicator.inactive-indicator{*/
+/*    opacity:1!important;*/
+/*    visibility: visible;*/
+/*}*/
 
 @keyframes fleche-evaporation {
     0% {

@@ -1,7 +1,9 @@
 function logClickPos(e)
 {
     //log('x = ' + (e.pageX / sceneWidth * 100) + '% , y = ' + (e.pageY / sceneHeight * 100) + "%" );
-    log((e.pageX/0.555)/sceneWidth*100, (e.pageY/0.555)/sceneHeight*100);
+    // log((e.pageX/0.555)/sceneWidth*100, (e.pageY/0.555)/sceneHeight*100);
+    log((e.pageX/0.555) * (currentMilieu + 1), (e.pageY/0.555));
+
 }
 
 function changeMilieu(newMilieuIndex)

@@ -1,0 +1,100 @@
+{
+    "infiltration-noue.png": {
+        "x_pixel": 918,
+        "y_pixel": 1306,
+        "x_percent": 7.97,
+        "y_percent": 60.46,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            174,
+            194
+        ]
+    },
+    "infiltration-foret.png": {
+        "x_pixel": 10370,
+        "y_pixel": 1212,
+        "x_percent": 90.02,
+        "y_percent": 56.11,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            754,
+            508
+        ]
+    },
+    "infiltration-elevage.png": {
+        "x_pixel": 6373,
+        "y_pixel": 1301,
+        "x_percent": 55.32,
+        "y_percent": 60.23,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            800,
+            249
+        ]
+    },
+    "infiltration-champ.png": {
+        "x_pixel": 4650,
+        "y_pixel": 1199,
+        "x_percent": 40.36,
+        "y_percent": 55.51,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            1008,
+            291
+        ]
+    },
+    "infiltration-jardin.png": {
+        "x_pixel": 2963,
+        "y_pixel": 1517,
+        "x_percent": 25.72,
+        "y_percent": 70.23,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            194,
+            130
+        ]
+    },
+    "infiltration-parking.png": {
+        "x_pixel": 1349,
+        "y_pixel": 1426,
+        "x_percent": 11.71,
+        "y_percent": 66.02,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            358,
+            196
+        ]
+    },
+    "infiltration-parc.png": {
+        "x_pixel": 401,
+        "y_pixel": 1140,
+        "x_percent": 3.48,
+        "y_percent": 52.78,
+        "original_size": [
+            11520,
+            2160
+        ],
+        "cropped_size": [
+            1305,
+            467
+        ]
+    }
+}
