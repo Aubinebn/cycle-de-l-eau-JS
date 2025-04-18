@@ -83,7 +83,7 @@ const effects = {
     }
 };
 
-//-- tableau contenant tous les effets indifférenciés, pour pouvoir checher un effet par nom
+//-- tableau contenant tous les effets indifférenciés, pour pouvoir chercher un effet par nom
 const allEffects = {};
 
 for (var effectName in effects.progress)

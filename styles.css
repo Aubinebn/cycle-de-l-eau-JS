@@ -363,7 +363,9 @@ body[data-milieu="3"] #focus-container {
     object-fit: cover;
     mix-blend-mode: screen;
     filter: saturate(0.75) hue-rotate(288deg);
-    mask: url(img/rain-mask.png);
+    mask: url(img/rain-mask2.png);
+    mask-size:11520px 2160px;
+    mask-repeat:no-repeat;
     opacity:0;
     pointer-events: none;
     will-change:mask-position;
