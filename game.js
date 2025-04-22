@@ -161,8 +161,12 @@ function calcEffect(effectName, effect)
 function onClickBulleAmenagement()
 {
     hideAllModals();
-
     let amenagementElt = $(this).closest('.amenagement');
+
+    //-- Si la bulle sur laquelle on clique était déja en focus on s'arrête la
+    if (amenagementElt.is('.focus'))
+            return false;
+
     let milieu = amenagementElt.closest('.milieu');
 
     //-- Remet l'aménagement en dernier dans son conteneur, pour qu'il prenne le max zIndex
