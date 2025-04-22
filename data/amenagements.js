@@ -331,12 +331,17 @@ const agricole = [
         effects: {
             evaporation: {
                 modifier: -1,
+                indicator: {
+                    inactiveIndicator: true,
+                    x: 4470,
+                    y: 601
+                }
             },
             infiltration: {
                 modifier: +1,
                 indicator: {
-                    x: 11,
-                    y: 50
+                    x: 4198,
+                    y: 1225
                 }
             },
             qualiteEau: {
@@ -357,7 +362,7 @@ const agricole = [
     {
         milieu: "agricole",
         label: "Travail du sol superficiel",
-        x: 38,
+        x: 43,
         y: 56,
         active: true,
         imageActive: {
@@ -374,19 +379,25 @@ const agricole = [
             evaporation: {
                 modifier: +1,
                 indicator: {
-                    x: 38,
-                    y: 56
+                    x: 5098,
+                    y: 838
                 }
             },
             infiltration: {
                 modifier: +1,
                 indicator: {
-                    x: 38,
-                    y: 56
+                    x: 4998,
+                    y: 1237
                 }
             },
             ruissellement: {
-                modifier: -1
+                modifier: -1,
+                indicator: {
+                    inactiveIndicator: true,
+                    image: 'img/indicators/ruissellements-cropped/ruissellements-labour.png',
+                    x: 4604,
+                    y: 865,
+                }
             },
             reseauEau: {
                 modifier: -1
@@ -418,8 +429,8 @@ const agricole = [
             infiltration: {
                 modifier: +1,
                 indicator: {
-                    x: 82,
-                    y: 48
+                    x: 6915,
+                    y: 1380
                 }
             },
             qualiteEau: {
@@ -427,6 +438,12 @@ const agricole = [
             },
             ruissellement: {
                 modifier: -1,
+                indicator: {
+                    inactiveIndicator: true,
+                    image: 'img/indicators/ruissellements-cropped/ruissellement-elevageclassique.png',
+                    x: 6447,
+                    y: 928
+                }
             },
             reseauEau: {
                 modifier: -1
@@ -452,10 +469,6 @@ const agricole = [
         effects: {
             infiltration: {
                 modifier: +1,
-                indicator: {
-                    x: 25,
-                    y: 35
-                }
             },
             qualiteEau: {
                 modifier: +1
@@ -490,8 +503,8 @@ const naturel = [
             evaporation: {
                 modifier: +1,
                 indicator: {
-                    x: 59,
-                    y: 34
+                    x: 9737,
+                    y: 559
                 }
             },
             infiltration: {
@@ -539,8 +552,8 @@ const naturel = [
             infiltration: {
                 modifier: +1,
                 indicator: {
-                    x: 47,
-                    y: 54
+                    x: 8584,
+                    y: 1351
                 }
             },
             qualiteEau: {
@@ -610,13 +623,18 @@ const naturel = [
         },
         effects: {
             evaporation: {
-                modifier: -1
+                modifier: -1,
+                indicator: {
+                    invalidIndicator: true,
+                    x: 8072,
+                    y: 765
+                }
             },
             infiltration: {
                 modifier: +1,
                 indicator: {
-                    x: 18,
-                    y: 45
+                    x: 7684,
+                    y: 1376
                 }
             },
             qualiteEau: {
@@ -652,8 +670,8 @@ const naturel = [
             evaporation: {
                 modifier: +1,
                 indicator: {
-                    x: 72,
-                    y: 27
+                    x: 10227,
+                    y: 360
                 }
             },
             infiltration: {
@@ -725,12 +743,17 @@ const naturel = [
             evaporation: {
                 modifier: +1,
                 indicator: {
-                    x: 83,
-                    y: 55
+                    x: 10950,
+                    y: 579
                 }
             },
             infiltration: {
-                modifier: -1
+                modifier: -1,
+                indicator: {
+                    invalidIndicator: true,
+                    x: 11150,
+                    y: 1223
+                }
             },
             qualiteEau: {
                 modifier: -1
@@ -738,9 +761,9 @@ const naturel = [
             ruissellement: {
                 modifier: +3,
                 indicator: {
-                    image: 'img/indicators/ruissellements-cropped/ruissellement-coupe-rase.png',
+                    image: 'img/indicators/ruissellements-cropped/ruissellement-couperase.png',
                     x: 10698,
-                    y: 1003
+                    y: 1003,
                 }
             },
             reseauEau: {

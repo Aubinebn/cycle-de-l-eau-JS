@@ -205,7 +205,7 @@ body[data-milieu="3"] #focus-container {
     position:absolute;
     gap: 4px;
     transform: translateY(-132px);
-    z-index: 1;
+    z-index: 2;
 }
 
 .point-info .amenagement-ui {
@@ -708,6 +708,7 @@ body[data-milieu="3"] #gui #gui-bottom #nav:after {
 
 .effect-indicator {
     position: absolute;
+    z-index: 1;
     pointer-events: none;
     opacity:0;
     visibility: hidden;
@@ -749,11 +750,6 @@ body[data-milieu="3"] #gui #gui-bottom #nav:after {
     opacity:1;
     visibility: visible;
 }
-/*.amenagement.active .effect-indicator.active-indicator,*/
-/*.amenagement:not(.active) .effect-indicator.inactive-indicator{*/
-/*    opacity:1!important;*/
-/*    visibility: visible;*/
-/*}*/
 
 @keyframes fleche-evaporation {
     0% {

@@ -1,7 +1,5 @@
 function setupEventListeners()
 {
-    $('body').click(logClickPos);
-
     $(document).click(hideAllModals);
 
     setupNavEventListeners();
