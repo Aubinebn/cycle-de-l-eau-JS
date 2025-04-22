@@ -4,7 +4,7 @@ const urbain = [
         label: "Parcs",
         x: 31,
         y: 49,
-        active: true,
+        active: false,
         imageActive: {
             path: "amenagements/urbain-cropped/parc.png",
             x: 234,
@@ -44,7 +44,7 @@ const urbain = [
         label: "Densification urbaine",
         x: 20,
         y: 30,
-        active: true,
+        active: false,
         imageInactive: {
             path: "amenagements/urbain-cropped/colline-ville.png",
             x: 0,
@@ -82,7 +82,7 @@ const urbain = [
         label: "Noues d'infiltration",
         x: 39,
         y: 46,
-        active: true,
+        active: false,
         imageActive: {
             path: "amenagements/urbain-cropped/noue.png",
             x: 986,
@@ -120,7 +120,7 @@ const urbain = [
         x: 84,
         y: 64,
         positionFiche: 'top',
-        active: true,
+        active: false,
         imageActive: {
             path: "amenagements/urbain-cropped/infiltration-parcelle.png",
             x: 2927,
@@ -158,7 +158,7 @@ const urbain = [
         x: 70,
         y: 73,
         positionFiche: 'top',
-        active: true,
+        active: false,
         imageInactive: {
             path: "amenagements/urbain-cropped/reseau-commun.png",
             x: 2162,
@@ -182,7 +182,7 @@ const urbain = [
         x: 78,
         y: 61,
         positionFiche: 'left',
-        active: true,
+        active: false,
         imageActive: {
             path: "amenagements/urbain-cropped/cuve-eau.png",
             x: 2623,
@@ -203,7 +203,7 @@ const urbain = [
         label: "Bassin de rétention des eaux pluviales",
         x: 59,
         y: 48,
-        active: true,
+        active: false,
         imageActive: {
             path: "amenagements/urbain-cropped/bassin-retention.png",
             x: 2017,
@@ -231,7 +231,7 @@ const urbain = [
         x: 48,
         y: 58,
         positionFiche: 'top',
-        active: true,
+        active: false,
         imageActive: {
             path: "amenagements/urbain-cropped/parking-infiltrant.png",
             x: 1325,
@@ -270,7 +270,7 @@ const urbain = [
         x: 35,
         y: 60,
         positionFiche: 'top',
-        active: true,
+        active: false,
         imageActive: {
             path: "amenagements/urbain-cropped/parking-vegetalise.png",
             x: 1121,
@@ -317,7 +317,7 @@ const agricole = [
         label: "Diversité culturale",
         x: 11,
         y: 50,
-        active: true,
+        active: false,
         imageActive: {
             path: "amenagements/agricole-cropped/diversite-cultures.png",
             x: 3842,
@@ -364,7 +364,7 @@ const agricole = [
         label: "Travail du sol superficiel",
         x: 43,
         y: 56,
-        active: true,
+        active: false,
         imageActive: {
             path: "amenagements/agricole-cropped/labour-superficiel-V2.png",
             x: 4499,
@@ -414,7 +414,7 @@ const agricole = [
         x: 82,
         y: 48,
         positionFiche: 'left',
-        active: true,
+        active: false,
         imageActive: {
             path: "amenagements/agricole-cropped/elevage-extensif-barrieres.png",
             x: 6243,
@@ -460,7 +460,7 @@ const agricole = [
         label: "Haies",
         x: 25,
         y: 35,
-        active: true,
+        active: false,
         imageActive: {
             path: "amenagements/agricole-cropped/haies.png",
             x: 3836,
@@ -493,7 +493,7 @@ const naturel = [
         label: "Plantation d'une peupleraie",
         x: 59,
         y: 34,
-        active: true,
+        active: false,
         imageActive: {
             path: "amenagements/naturel-cropped/peupliers.png",
             x: 9642,
@@ -537,7 +537,7 @@ const naturel = [
         x: 47,
         y: 54,
         positionFiche: 'top',
-        active: true,
+        active: false,
         imageInactive: {
             path: "amenagements/naturel-cropped/zone_humide.png",
             x: 8292,
@@ -580,7 +580,7 @@ const naturel = [
         x: 8,
         y: 58,
         positionFiche: 'higher',
-        active: true,
+        active: false,
         imageInactive: {
             path: "amenagements/naturel-cropped/riviere-classique-v2.png",
             x: 7884,
@@ -615,7 +615,7 @@ const naturel = [
         x: 18,
         y: 45,
         positionFiche: 'higher',
-        active: true,
+        active: false,
         imageActive: {
             path: "amenagements/naturel-cropped/ripisylve.png",
             x: 7562,
@@ -660,7 +660,7 @@ const naturel = [
         label: "Mono culture de sapins",
         x: 72,
         y: 27,
-        active: true,
+        active: false,
         imageActive: {
             path: "amenagements/naturel-cropped/sapins.png",
             x: 10137,
@@ -728,7 +728,7 @@ const naturel = [
         x: 83,
         y: 55,
         positionFiche: 'left higher',
-        active: true,
+        active: false,
         imageInactive: {
             path: "amenagements/naturel-cropped/foret-1.png",
             x: 10340,
