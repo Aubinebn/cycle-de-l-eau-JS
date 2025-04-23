@@ -27,6 +27,9 @@ var milieuxContainer = viewportScroll.find('#milieux');
 
 var amenagementList = [];
 
+var nappeOpacity = 0;
+var nappeHeight;
+
 
 init();
 
@@ -52,6 +55,9 @@ function init()
     initComplete = true;
 
     updateEffects();
+
+    nappeHeight = $('#nappe-phreatique').height();
+    requestAnimationFrame(udateNappe);
 }
 
 function setupMilieux()

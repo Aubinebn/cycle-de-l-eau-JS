@@ -158,6 +158,22 @@ function calcEffect(effectName, effect)
     };
 }
 
+function udateNappe()
+{
+    let ratio = $('.gui-effect-infiltration').data('effect-ratio');
+    nappeOpacity += (ratio - nappeOpacity) * 0.0015;
+
+    // let maxTop = 200;
+    // let top = maxTop - (nappeOpacity * maxTop);
+
+    let translate = nappeHeight * (1 - nappeOpacity) + 'px';
+
+    $('#nappe-phreatique').css('opacity', nappeOpacity);
+    $('#nappe-phreatique').css('transform', 'translateY(' + translate + ')');
+
+    requestAnimationFrame(udateNappe);
+}
+
 function onClickBulleAmenagement()
 {
     hideAllModals();
