@@ -161,15 +161,13 @@ function calcEffect(effectName, effect)
 function udateNappe()
 {
     let ratio = $('.gui-effect-infiltration').data('effect-ratio');
-    nappeOpacity += (ratio - nappeOpacity) * 0.0015;
+    nappeOpacity += (ratio - nappeOpacity) * 0.001;
 
-    // let maxTop = 200;
-    // let top = maxTop - (nappeOpacity * maxTop);
-
-    let translate = nappeHeight * (1 - nappeOpacity) + 'px';
+    let maxTranslate = 500;
+    let translate = maxTranslate - (nappeOpacity * maxTranslate);
 
     $('#nappe-phreatique').css('opacity', nappeOpacity);
-    $('#nappe-phreatique').css('transform', 'translateY(' + translate + ')');
+    $('#nappe-phreatique').css('transform', 'translateY(' + translate + 'px)');
 
     requestAnimationFrame(udateNappe);
 }
