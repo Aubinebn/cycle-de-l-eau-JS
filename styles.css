@@ -266,6 +266,7 @@ body[data-milieu="3"] #focus-container {
 }
 .amenagement.point-info .fiche-amenagement {
     background:none;
+    box-shadow: 0 0 25px 2px rgba(0, 0, 0, 0.3);
     padding-top:0;
 }
 
