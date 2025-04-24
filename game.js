@@ -170,7 +170,7 @@ function updateNappe()
     nappeOpacity += (ratio - nappeOpacity) * 0.015;
 
     let maxTranslate = 500;
-    let translate = maxTranslate - (nappeOpacity * maxTranslate);
+    let translate = maxTranslate - nappeOpacity * maxTranslate;
 
     $('#nappe-phreatique').css('opacity', nappeOpacity);
     $('#nappe-phreatique').css('transform', 'translateY(' + translate + 'px)');
