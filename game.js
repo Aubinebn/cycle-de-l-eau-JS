@@ -158,18 +158,24 @@ function calcEffect(effectName, effect)
     };
 }
 
-function udateNappe()
+function updateNappe()
 {
+    if (jbody.hasClass('focus'))
+    {
+        requestAnimationFrame(updateNappe);
+        return;
+    }
+
     let ratio = $('.gui-effect-infiltration').data('effect-ratio');
-    nappeOpacity += (ratio - nappeOpacity) * 0.001;
+    nappeOpacity += (ratio - nappeOpacity) * 0.015;
 
     let maxTranslate = 500;
-    let translate = maxTranslate - (nappeOpacity * maxTranslate);
+    let translate = maxTranslate - nappeOpacity * maxTranslate;
 
     $('#nappe-phreatique').css('opacity', nappeOpacity);
     $('#nappe-phreatique').css('transform', 'translateY(' + translate + 'px)');
 
-    requestAnimationFrame(udateNappe);
+    requestAnimationFrame(updateNappe);
 }
 
 function onClickBulleAmenagement()
@@ -228,7 +234,9 @@ function toggleAmenagement()
     amenagement.active = amenagementElt.is('.active');
 
     updateEffects();
-    // hideAllModals();
+
+    if (!amenagement.active)
+        hideAllModals();
 
     return false;
 }

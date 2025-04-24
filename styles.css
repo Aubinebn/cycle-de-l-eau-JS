@@ -423,6 +423,10 @@ body[data-milieu="3"] #rain {
     font-weight:bold;
     font-size:24px;
     color:#fff;
+    /*transition:all .5s;*/
+}
+#gui .gui-elt.highlight {
+    box-shadow: 0 0 20px 9px rgb(210 245 244);
 }
 #gui .gui-label {
     margin-bottom:10px;
