@@ -54,7 +54,7 @@ function init()
 
     updateEffects();
 
-    requestAnimationFrame(udateNappe);
+    requestAnimationFrame(updateNappe);
 }
 
 function setupMilieux()
