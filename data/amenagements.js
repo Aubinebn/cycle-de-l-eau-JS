@@ -534,9 +534,9 @@ const naturel = [
     {
         milieu: "naturel",
         label: "Travaux reconnexion bras morts",
-        x: 47,
-        y: 54,
-        positionFiche: 'top',
+        x: 23,
+        y: 51,
+        positionFiche: 'higher',
         active: false,
         imageInactive: {
             path: "amenagements/naturel-cropped/zone_humide.png",
