@@ -12,7 +12,7 @@ const pointsInfo = [
     {
         milieu: "urbain",
         label: "Chateau d'eau",
-        positionFiche: 'top',
+        positionFiche: 'left',
         x: 95.2,
         y: 23,
         description: "Le château d'eau est une construction destinée à entreproser l'eau en hauteur pour permettre de la distribuer sous pression par gravité. \n" +
@@ -79,10 +79,9 @@ const pointsInfo = [
     {
         milieu: "naturel",
         label: "Plan d'aménagement forestier",
-        positionFiche: 'top',
+        positionFiche: 'left',
         x: 81,
         y: 41,
-        positionFiche: 'left',
         description: "Un plan d’aménagement forestier est un document qui sert à organiser et gérer une forêt de manière durable. Il définit comment exploiter les arbres tout en protégeant l’environnement et en préservant la biodiversité. Ce plan précise quelles zones seront exploitées, reboisées ou laissées intactes, ainsi que les actions à mener pour garantir la santé de la forêt sur le long terme. Son objectif est d’équilibrer la production de bois, la conservation de la nature et les besoins des humains.",
     }
 ]

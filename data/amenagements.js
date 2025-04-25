@@ -181,7 +181,7 @@ const urbain = [
         label: "Stockage des eaux de pluies",
         x: 78,
         y: 61,
-        positionFiche: 'left',
+        positionFiche: 'top',
         active: false,
         imageActive: {
             path: "amenagements/urbain-cropped/cuve-eau.png",
