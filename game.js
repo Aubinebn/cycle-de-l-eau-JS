@@ -237,8 +237,10 @@ function toggleAmenagement()
 
     updateEffects();
 
-    if (!amenagement.active)
-        hideAllModals();
+    // if (!amenagement.active)
+    //     hideAllModals();
+    // else
+        setTimeout(hideAllModals, 1500);
 
     return false;
 }
