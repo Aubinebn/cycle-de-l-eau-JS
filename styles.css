@@ -357,8 +357,8 @@ body[data-milieu="3"] #focus-container {
 .fiche-amenagement-content .toggle-button {
     display: flex;
     justify-content: center;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 24px;
+    padding-bottom: 24px;
     border-radius: 8px;
     background: linear-gradient(180deg, #D4D4D4 0%, #C7C7C7 100%);
     color: #DFEDE8;
