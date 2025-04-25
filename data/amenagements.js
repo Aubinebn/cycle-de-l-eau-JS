@@ -361,7 +361,7 @@ const agricole = [
     },
     {
         milieu: "agricole",
-        label: "Travail du sol superficiel",
+        label: "Labour superficiel",
         x: 43,
         y: 56,
         active: false,
