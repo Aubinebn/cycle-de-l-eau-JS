@@ -17,7 +17,7 @@ const effects = {
                 hot: {
                     rain_none: 0,
                     rain_low: 0.5,
-                    rain_high: 0
+                    rain_high: 0.1
                 },
             }
         }
