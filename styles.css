@@ -25,7 +25,7 @@ html, body {
 }
 
 p{
-    margin-bottom: 0.5em;
+    margin-bottom: 0.4em;
 }
 p:last-child {
     margin-bottom: 0;
@@ -33,6 +33,7 @@ p:last-child {
 p.underline {
     position: relative;
     display: inline-block;
+    margin-bottom: 0.6em;
 }
 p.underline:after {
     content: '';
