@@ -35,6 +35,8 @@ function changeMilieu(newMilieuIndex)
         updateEffects();
         hideAllModals();
     });
+
+    updateWeatherSummaryGUI();
 }
 
 function updateEffects()
@@ -255,4 +257,34 @@ function hideAllModals()
 
     if (isset(window.showBulleTimeout))
         clearTimeout(window.showBulleTimeout);
+}
+
+function updateWeatherSummaryGUI()
+{
+    let labelTempElt = $('#gui-weather-summary .gui-label .temperature').empty().removeClass('cold hot');
+    let labelRainElt = $('#gui-weather-summary .gui-label .rain').empty().removeClass('none low high');
+    let contentElt = $('#gui-weather-summary .gui-weather-summary-content').empty();
+
+    let rain = 'sec';
+    if (currentRain == 'low')
+        rain = 'faible pluie';
+    else if (currentRain == 'high')
+        rain = 'forte pluie';
+
+    //-- Update de le titre des conditions météo
+    labelTempElt.html(currentTemperature == 'cold' ? 'froid' : 'chaud')
+            .addClass(currentTemperature);
+
+    labelRainElt.html(rain)
+            .addClass(currentRain);
+
+    //-- Update le texte des conditions météo
+    let text = '';
+    weatherCombination.forEach(function (combination)
+    {
+            if (combination.milieu == milieux[currentMilieu].name)
+                text = combination[currentTemperature][currentRain];
+    });
+
+    contentElt.html(text);
 }

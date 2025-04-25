@@ -11,7 +11,9 @@ function onClickTemperatureBtn()
     
     if (initComplete)
         updateEffects();
-    
+
+    updateWeatherSummaryGUI();
+
     return false;
 }
 
@@ -29,6 +31,8 @@ function onClickRainBtn()
     
     if (initComplete)
         updateEffects();
+
+    updateWeatherSummaryGUI();
     
     return false;
 }
