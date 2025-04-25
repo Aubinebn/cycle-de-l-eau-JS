@@ -115,9 +115,10 @@ function setupAmenagements()
             {
                 let modifier = amenagement.effects[effectName].modifier;
                 let effect = allEffects[effectName];
+                let label = isset(effect.ficheLabel) ? effect.ficheLabel : effect.label;
                 let effectElt =
                         '<div class="amenagement-effect-item ' + (modifier > 0 ? 'positive' : 'negative') + '">' +
-                        '<span class="effect-label">' + effect.label + '</span>' +
+                        '<span class="effect-label">' + label + '</span>' +
                         '</div>';
 
                 if (modifier > 0)

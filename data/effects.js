@@ -86,6 +86,7 @@ const effects = {
         ,
         reseauEau: {
             label: 'Réseau d\'eau',
+            ficheLabel: 'Disponibilité du réseau d\'eau',
             default: {
                 'urbain' : 2.5,
                 'agricole' : 0,
