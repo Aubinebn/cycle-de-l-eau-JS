@@ -1,7 +1,7 @@
 /* variables */
 :root {
     --viewport-scale-value: 0.555;
-    /*--viewport-scale-value: 1;*/
+    --viewport-scale-value: 1;
 
     --change-milieu-transition-ease : ease-in-out;
     --change-milieu-transition-duration : 500ms;
@@ -18,7 +18,7 @@ html, body {
 #viewport,
 #gui-top,
 #gui-bottom,
-#gui-bottom-left
+#gui-top-right
 {
     transform-origin:top left;
     transform:scale(var(--viewport-scale-value));
@@ -33,16 +33,20 @@ p:last-child {
 p.underline {
     position: relative;
     display: inline-block;
-    margin-bottom: 0.6em;
+    margin-bottom: 1.1em;   
 }
 p.underline:after {
     content: '';
-    height: 4px;
+    height: 5px;
     position: absolute;
-    bottom: -0.2em;
+    bottom: -8px;
     left: -1px;
     right: -1px;
     background: #fff;
+    border-radius: 4px;
+}
+strong {
+    font-weight:bold;
 }
 
 /*********** Viewport ***********/
@@ -579,35 +583,35 @@ body[data-milieu="3"] #gui #gui-bottom #nav:after {
     fill:#FE6363;
 }
 
-#gui #gui-bottom-left {
+#gui #gui-top-right {
     position:absolute;
-    bottom:15px;
-    left:15px;
-    transform-origin: bottom left;
+    top:15px;
+    right:15px;
+    transform-origin: top right;
 }
 
-#gui #gui-bottom-left #gui-weather-summary {
-    width: 517px;
+#gui #gui-top-right #gui-weather-summary {
+    width: 650px;
     display:flex;
     flex-direction:column;
     gap: 10px;
 }
-#gui #gui-bottom-left #gui-weather-summary .gui-label .cold{
-    color: #5DCCE2;
-}
-#gui #gui-bottom-left #gui-weather-summary .gui-label .hot{
-    color: #FE6363;
-}
-#gui #gui-bottom-left #gui-weather-summary .gui-label .none{
-    color: #fff;
-}
-#gui #gui-bottom-left #gui-weather-summary .gui-label .low{
-    color: #CEEFF5;
-}
-#gui #gui-bottom-left #gui-weather-summary .gui-label .high{
-    color: #43BBEE;
-}
-#gui #gui-bottom-left #gui-weather-summary .gui-weather-summary-content{
+/* #gui #gui-top-right #gui-weather-summary .gui-label .cold{ */
+    /* color: #5DCCE2; */
+/* } */
+/* #gui #gui-top-right #gui-weather-summary .gui-label .hot{ */
+    /* color: #FE6363; */
+/* } */
+/* #gui #gui-top-right #gui-weather-summary .gui-label .none{ */
+    /* color: #fff; */
+/* } */
+/* #gui #gui-top-right #gui-weather-summary .gui-label .low{ */
+    /* color: #CEEFF5; */
+/* } */
+/* #gui #gui-top-right #gui-weather-summary .gui-label .high{ */
+    /* color: #43BBEE; */
+/* } */
+#gui #gui-top-right #gui-weather-summary .gui-weather-summary-content{
     text-transform: none;
     font-size: 24px;
 }

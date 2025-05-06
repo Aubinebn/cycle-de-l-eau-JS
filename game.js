@@ -34,9 +34,8 @@ function changeMilieu(newMilieuIndex)
         
         updateEffects();
         hideAllModals();
+        updateWeatherSummaryGUI();
     });
-
-    updateWeatherSummaryGUI();
 }
 
 function updateEffects()
@@ -267,26 +266,29 @@ function updateWeatherSummaryGUI()
     let labelRainElt = $('#gui-weather-summary .gui-label .rain').empty().removeClass('none low high');
     let contentElt = $('#gui-weather-summary .gui-weather-summary-content').empty();
 
-    let rain = 'sec';
+    let rainText = 'Temps ensoleillé';
     if (currentRain == 'low')
-        rain = 'faible pluie';
+        rainText = 'Faibles averses';
     else if (currentRain == 'high')
-        rain = 'forte pluie';
+        rainText = 'Forte pluie';
+    
+    let temperatureText = currentTemperature == 'cold'
+        ? 'températures en baisse'
+        : 'chaleurs estivales';
+    
+    //-- Update le titre des conditions météo
+    // labelTempElt.html(temperatureText)
+            // .addClass(currentTemperature);
 
-    //-- Update de le titre des conditions météo
-    labelTempElt.html(currentTemperature == 'cold' ? 'froid' : 'chaud')
-            .addClass(currentTemperature);
-
-    labelRainElt.html(rain)
-            .addClass(currentRain);
-
+    // labelRainElt.html(rainText)
+            // .addClass(currentRain);
+            
+    let currentMilieuName = milieux[currentMilieu].name;
+    
     //-- Update le texte des conditions météo
-    let text = '';
-    weatherCombination.forEach(function (combination)
-    {
-            if (combination.milieu == milieux[currentMilieu].name)
-                text = combination[currentTemperature][currentRain];
-    });
-
-    contentElt.html(text);
+    let weatherText = weatherTexts[currentMilieuName][currentTemperature][currentRain];
+    contentElt.html(
+        '<p><strong>' + rainText + ' et ' + temperatureText + '</strong></p>' +
+        weatherText
+    );
 }
