@@ -1,5 +1,7 @@
 function onClickTemperatureBtn()
 {
+    resetRestartTimeout();
+    
     currentTemperature = $(this).data('temperature');
     
     $('#gui-temperature .gui-btn').removeClass('active');
@@ -19,6 +21,8 @@ function onClickTemperatureBtn()
 
 function onClickRainBtn()
 {
+    resetRestartTimeout();
+    
     currentRain = $(this).data('rain-level');
     
     $('#gui-rain .gui-btn').removeClass('active');

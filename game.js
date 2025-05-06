@@ -181,7 +181,11 @@ function updateNappe()
 
 function onClickBulleAmenagement()
 {
+    resetRestartTimeout();
     hideAllModals();
+    
+    $('#focus-container').stop(true, false).empty();
+    
     let amenagementElt = $(this).closest('.amenagement');
 
     //-- Si la bulle sur laquelle on clique était déja en focus on s'arrête la
@@ -224,29 +228,49 @@ function onClickBulleAmenagement()
 
 function toggleAmenagement()
 {
+    resetRestartTimeout();
+    
     let amenagementElt = $(this).closest('.amenagement');
     let amenagement = amenagementElt.data('amenagement');
+    
+    if (amenagementElt.hasClass('activating'))
+        return;
 
     //-- ajoute l'élément de base (non cloné) au selecteur jquery, pour appliquer les modifications sur les deux en même temps
     amenagementElt = amenagementElt.add(amenagementElt.data('amenagement-elt-base'));
 
+    let active = !amenagementElt.hasClass('active');
+    
     amenagementElt.toggleClass('active');
-
+    
     amenagement.active = amenagementElt.is('.active');
-
+    
+    if (active)
+    {
+            amenagementElt.addClass('activating');
+        
+            setTimeout(function(){
+                hideAllModals();
+                
+                setTimeout(function(){
+                    amenagementElt.removeClass('activating');
+                }, 300);
+                
+            }, 400);
+    }
+    else
+    {
+        hideAllModals();
+    }
+    
     updateEffects();
-
-    // if (!amenagement.active)
-    //     hideAllModals();
-    // else
-        setTimeout(hideAllModals, 1500);
 
     return false;
 }
 
 function hideAllModals()
 {
-    $('#focus-container').empty();
+    $('#focus-container').fadeOut();
 
     $('#focus-overlay').removeClass('visible');
     $('body').removeClass('focus');

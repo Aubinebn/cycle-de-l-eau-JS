@@ -243,6 +243,7 @@ body[data-milieu="3"] #focus-container {
     background-image: url("img/UI/bulle_amenagement.png");
     height: 161px;
     aspect-ratio: 1;
+    transition:background .3s;
 }
 
 .point-info .bulle-amenagement {
@@ -276,6 +277,16 @@ body[data-milieu="3"] #focus-container {
     background-image: url("img/UI/bulle_politique_gestion_green.png");
 }
 
+@property --fiche-amenagement-gradient-1 {
+    syntax: '<color>';
+    initial-value: #3E5B5B;
+    inherits:false;
+}
+@property --fiche-amenagement-gradient-2 {
+    syntax: '<color>';
+    initial-value: #273D3D;
+    inherits:false;
+}
 .amenagement .fiche-amenagement {
     width: 840px;
     height: auto;
@@ -283,9 +294,10 @@ body[data-milieu="3"] #focus-container {
     top: -20px;
     left: 100%;
     border-radius: 16px;
-    background: linear-gradient(0deg, #3E5B5B 92.5%, #273D3D 100%);
+    background: linear-gradient(0deg, var(--fiche-amenagement-gradient-1) 92.5%, var(--fiche-amenagement-gradient-2) 100%);
     padding-top: 40px;
-    transition: opacity .3s;
+    /*transition: opacity .3s;*/
+    transition: all .5s, --fiche-amenagement-gradient-1 .15s, --fiche-amenagement-gradient-2 .15s;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -294,6 +306,12 @@ body[data-milieu="3"] #focus-container {
     background:none;
     box-shadow: 0 0 25px 2px rgba(0, 0, 0, 0.3);
     padding-top:0;
+}
+.amenagement.activating .fiche-amenagement,
+.amenagement.active .fiche-amenagement {
+    /*background: linear-gradient(360deg, #3EC46D 92%, #5FD388 100%);*/
+    --fiche-amenagement-gradient-1:#3EC46D;
+    --fiche-amenagement-gradient-2:#5FD388;
 }
 
 .amenagement-ui.top .fiche-amenagement {
@@ -310,9 +328,6 @@ body[data-milieu="3"] #focus-container {
     top: -240px;
 }
 
-.amenagement.active .fiche-amenagement {
-    background: linear-gradient(360deg, #3EC46D 92%, #5FD388 100%);
-}
 
 #focus-container .amenagement.focus .fiche-amenagement {
     opacity: 1;
@@ -358,38 +373,60 @@ body[data-milieu="3"] #focus-container {
     font-size: 24px;
     text-transform:uppercase;
 }
+
+@property --toggle-button-gradient-1 {
+    syntax: '<color>';
+    initial-value: #D4D4D4;
+    inherits:false;
+}
+@property --toggle-button-gradient-2 {
+    syntax: '<color>';
+    initial-value: #C7C7C7;
+    inherits:false;
+}
 .fiche-amenagement-content .toggle-button {
     display: flex;
     justify-content: center;
     padding-top: 24px;
     padding-bottom: 24px;
     border-radius: 8px;
-    background: linear-gradient(180deg, #D4D4D4 0%, #C7C7C7 100%);
+    background: linear-gradient(180deg, var(--toggle-button-gradient-1) 0%, var(--toggle-button-gradient-2) 100%);
     color: #DFEDE8;
     font-size: 30px;
     font-weight: 700;
     text-transform: uppercase;
-    transition: all 400ms ease-in-out;
+    transition: --toggle-button-gradient-1 .3s, --toggle-button-gradient-2 .3s;
     width:100%;
 }
-
 .amenagement .toggle-button .toggle-off-text,
 .amenagement .toggle-button .toggle-on-text {
     display: none;
+    transition: .3s;
 }
-.amenagement:not(.active) .toggle-button .toggle-on-text{
+.amenagement:not(.active) .toggle-button .toggle-on-text,
+.amenagement.activating .toggle-button .toggle-on-text{
     display: block;
 }
-.amenagement.active .toggle-button .toggle-off-text{
+.amenagement.active:not(.activating) .toggle-button .toggle-off-text{
     display: block;
 }
 
 
 .amenagement:not(.active) .toggle-button{
-    background: linear-gradient(180deg, #5FD388 0%, #3EC46D 100%);
+    --toggle-button-gradient-1:#5FD388;
+    --toggle-button-gradient-2:#3EC46D;
 }
 .amenagement.active .toggle-button{
-    background: linear-gradient(180deg, #e5d169 0%, #d1b739 100%);
+    --toggle-button-gradient-1:#e5d169;
+    --toggle-button-gradient-2:#d1b739;
+}
+.amenagement:not(.active) .toggle-button:active,
+.amenagement.activating .toggle-button{
+    --toggle-button-gradient-1:#4ebb74;
+    --toggle-button-gradient-2:#31a75a;
+}
+.amenagement.activating .toggle-button * {
+    opacity:.7;
 }
 
 
@@ -591,10 +628,13 @@ body[data-milieu="3"] #gui #gui-bottom #nav:after {
 }
 
 #gui #gui-top-right #gui-weather-summary {
-    width: 650px;
+    /*width: 650px;*/
+    width: 400px;
     display:flex;
     flex-direction:column;
+    text-align: center;
     gap: 10px;
+    /*background:rgba(39, 61, 61, 0.75);*/
 }
 /* #gui #gui-top-right #gui-weather-summary .gui-label .cold{ */
     /* color: #5DCCE2; */

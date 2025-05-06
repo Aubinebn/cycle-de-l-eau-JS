@@ -1,5 +1,6 @@
 function setupEventListeners()
 {
+    $(document).click(resetRestartTimeout);
     $(document).click(hideAllModals);
 
     setupNavEventListeners();
@@ -15,6 +16,8 @@ function setupEventListeners()
 
 function onClickGuiEffectMore()
 {
+    resetRestartTimeout();
+    
     if (!$(this).hasClass('active'))
         return;
 

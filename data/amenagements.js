@@ -315,9 +315,10 @@ const agricole = [
     {
         milieu: "agricole",
         label: "Diversité culturale",
-        x: 11,
-        y: 50,
+        x: 35.8,
+        y: 34.8,
         active: false,
+        positionFiche: 'right higher',
         imageActive: {
             path: "amenagements/agricole-cropped/diversite-cultures.png",
             x: 3842,
@@ -413,8 +414,8 @@ const agricole = [
     {
         milieu: "agricole",
         label: "Pâturage extensif",
-        x: 82,
-        y: 48,
+        x: 80,
+        y: 44,
         positionFiche: 'left',
         active: false,
         imageActive: {
@@ -460,8 +461,9 @@ const agricole = [
     {
         milieu: "agricole",
         label: "Haies",
-        x: 25,
-        y: 35,
+        x: 23.5,
+        y: 40,
+        // positionFiche: 'top',
         active: false,
         imageActive: {
             path: "amenagements/agricole-cropped/haies.png",
@@ -476,7 +478,7 @@ const agricole = [
                 modifier: +1
             },
             ruissellement: {
-                modifier: -1
+                modifier: -2
             },
             reseauEau: {
                 modifier: -1

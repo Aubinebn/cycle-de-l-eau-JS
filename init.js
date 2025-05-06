@@ -1,6 +1,8 @@
 const totalWidth = 11520;
 const totalHeight = 2160;
 
+const idleRestartTime = 120000;
+
 var currentMilieu = 0;
 var isMouseDown = false;
 
@@ -55,6 +57,19 @@ function init()
     updateEffects();
 
     requestAnimationFrame(updateNappe);
+    
+    resetRestartTimeout();
+}
+
+function resetRestartTimeout()
+{
+    if (isset(window.restartTimeout))
+        clearTimeout(window.restartTimeout);
+    
+    window.restartTimeout = setTimeout(function()
+    {
+        document.location.reload();
+    }, idleRestartTime);
 }
 
 function setupMilieux()

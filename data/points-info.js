@@ -34,7 +34,6 @@ const pointsInfo = [
         positionFiche: 'top',
         x: 25,
         y: 70,
-        positionFiche: 'higher',
         description: "<p>Les eaux souterraines sont constituées des réserves d'eau stockées dans les roches poreuses et perméables du sous-sol. Les nappes d'eau souterraine ne sont ni des lacs ni des cours d'eau souterrains : c'est de l'eau contenue dans les roches poreuses saturées par les eaux de pluie qui se sont infliltrées. Elles communiquent plus ou moins avec les milieux aquatiques de surface. Les nappes libres communiquent avec la surface car une couche perméable les recouvre. Les nappes captives sont recouvertes par au moins une couche géologique imperméable qui confine l'eau.</p>",
     },
     {
@@ -50,8 +49,8 @@ const pointsInfo = [
         milieu: "agricole",
         label: "Prairies",
         positionFiche: 'top',
-        x: 67,
-        y: 34,
+        x: 75,
+        y: 32,
         description: "<p>Quelle que soit la nature de la prairie, son mode de conduite et sa localisation, une prairie joue un rôle important au regard de la protection de l'eau du fait qu'elle présente une couverture végétale permanente toute l'année et qu'elle est moins consommatrice d'intrants. Qui plus est, dans le cadre d'une prairie temporaire, elle permet de casser le cycle des adventices, d'apporter de l'azote et donc de diminuer l'usage d'intrants de synthèse pour les cultures qui lui succèdent.</p>",
     },
     {
