@@ -5,6 +5,7 @@ const politiquesGestion = [
                 label: "Zonage pluvial",
                 x: 38,
                 y: 15,
+                positionFiche: 'bottom',
                 active: false,
                 effects: {
                         evaporation: {
@@ -29,8 +30,9 @@ const politiquesGestion = [
                 isPolitiqueGestion: true,
                 milieu: "naturel",
                 label: "Gestion écologique maintien du milieu ouvert",
-                x: 33,
+                x: 30,
                 y: 15,
+                positionFiche: 'bottom',
                 active: false,
                 effects: {
                         infiltration: {
@@ -67,8 +69,9 @@ const politiquesGestion = [
                 isPolitiqueGestion: true,
                 milieu: "naturel",
                 label: "Plan Territoriaux de Gestion des Eaux",
-                x: 66,
+                x: 60,
                 y: 15,
+                positionFiche: 'bottom',
                 active: false,
                 effects: {
                         evaporation: {

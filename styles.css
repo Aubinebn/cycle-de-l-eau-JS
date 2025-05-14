@@ -291,8 +291,6 @@ body[data-milieu="3"] #focus-container {
     width: 840px;
     height: auto;
     position: absolute;
-    top: -20px;
-    left: 100%;
     border-radius: 16px;
     background: linear-gradient(0deg, var(--fiche-amenagement-gradient-1) 92.5%, var(--fiche-amenagement-gradient-2) 100%);
     padding-top: 40px;
@@ -318,14 +316,28 @@ body[data-milieu="3"] #focus-container {
     top: auto;
     bottom: 100%;
     left: 50%;
-    transform: translateX(-50%);
+    transform:translateX(-50%);
+}
+.amenagement-ui.bottom .fiche-amenagement {
+    left: 50%;
+    transform:translateX(-50%);
+}
+.amenagement-ui.right .fiche-amenagement {
+    left: 100%;
+    top: -20px;
 }
 .amenagement-ui.left .fiche-amenagement {
     right: 100%;
     left: auto;
+    top: -20px;
 }
-.amenagement-ui.higher .fiche-amenagement {
-    top: -240px;
+.amenagement-ui.left.middle .fiche-amenagement {
+    top:50%;
+    transform:translateY(-50%);
+}
+.amenagement-ui.right.middle .fiche-amenagement {
+    top:50%;
+    transform:translateY(-50%);
 }
 
 
@@ -355,7 +367,7 @@ body[data-milieu="3"] #focus-container {
     font-weight: 400;
     overflow-y: auto;
     line-height: 1.4;
-    max-height: 553px;
+    max-height: 328px;
     padding-right: 30px;
 }
 .amenagement .fiche-amenagement-content .amenagement-effects {

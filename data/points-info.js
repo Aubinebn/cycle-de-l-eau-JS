@@ -57,8 +57,8 @@ const pointsInfo = [
         milieu: "naturel",
         label: "Libre évolution",
         positionFiche: 'top',
-        x: 47,
-        y: 40,
+        x: 40,
+        y: 50,
         description: "<p>Une zone humide laissée en libre évolution évolue naturellement selon plusieurs facteurs, notamment le climat, la topographie et les dynamiques écologiques locales. Voici les principales étapes et tendances possibles :</p>" +
                 "<p></p>" +
                 "<p>1. Végétation herbacée et marais</p>" +
@@ -78,9 +78,9 @@ const pointsInfo = [
     {
         milieu: "naturel",
         label: "Plan d'aménagement forestier",
-        positionFiche: 'left',
-        x: 81,
-        y: 41,
+        positionFiche: 'top',
+        x: 85,
+        y: 36,
         description: "<p>Un plan d’aménagement forestier est un document qui sert à organiser et gérer une forêt de manière durable. Il définit comment exploiter les arbres tout en protégeant l’environnement et en préservant la biodiversité. Ce plan précise quelles zones seront exploitées, reboisées ou laissées intactes, ainsi que les actions à mener pour garantir la santé de la forêt sur le long terme. Son objectif est d’équilibrer la production de bois, la conservation de la nature et les besoins des humains.</p>",
     }
 ]

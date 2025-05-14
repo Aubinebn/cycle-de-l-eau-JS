@@ -4,6 +4,7 @@ const urbain = [
         label: "Parcs",
         x: 31,
         y: 49,
+        positionFiche: 'right middle',
         active: false,
         imageActive: {
             path: "amenagements/urbain-cropped/parc.png",
@@ -44,6 +45,7 @@ const urbain = [
         label: "Densification urbaine",
         x: 20,
         y: 30,
+        positionFiche: 'right',
         active: false,
         imageInactive: {
             path: "amenagements/urbain-cropped/colline-ville.png",
@@ -82,6 +84,7 @@ const urbain = [
         label: "Noues d'infiltration",
         x: 39,
         y: 46,
+        positionFiche: 'right middle',
         active: false,
         imageActive: {
             path: "amenagements/urbain-cropped/noue.png",
@@ -203,6 +206,7 @@ const urbain = [
         label: "Bassin de rétention des eaux pluviales",
         x: 59,
         y: 48,
+        positionFiche: 'right middle',
         active: false,
         imageActive: {
             path: "amenagements/urbain-cropped/bassin-retention.png",
@@ -318,7 +322,7 @@ const agricole = [
         x: 35.8,
         y: 34.8,
         active: false,
-        positionFiche: 'right higher',
+        positionFiche: 'right middle',
         imageActive: {
             path: "amenagements/agricole-cropped/diversite-cultures.png",
             x: 3842,
@@ -365,8 +369,9 @@ const agricole = [
     {
         milieu: "agricole",
         label: "Labour superficiel",
-        x: 43,
-        y: 56,
+        x: 40,
+        y: 48,
+        positionFiche: 'right middle',
         active: false,
         imageActive: {
             path: "amenagements/agricole-cropped/labour-superficiel-V2.png",
@@ -410,6 +415,47 @@ const agricole = [
             }
         },
         description: "",
+    },
+    {
+        milieu: "agricole",
+        label: "Irrigation",
+        x: 13,
+        y: 54,
+        positionFiche: 'right middle',
+        active: false,
+        imageActive: {
+            path: "amenagements/agricole-cropped/irrigation.png",
+            x: 4065,
+            y: 883
+        },
+        effects: {
+            // infiltration: {
+                // modifier: +1,
+                // indicator: {
+                    // x: 6915,
+                    // y: 1380
+                // }
+            // },
+            // qualiteEau: {
+                // modifier: +1
+            // },
+            // ruissellement: {
+                // modifier: -1,
+                // indicator: {
+                    // inactiveIndicator: true,
+                    // image: 'img/indicators/ruissellements-cropped/ruissellement-elevageclassique.png',
+                    // x: 6447,
+                    // y: 928
+                // }
+            // },
+            // reseauEau: {
+                // modifier: -1
+            // },
+            // biodiversite: {
+                // modifier: +1
+            // }
+        },
+        description: "<p>...</p>",
     },
     {
         milieu: "agricole",
@@ -460,10 +506,37 @@ const agricole = [
     },
     {
         milieu: "agricole",
+        label: "Mise en défend des berges",
+        x: 93.8,
+        y: 39,
+        positionFiche: 'left middle',
+        active: false,
+        imageActive: {
+            path: "amenagements/agricole-cropped/mise-en-defend.png",
+            x: 7323,
+            y: 801
+        },
+        imageInactive: {
+            path: "amenagements/agricole-cropped/mise-en-defend-inactive.png",
+            x: 7305,
+            y: 827
+        },
+        effects: {
+            qualiteEau: {
+                modifier: +5
+            },
+            biodiversite: {
+                modifier: +1
+            }
+        },
+        description: "<p>La mise en défend des berges permet de limiter l'érosion des berges de cours d'eau et limiter son piétinement. Cela préserve la qualité de l'eau.</p><p>Plusieurs techniques existent pour permettre l'abreuvement du bétail dans ces conditions : passage à gué, pompe à nez, aménagement de mare.</p>",
+    },
+    {
+        milieu: "agricole",
         label: "Haies",
         x: 23.5,
         y: 40,
-        // positionFiche: 'top',
+        positionFiche: 'right middle',
         active: false,
         imageActive: {
             path: "amenagements/agricole-cropped/haies.png",
@@ -495,63 +568,20 @@ const agricole = [
 const naturel = [
     {
         milieu: "naturel",
-        label: "Plantation d'une peupleraie",
-        x: 59,
-        y: 34,
-        active: false,
-        imageActive: {
-            path: "amenagements/naturel-cropped/peupliers.png",
-            x: 9642,
-            y: 609
-        },
-        effects: {
-            evaporation: {
-                modifier: +1,
-                indicator: {
-                    x: 9737,
-                    y: 559
-                }
-            },
-            infiltration: {
-                modifier: -1
-            },
-            qualiteEau: {
-                modifier: -1
-            },
-            ruissellement: {
-                modifier: +1,
-            },
-            reseauEau: {
-                modifier: +1
-            },
-            biodiversite: {
-                modifier: -1
-            }
-        },
-        description: "<p>L’implantation d’une peupleraie (plantation de peupliers) dans une zone humide modifie profondément son fonctionnement écologique. Les peupliers, en raison de leur forte capacité d’absorption de l’eau, entraînent un assèchement progressif des sols, réduisant ainsi la disponibilité en eau pour la flore et la faune locales.</p>" +
-                "<p></p>" +
-                "<p>De plus, la plantation en ligne et l’entretien des peupleraies nécessitent souvent un drainage, qui altère la capacité naturelle de la zone humide à stocker et filtrer l’eau. La biodiversité spécifique de ces milieux est alors menacée, car l’ombrage dense des peupliers limite le développement de la végétation herbacée typique, réduisant ainsi les habitats et les ressources pour de nombreuses espèces.</p>" +
-                "<p></p>" +
-                "<p>Enfin, l’exploitation des peupleraies implique souvent des interventions mécaniques (labour, fertilisation, traitements phytosanitaires) qui peuvent accentuer la pollution des sols et de l’eau, fragilisant davantage cet écosystème précieux.</p>" +
-                "<p></p>" +
-                "<p>En résumé, bien que les peupleraies puissent être une ressource économique, leur implantation dans une zone humide doit être soigneusement évaluée afin de préserver les fonctions écologiques essentielles de ces milieux naturels.</p>"
-    },
-    {
-        milieu: "naturel",
         label: "Travaux reconnexion bras morts",
-        x: 23,
-        y: 51,
-        positionFiche: 'higher',
+        x: 29,
+        y: 52,
+        positionFiche: 'top',
         active: false,
-        imageInactive: {
-            path: "amenagements/naturel-cropped/zone_humide.png",
-            x: 8292,
-            y: 1061
-        },
         imageActive: {
-            path: "amenagements/naturel-cropped/rattachement-bras-morts.png",
+            path: "amenagements/naturel-cropped/rattachement-bras-mort.png",
             x: 8208,
             y: 996
+        },
+        imageInactive: {
+            path: "amenagements/naturel-cropped/bras-mort.png",
+            x: 8291,
+            y: 1075
         },
         effects: {
             infiltration: {
@@ -582,18 +612,18 @@ const naturel = [
     {
         milieu: "naturel",
         label: "Reméandrement de la rivière et effacement des ouvrages",
-        x: 8,
-        y: 58,
-        positionFiche: 'higher',
+        x: 23.7,
+        y: 34,
+        positionFiche: 'right middle',
         active: false,
         imageInactive: {
             path: "amenagements/naturel-cropped/riviere-classique-v2.png",
-            x: 7884,
-            y: 734
+            x: 7731,
+            y: 731
         },
         imageActive: {
             path: "amenagements/naturel-cropped/riviere-remeandree-v2.png",
-            x: 7422,
+            x: 7731,
             y: 733
         },
         effects: {
@@ -619,7 +649,7 @@ const naturel = [
         label: "Maintien de la ripisylve",
         x: 18,
         y: 45,
-        positionFiche: 'higher',
+        positionFiche: 'right middle',
         active: false,
         imageActive: {
             path: "amenagements/naturel-cropped/ripisylve.png",
@@ -664,11 +694,12 @@ const naturel = [
         label: "Mono culture de sapins",
         x: 72,
         y: 27,
+        positionFiche: 'right',
         active: false,
         imageActive: {
             path: "amenagements/naturel-cropped/sapins.png",
-            x: 10137,
-            y: 413
+            x: 9970,
+            y: 438
         },
         effects: {
             evaporation: {
@@ -731,7 +762,7 @@ const naturel = [
         label: "Coupe rase",
         x: 83,
         y: 55,
-        positionFiche: 'left higher',
+        positionFiche: 'top',
         active: false,
         imageInactive: {
             path: "amenagements/naturel-cropped/foret-1.png",
@@ -781,6 +812,55 @@ const naturel = [
                 "<p>Sur le plan écologique, la destruction soudaine des habitats entraîne une forte perte de biodiversité. De nombreuses espèces animales et végétales disparaissent ou peinent à se réinstaller, perturbant l’équilibre naturel.</p>" +
                 "<p>Face à ces impacts, il est essentiel de privilégier des pratiques forestières durables, comme la coupe sélective ou la gestion en futaie irrégulière, afin de préserver les ressources en eau et la richesse des écosystèmes.</p>"
     },
+    {
+        milieu: "naturel",
+        label: "Plantation d'une peupleraie",
+        x: 59,
+        y: 45,
+        active: false,
+        positionFiche: 'right middle',
+        imageActive: {
+            path: "amenagements/naturel-cropped/peupliers.png",
+            x: 9342,
+            y: 641
+        },
+        imageInactive: {
+            path: "amenagements/naturel-cropped/zone_humide.png",
+            x: 9202,
+            y: 770
+        },
+        effects: {
+            evaporation: {
+                modifier: +1,
+                indicator: {
+                    x: 9737,
+                    y: 559
+                }
+            },
+            infiltration: {
+                modifier: -1
+            },
+            qualiteEau: {
+                modifier: -1
+            },
+            ruissellement: {
+                modifier: +1,
+            },
+            reseauEau: {
+                modifier: +1
+            },
+            biodiversite: {
+                modifier: -1
+            }
+        },
+        description: "<p>L’implantation d’une peupleraie (plantation de peupliers) dans une zone humide modifie profondément son fonctionnement écologique. Les peupliers, en raison de leur forte capacité d’absorption de l’eau, entraînent un assèchement progressif des sols, réduisant ainsi la disponibilité en eau pour la flore et la faune locales.</p>" +
+                "<p></p>" +
+                "<p>De plus, la plantation en ligne et l’entretien des peupleraies nécessitent souvent un drainage, qui altère la capacité naturelle de la zone humide à stocker et filtrer l’eau. La biodiversité spécifique de ces milieux est alors menacée, car l’ombrage dense des peupliers limite le développement de la végétation herbacée typique, réduisant ainsi les habitats et les ressources pour de nombreuses espèces.</p>" +
+                "<p></p>" +
+                "<p>Enfin, l’exploitation des peupleraies implique souvent des interventions mécaniques (labour, fertilisation, traitements phytosanitaires) qui peuvent accentuer la pollution des sols et de l’eau, fragilisant davantage cet écosystème précieux.</p>" +
+                "<p></p>" +
+                "<p>En résumé, bien que les peupleraies puissent être une ressource économique, leur implantation dans une zone humide doit être soigneusement évaluée afin de préserver les fonctions écologiques essentielles de ces milieux naturels.</p>"
+    }
 ];
 
 const amenagements = [...urbain, ...agricole, ...naturel];

@@ -1,7 +1,7 @@
 const totalWidth = 11520;
 const totalHeight = 2160;
 
-const idleRestartTime = 120000;
+const idleRestartTime = 360000;
 
 var currentMilieu = 0;
 var isMouseDown = false;
