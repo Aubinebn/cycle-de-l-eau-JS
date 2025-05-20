@@ -640,8 +640,8 @@ body[data-milieu="3"] #gui #gui-bottom #nav:after {
 }
 
 #gui #gui-top-right #gui-weather-summary {
-    /*width: 650px;*/
-    width: 400px;
+    width: 680px;
+    /* width: 400px; */
     display:flex;
     flex-direction:column;
     text-align: center;

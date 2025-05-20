@@ -77,7 +77,7 @@ const urbain = [
             },
         },
         description: "<p>L'augmentation du nombre de construction, la densification de l'habitat impactent le milieu naturel en empêchant les eaux de pluie de s'infiltrer et en créant des îlots de chaleur. Lorsque l'on urbanise fortement et que l'espace ne permet pas d'infiltrer les eaux de pluie à la parcelle, celles-ci sont collectés par des réseaux. Elles sont acheminées à la station d'épuration si le réseau est unitaire ou directement vers le milieu naturel si le réseau est séparatif. </p>" +
-            "<p>Lors de forts épisodes pluvieux les réseaux peuvent être saturés et créer des débordements sur la chaussée. La collecte des eaux pluviales par les réseaux accélère le transport de l'eau vers un même exutoire, ce qui contribue à augmenter le débit des cours d'eau et créer des inondations.</p>",
+            "<p>Lors de forts épisodes pluvieux, les réseaux peuvent être saturés et créer des débordements sur la chaussée. La collecte des eaux pluviales par les réseaux accélère le transport de l'eau vers un même exutoire, ce qui contribue à augmenter le débit des cours d'eau et créer des inondations.</p>",
     },
     {
         milieu: "urbain",
@@ -227,7 +227,7 @@ const urbain = [
                 modifier: -1
             },
         },
-        description: "<p>Un bassin de rétention des eaux pluviales aussi appelé bassin tampon est une infrastructure essentielle dans la gestion des eaux pluviales, surtout pour les terrains soumis à un urbanisme croissant. Il sert à recueillir temporairement les excédents d'eau de pluie, évitant ainsi les inondations et la surcharge des réseaux d'assainissement.</p>",
+        description: "<p>Un bassin de rétention des eaux pluviales, aussi appelé bassin tampon, est une infrastructure essentielle dans la gestion des eaux pluviales, surtout pour les terrains soumis à un urbanisme croissant. Il sert à recueillir temporairement les excédents d'eau de pluie, évitant ainsi les inondations et la surcharge des réseaux d'assainissement.</p>",
     },
     {
         milieu: "urbain",
@@ -362,9 +362,7 @@ const agricole = [
                 modifier: +1
             }
         },
-        description: "<p>Qu'elle soit à l'échelle du paysage (multi productions), du système de culture (rotation diversifiée, agroforesterie ...) ou de la culture (association de cultures ou mélanges de variétés), la diversité est une question de bon sens.</p>" +
-                "<p> Elle permet de tirer de multiples bénéfices de la complémentarité culturale (ombrage aux pics de chaleur, captation d'azote atmosphérique, limitation du travail du sol...), de limiter la propagation des bioagresseurs (ex : insectes ravageurs ...), de diversifier les risques face aux aléas climatiques, etc." +
-                "<p> Elle permet ainsi de réduire l'impact sur l'environnement (moins d'intrants de synthèse utilisés, moins de lessivage d'azote ...).</p>",
+        description: "<p>Qu’elle soit pratiquée à l’échelle du paysage, des cultures ou des variétés, la diversité en agriculture est une solution efficace et naturelle.</p><p>Elle améliore la résilience face aux aléas climatiques, limite les ravageurs, réduit le besoin en produits chimiques et favorise une meilleure gestion des ressources comme l’eau et les sols.</p><p>En associant différentes cultures ou en intégrant des arbres (agroforesterie), on tire parti des complémentarités naturelles, tout en diminuant l’impact environnemental.</p>",
     },
     {
         milieu: "agricole",
@@ -414,7 +412,7 @@ const agricole = [
                 modifier: +1
             }
         },
-        description: "",
+        description: "<p>Le labour superficiel des sols, les cultures de semis sous couvert, ainsi que le sens du labour perpendiculaire au sens de la pente sont autant de techniques pour limiter l'érosion des sols et le ruissellement. Ces techniques doivent être favorisées pour infiltrer l'eau dans les sols.</p>",
     },
     {
         milieu: "agricole",
@@ -455,7 +453,7 @@ const agricole = [
                 // modifier: +1
             // }
         },
-        description: "<p>...</p>",
+        description: "<p>Certaines cultures sont gourmandes en eau. En fonction des conditions climatiques elles peuvent nécessiter une irrigation.</p><p>Des puits sont installés dans les parcelles agricoles pour pomper dans la nappe phréatique l'eau nécessaire. Les quantités prélevées sont réglementées (volumes maximum, période de prélévement définie).</p><p>Un puit est un forage équipée de crépine qui permet de capter la nappe. A l'aide d'une pompe l'eau est relevée jusqu'au niveau du terrain naturel pour irriguer les cultures.</p>",
     },
     {
         milieu: "agricole",
@@ -501,8 +499,7 @@ const agricole = [
                 modifier: +1
             }
         },
-        description: "<p>La mise en défend des berges permet de limiter l'érosion des berges de cours d'eau et limiter son piétinement. Cela préserve la qualité de l'eau. Le chargement moins important à l'hectare évite le compactage des sols et permet l'infiltration.</p>" +
-                "<p>Plusieurs techniques existent pour permettre l'abreuvement du bétail dans ces conditions : passage à gué, pompe à nez, aménagement de mare.</p>",
+        description: "<p>Le chargement moins important à l'hectare évite le compactage des sols et permet l'infiltration.</p><p>Il permet également une pression limitée sur la prairie.</p>",
     },
     {
         milieu: "agricole",
@@ -560,15 +557,14 @@ const agricole = [
                 modifier: +1
             }
         },
-        description: "<p>Tout végétal transpire et donc relargue de l'eau dans l'atmosphère. En fonction des espèces, la haie va donc puiser de l'eau dans les sols.</p>" +
-                "<p>A contrario, le fait qu'elle transpire couplé à l'ombrage portée va diminuer respectivement la température de l'air et le rayonnement au niveau du sol (et donc sa température), et de ce fait, diminuer l'évaporation de l'eau du sol. </p>",
+        description: "<p>Tout végétal transpire et donc relargue de l'eau dans l'athmosphère.</p><p>En fonction des espèces, la haie va donc dans un sens favoriser l'évaporation de l'eau des végétaux dans l'atmosphère et contribuer au cycle hydrologique.</p><p>A contrario, le fait qu'elle transpire couplé à l'ombrage portée va diminuer la température et le rayonnement au niveau du sol, et de ce fait, diminuer l'évaporation.</p>",
     },
 ];
 
 const naturel = [
     {
         milieu: "naturel",
-        label: "Travaux reconnexion bras morts",
+        label: "Travaux de reconnexion de bras morts",
         x: 29,
         y: 52,
         positionFiche: 'top',
@@ -604,10 +600,7 @@ const naturel = [
                 modifier: +1
             }
         },
-        description: "<p>Les travaux de reconnexion des bras morts (réouverture d'anciens méandres ou bras de rivière) offrent de nombreux avantages pour l'eau et la biodiversité. En ralentissant le flux de l'eau, ces zones permettent de réduire le ruissellement et l’érosion des berges tout en améliorant la qualité de l’eau. Elles agissent comme des filtres naturels, capturant les polluants et les sédiments avant qu'ils n'atteignent le cours principal de la rivière.</p>" +
-                "<p>Ces zones d’eau stagnante favorisent également l’infiltration de l’eau dans le sol, aidant à recharger les nappes phréatiques et réduisant le risque d’inondations en offrant un espace de stockage pour l’eau en période de crue.</p>" +
-                "<p>En plus de ces bienfaits pour l’eau, les bras morts restaurent des habitats précieux pour la faune et la flore. Ils servent de refuges pour de nombreuses espèces aquatiques et terrestres, soutenant ainsi la biodiversité locale.</p>" +
-                "<p>En somme, la reconnexion des bras morts est une mesure efficace pour améliorer la gestion de l’eau, limiter les inondations et préserver la biodiversité des milieux aquatiques.</p>",
+        description: "<p>La reconnexion des anciens méandres ou bras morts des rivières permet de ralentir le flux de l’eau, limitant l’érosion et filtrant naturellement les polluants.</p><p>Ces zones favorisent l’infiltration de l’eau dans le sol, réduisent les risques d’inondation et rechargent les nappes phréatiques.</p><p>Elles offrent aussi des habitats essentiels pour de nombreuses espèces, renforçant ainsi la biodiversité.</p><p>Une solution naturelle, efficace et durable pour mieux gérer l’eau et protéger les écosystèmes.</p>",
     },
     {
         milieu: "naturel",
@@ -640,9 +633,7 @@ const naturel = [
                 modifier: +1
             }
         },
-        description: "<p>Le reméandrement des rivières et l’effacement des ouvrages permettent de restaurer le fonctionnement naturel des cours d’eau, avec de nombreux bénéfices pour l’eau et la biodiversité. En ralentissant le débit et en diversifiant les habitats, ces actions réduisent l’érosion et améliorent l’infiltration, favorisant ainsi la recharge des nappes phréatiques. Elles contribuent également à limiter l’évaporation en rétablissant des zones ombragées et en évitant la stagnation de l’eau.</p>" +
-                "<p>La suppression des obstacles artificiels améliore la qualité de l’eau en favorisant son oxygénation et en réduisant la pollution par sédiments et nutriments. Elle diminue aussi le risque d’inondations en offrant aux rivières des espaces naturels pour absorber les crues.</p>" +
-                "<p>Enfin, ces restaurations redonnent aux milieux aquatiques leur richesse écologique, permettant le retour de nombreuses espèces, notamment les poissons migrateurs et la faune des zones humides. En restaurant les rivières à leur état naturel, on renforce leur résilience face aux changements climatiques et on préserve durablement les écosystèmes.</p>"
+        description: "<p>Restaurer les cours d’eau en recréant leurs méandres naturels et en supprimant les obstacles artificiels améliore la qualité de l’eau, réduit l’érosion et facilite la recharge des nappes.</p><p>Ces actions renforcent l’oxygénation, limitent les inondations et créent des habitats propices à la biodiversité, notamment pour les poissons migrateurs.</p><p>En rendant les rivières plus naturelles, on les aide à mieux faire face aux effets du changement climatique.</p>"
     },
     {
         milieu: "naturel",
@@ -685,13 +676,11 @@ const naturel = [
                 modifier: +1
             }
         },
-        description: "<p>Le maintien de la ripisylve et la protection des berges jouent un rôle essentiel dans la gestion de l’eau et la préservation de la biodiversité. En stabilisant les sols avec leurs racines, les arbres et arbustes des berges réduisent l’érosion et le ruissellement, limitant ainsi l’apport de sédiments et de polluants dans les cours d’eau. Cette végétation filtre naturellement l’eau, améliorant sa qualité tout en favorisant son infiltration, ce qui aide à recharger les nappes phréatiques.</p>" +                "En offrant de l’ombre, la ripisylve limite l’évaporation et maintient une température stable dans les rivières, essentielle à la vie aquatique. De plus, en ralentissant l’écoulement de l’eau lors des fortes pluies, elle atténue les risques d’inondations. Enfin, elle constitue un refuge précieux pour de nombreuses espèces animales et végétales, renforçant la biodiversité locale.\n" +
-                "<p>Protéger les berges et leur végétation naturelle, c’est préserver l’équilibre des écosystèmes tout en garantissant une ressource en eau de qualité.</p>" +
-                "<p>Il est possible d'aménager des passages à gué pour permettre aux animaux de rejoindre l'autre rive et ainsi éviter le piétinement. Des aménagements sont également possible pour l'abreuvement du bétail (ex pompe à nez).</p>"
+        description: "<p>La végétation des berges (ripisylve) joue un rôle clé pour la qualité de l’eau et la biodiversité.</p><p>Elle stabilise les sols, filtre les polluants, limite l’évaporation et favorise l’infiltration, contribuant à la recharge des nappes et à la prévention des inondations.</p><p>En créant de l’ombre et des refuges, elle protège la vie aquatique et renforce la diversité des espèces.</p>"
     },
     {
         milieu: "naturel",
-        label: "Mono culture de sapins",
+        label: "Monoculture de sapins",
         x: 72,
         y: 27,
         positionFiche: 'right',
@@ -725,9 +714,7 @@ const naturel = [
                 modifier: -1
             }
         },
-        description: "<p>Les plantations de résineux (comme les pins et épicéas) ont divers effets sur l’environnement. Ces arbres peuvent augmenter l’évaporation de l’eau en raison de leur feuillage dense, tout en réduisant l'humidité du sol. De plus, le sol sous ces arbres est souvent moins perméable, ce qui peut entraîner un ruissellement plus important, notamment lors de fortes pluies. Les résineux peuvent aussi acidifier le sol et l’eau, ce qui perturbe les écosystèmes aquatiques en aval. Leurs racines superficielles limitent la capacité du sol à absorber l’eau, accélérant ainsi l’écoulement. Ce phénomène, combiné à un faible taux d’infiltration, peut augmenter le risque d'inondation en période de fortes précipitations. Enfin, la monoculture de résineux, composée généralement d’une seule espèce, offre une diversité végétale et animale plus faible, ce qui impacte négativement la biodiversité locale.</p>" +
-                "<p></p>" +
-                "<p>En somme, bien que les plantations de résineux présentent des avantages pour la production de bois, elles peuvent avoir des conséquences néfastes sur l’eau, les inondations et la biodiversité. Il est crucial de les gérer correctement pour limiter ces impacts. Par ailleurs, l’utilisation d’intrants chimiques comme des insecticides, fongicides et désherbants pour optimiser ces monocultures a également des effets nuisibles sur la qualité de l’eau et les écosystèmes. Enfin, la coupe à blanc peut provoquer l’érosion des sols et perturber le cycle naturel des sols en apportant excessivement de matière organique et azotée lors des récoltes.</p>",
+        description: "<p>Les plantations de résineux (comme les pins ou les épicéas), souvent organisées en monocultures, peuvent avoir des effets importants sur les milieux naturels.</p><p>Leur feuillage dense augmente l’évaporation et réduit l’humidité des sols, tandis que leurs racines superficielles limitent l’infiltration de l’eau. Cela favorise le ruissellement et peut accentuer le risque d’inondations.</p><p>En acidifiant les sols et l’eau, ces plantations perturbent les écosystèmes aquatiques en aval.</p><p>La faible diversité végétale et animale dans ces forêts appauvrit la biodiversité locale.</p><p>De plus, l’usage d’intrants chimiques (pesticides, désherbants) et les pratiques comme la coupe à blanc accentuent l’érosion des sols et la pollution de l’eau.</p><p>Pour limiter ces impacts, une gestion plus écologique et diversifiée des plantations est essentielle.</p>",
     },
     // {
     //     milieu: "naturel",
@@ -808,9 +795,7 @@ const naturel = [
                 modifier: -1
             }
         },
-        description: "<p>La coupe rase forestière a de lourdes conséquences sur l’eau et la biodiversité. En supprimant la couverture végétale, elle accélère l’évaporation et assèche les sols. L’absence de racines favorise le ruissellement et l’érosion, entraînant une dégradation de la qualité de l’eau par l’apport de sédiments et de nutriments dans les rivières. De plus, la réduction de l’infiltration limite la recharge des nappes phréatiques et accentue le risque d’inondations en cas de fortes pluies.</p>" +
-                "<p>Sur le plan écologique, la destruction soudaine des habitats entraîne une forte perte de biodiversité. De nombreuses espèces animales et végétales disparaissent ou peinent à se réinstaller, perturbant l’équilibre naturel.</p>" +
-                "<p>Face à ces impacts, il est essentiel de privilégier des pratiques forestières durables, comme la coupe sélective ou la gestion en futaie irrégulière, afin de préserver les ressources en eau et la richesse des écosystèmes.</p>"
+        description: "<p>La coupe rase supprime brutalement la couverture végétale, ce qui accélère l’évaporation, assèche les sols et favorise le ruissellement.</p><p>Cela entraîne l’érosion et une dégradation de la qualité de l’eau, avec des sédiments et nutriments en excès dans les rivières.</p><p>L’infiltration est réduite, limitant la recharge des nappes phréatiques et augmentant le risque d’inondations.</p><p>Sur le plan écologique, cette pratique détruit les habitats et provoque un effondrement de la biodiversité locale.</p><p>Pour limiter ces effets, des alternatives durables comme la coupe sélective ou la gestion en futaie irrégulière permettent de préserver l’équilibre des écosystèmes et des ressources en eau.</p>"
     },
     {
         milieu: "naturel",
@@ -853,13 +838,7 @@ const naturel = [
                 modifier: -1
             }
         },
-        description: "<p>L’implantation d’une peupleraie (plantation de peupliers) dans une zone humide modifie profondément son fonctionnement écologique. Les peupliers, en raison de leur forte capacité d’absorption de l’eau, entraînent un assèchement progressif des sols, réduisant ainsi la disponibilité en eau pour la flore et la faune locales.</p>" +
-                "<p></p>" +
-                "<p>De plus, la plantation en ligne et l’entretien des peupleraies nécessitent souvent un drainage, qui altère la capacité naturelle de la zone humide à stocker et filtrer l’eau. La biodiversité spécifique de ces milieux est alors menacée, car l’ombrage dense des peupliers limite le développement de la végétation herbacée typique, réduisant ainsi les habitats et les ressources pour de nombreuses espèces.</p>" +
-                "<p></p>" +
-                "<p>Enfin, l’exploitation des peupleraies implique souvent des interventions mécaniques (labour, fertilisation, traitements phytosanitaires) qui peuvent accentuer la pollution des sols et de l’eau, fragilisant davantage cet écosystème précieux.</p>" +
-                "<p></p>" +
-                "<p>En résumé, bien que les peupleraies puissent être une ressource économique, leur implantation dans une zone humide doit être soigneusement évaluée afin de préserver les fonctions écologiques essentielles de ces milieux naturels.</p>"
+        description: "<p>L’implantation d’une peupleraie (plantation de peupliers) dans une zone humide modifie profondément son fonctionnement écologique.</p><p>Les peupliers, en raison de leur forte capacité d’absorption de l’eau, entraînent un assèchement progressif des sols, réduisant ainsi la disponibilité en eau pour la flore et la faune locales.</p><p>De plus, la plantation en ligne et l’entretien des peupleraies nécessitent souvent un drainage, qui altère la capacité naturelle de la zone humide à stocker et filtrer l’eau.</p><p>La biodiversité spécifique de ces milieux est alors menacée, car l’ombrage dense des peupliers limite le développement de la végétation herbacée typique, réduisant ainsi les habitats et les ressources pour de nombreuses espèces.</p><p>Enfin, l’exploitation des peupleraies implique souvent des interventions mécaniques (labour, fertilisation, traitements phytosanitaires) qui peuvent accentuer la pollution des sols et de l’eau, fragilisant davantage cet écosystème précieux.</p>"
     }
 ];
 

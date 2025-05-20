@@ -24,9 +24,9 @@ const politiquesGestion = [
                                 modifier: -1
                         }
                 },
-                description: "<p>Le zonage pluvial est l'outil technique et juridique, constitué d'un document cartographique et d'un règlement. Il permet d'identifier comment favoriser l'infiltration à la parcelle et de réduire les conséquences des eaux de ruissellement. Les objectifs de la gestion des eaux pluviales sont nombreux : la préservation de la ressource en eau, la protection des milieux aquatiques par la maîtrise des flux de pollution et la prévention des risques inondations par ruissellement.</p>",
+                description: "<p>Le zonage pluvial, constitué d'un document cartographique et d'un réglement, est l'outil technique et juridique.</p><p>Il permet d'identifier comment favoriser l'infiltration à la parcelle et de réduire les conséquences des eaux de ruissellement.</p><p>Les objectifs de la gestion des eaux pluviales sont nombreux : la préservation de la ressource en eau, la protection des milieux aquatiques par la maîtrise des flux de pollution et la prévention des risques inondations par ruissellement.</p>",
         },
-        {
+        /*{
                 isPolitiqueGestion: true,
                 milieu: "naturel",
                 label: "Gestion écologique maintien du milieu ouvert",
@@ -64,11 +64,11 @@ const politiquesGestion = [
                         "<p>- améliorent la qualité de l’eau en absorbant jusqu’à 18 % de l’azote terrestre grâce à la végétation ;</p>" +
                         "<p>- capturent 30 % du carbone terrestre dans les sols via la photosynthèse ;</p>" +
                         "<p>- constituent un habitat essentiel pour une biodiversité spécifique.</p>",
-        },
+        },*/
         {
                 isPolitiqueGestion: true,
                 milieu: "naturel",
-                label: "Plan Territoriaux de Gestion des Eaux",
+                label: "Projet de Territoire pour la Gestion de l'Eau (PTGE)",
                 x: 60,
                 y: 15,
                 positionFiche: 'bottom',

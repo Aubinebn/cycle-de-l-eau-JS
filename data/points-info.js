@@ -18,7 +18,7 @@ const pointsInfo = [
         description: "<p>Le château d'eau est une construction destinée à entreproser l'eau en hauteur pour permettre de la distribuer sous pression par gravité.</p>" +
                 "<p>L'entreposage de l'eau dans un réseau (château d'eau, cuve enterrée,...) joue un rôle de tampon entre le débit demandé par les abonnés et le débit fourni par la station de pompage.</p>" +
                 "<p>L'eau est acheminée du point d'eau de prélèvement au réservoir. Si l'altitude du point d'eau est inférieur à l'altitude du réservoir, on utilise des pompes pour relever l'eau jusqu'à ce dernier.</p>" +
-                "<p>Attention l'eau n'est contenu que dans la partie supérieure de l'ouvrage, la colonne permet de monter jusqu'au réservoir.</p>"
+                "<p>Attention l'eau n'est contenue que dans la partie supérieure de l'ouvrage, la colonne permet de monter jusqu'au réservoir.</p>"
     },
     {
         milieu: "urbain",
@@ -34,7 +34,7 @@ const pointsInfo = [
         positionFiche: 'top',
         x: 25,
         y: 70,
-        description: "<p>Les eaux souterraines sont constituées des réserves d'eau stockées dans les roches poreuses et perméables du sous-sol. Les nappes d'eau souterraine ne sont ni des lacs ni des cours d'eau souterrains : c'est de l'eau contenue dans les roches poreuses saturées par les eaux de pluie qui se sont infliltrées. Elles communiquent plus ou moins avec les milieux aquatiques de surface. Les nappes libres communiquent avec la surface car une couche perméable les recouvre. Les nappes captives sont recouvertes par au moins une couche géologique imperméable qui confine l'eau.</p>",
+        description: "<p>Les eaux souterraines sont constituées des réserves d'eau stockées dans les roches poreuses et perméables du sous-sol. Les nappes d'eau souterraines ne sont ni des lacs ni des cours d'eau souterrains : c'est de l'eau contenue dans les roches poreuses saturées par les eaux de pluie qui se sont infliltrées. Elles communiquent plus ou moins avec les milieux aquatiques de surface. Les nappes libres communiquent avec la surface car une couche perméable les recouvre. Les nappes captives sont recouvertes par au moins une couche géologique imperméable qui confine l'eau.</p>",
     },
     {
         milieu: "agricole",
@@ -42,8 +42,7 @@ const pointsInfo = [
         positionFiche: 'top',
         x: 57,
         y: 44,
-        description: "<p>Un intrant peut tout autant être un pesticide de synthèse qui va avoir un impact négatif sur la qualité de l'eau tout comme un apport d'inoculum mycorhizien pour favoriser la tolérance de la culture vis à vis de la sécheresse. Ou encore, un amendement organique peut permettre d'accroitre la réserve utile des sols, améliore la perméabilité de la surface du sol, l'infiltration de l'eau et le ressuyage des sols ...</p>" +
-                "<p>Attention à ne pas diaboliser les intrants. N'importe qui faisant du jardinage se rend compte qu'on ne peut pas exporter des productions sans rapporter quelque chose au sol (en tout cas sur le long terme).</p>",
+        description: "<p>Les intrants peuvent être de différents types, de synthèse via les pestcicides mais aussi organiques via l'apport de matière. Il s'agira d'être vigilant sur leur utilisation et d'en avoir une approche raisonnée.</p>",
     },
     {
         milieu: "agricole",
@@ -51,36 +50,39 @@ const pointsInfo = [
         positionFiche: 'top',
         x: 75,
         y: 32,
-        description: "<p>Quelle que soit la nature de la prairie, son mode de conduite et sa localisation, une prairie joue un rôle important au regard de la protection de l'eau du fait qu'elle présente une couverture végétale permanente toute l'année et qu'elle est moins consommatrice d'intrants. Qui plus est, dans le cadre d'une prairie temporaire, elle permet de casser le cycle des adventices, d'apporter de l'azote et donc de diminuer l'usage d'intrants de synthèse pour les cultures qui lui succèdent.</p>",
+        description: "<p>La prairie humide constitue une forme particulière de zone humide qui peut être préservée grâce à une agriculture raisonnée.</p><p>Le maintien d’un couvert végétal permanent, une gestion pastorale extensive ou encore la fauche tardive sont autant de gestes qui contribuent à l’entretien de ces milieux et renforcent les nombreux services qu’ils rendent.</p>",
     },
+    /*{
+        milieu: "agricole",
+        label: "Récupération d'eau de pluie",
+        positionFiche: 'top',
+        x: 75,
+        y: 32,
+        description: "Identique à la récupération de l'eau de pluie sur les toitures, la récupération de l'eau de pluie sur les bâtiments agricoles peut permettre l'arrosage, le lavage des sols, l'évacuation des excrétas...</p><p>C'est une solution alternative qui permet de protéger l'environnement en limitant les prélèvements notamment en période de sécheresse.",
+    },*/
     {
         milieu: "naturel",
         label: "Libre évolution",
         positionFiche: 'top',
         x: 40,
         y: 50,
-        description: "<p>Une zone humide laissée en libre évolution évolue naturellement selon plusieurs facteurs, notamment le climat, la topographie et les dynamiques écologiques locales. Voici les principales étapes et tendances possibles :</p>" +
-                "<p></p>" +
-                "<p>1. Végétation herbacée et marais</p>" +
-                "<p>Dans un premier temps, la zone humide reste dominée par des plantes aquatiques et semi-aquatiques (roseaux, joncs, carex…). La diversité végétale s’accroît, attirant une faune spécifique (amphibiens, oiseaux d’eau, insectes).</p>" +
-                "<p></p>" +
-                "<p>2. Progression vers un milieu boisé (boisement spontané)</p>" +
-                "<p>Sans intervention, certaines zones humides évoluent vers un boisement naturel. Des espèces adaptées aux milieux humides, comme les saules, aulnes ou frênes, s’installent progressivement, transformant le paysage en forêt alluviale ou ripisylve. Ce boisement modifie l’hydrologie et peut réduire l’ouverture du milieu.</p>" +
-                "<p></p>" +
-                "<p>3. Stabilisation en forêt humide ou en tourbière</p>" +
-                "<p>Selon l’humidité résiduelle et les conditions locales :</p>" +
-                "<p></p>" +
-                "<p>Si l’eau reste abondante, la zone peut évoluer en tourbière où la matière organique s’accumule (sphaignes, mousses). Ce type de milieu stocke du carbone et joue un rôle majeur dans la régulation climatique.</p>" +
-                "<p>Si l’eau se fait plus rare, la forêt humide peut s’épaissir et ressembler à une forêt classique, avec une biodiversité adaptée aux sols encore humides.</p>" +
-                "<p></p>" +
-                "<p>En résumé : Une zone humide en libre évolution peut rester une prairie humide, évoluer en marais, en forêt alluviale, ou même en tourbière, selon les conditions locales. C’est un processus lent et naturel qui favorise la biodiversité et les fonctions écologiques du milieu.</p>",
+        description: "<p>Une zone humide laissée en libre évolution évolue naturellement selon plusieurs facteurs, notamment le climat, la topographie et les dynamiques écologiques locales.</p><p>Cette évolution est composée de différentes étapes qui se succéderont avec pour commencer la densification des herbier puis l'arrivée des ligneux pour enfin former un milieu de type forestier.</p><p>Une zone humide en libre évolution peut rester une prairie humide, évoluer en marais, en forêt alluviale, ou même en tourbière, selon les conditions locales.</p><p>C’est un processus lent et naturel qui favorise la biodiversité et les fonctions écologiques du milieu.</p>",
     },
+    // {
+        // milieu: "naturel",
+        // label: "Plan d'aménagement forestier",
+        // positionFiche: 'top',
+        // x: 85,
+        // y: 36,
+        // description: "<p>Un plan d’aménagement forestier est un document qui sert à organiser et gérer une forêt de manière durable. Il définit comment exploiter les arbres tout en protégeant l’environnement et en préservant la biodiversité. Ce plan précise quelles zones seront exploitées, reboisées ou laissées intactes, ainsi que les actions à mener pour garantir la santé de la forêt sur le long terme. Son objectif est d’équilibrer la production de bois, la conservation de la nature et les besoins des humains.</p>",
+    // },
+    
     {
         milieu: "naturel",
-        label: "Plan d'aménagement forestier",
-        positionFiche: 'top',
+        label: "Forêt de feuillus",
+        positionFiche: 'bottom',
         x: 85,
         y: 36,
-        description: "<p>Un plan d’aménagement forestier est un document qui sert à organiser et gérer une forêt de manière durable. Il définit comment exploiter les arbres tout en protégeant l’environnement et en préservant la biodiversité. Ce plan précise quelles zones seront exploitées, reboisées ou laissées intactes, ainsi que les actions à mener pour garantir la santé de la forêt sur le long terme. Son objectif est d’équilibrer la production de bois, la conservation de la nature et les besoins des humains.</p>",
+        description: "<p>Riches en espèces et dotées de sols vivants, les forêts de feuillus jouent un rôle clé dans la gestion durable de l’eau.</p><p>Leurs racines profondes et leur sol riche en humus favorisent l’infiltration, limitent le ruissellement et réduisent l’érosion.</p><p>Contrairement aux résineux, elles n’acidifient pas les sols et contribuent à une meilleure qualité de l’eau.</p><p>En hiver, lorsque les arbres perdent leurs feuilles, l’évapotranspiration diminue, ce qui facilite la recharge des nappes phréatiques.</p><p>Ces forêts offrent aussi une grande diversité d’habitats pour la faune et la flore, renforçant la résilience des écosystèmes face aux maladies et au changement climatique.</p>",
     }
 ]
