@@ -93,7 +93,9 @@ function updateAmenagementsEffects()
             let indicatorVisible = weatherModifier > 0;
 
             let indicatorRatio = .5 + weatherModifier * .5;
-
+            let indicatorScale = .9 + weatherModifier * .3;
+            
+// log(weatherModifier);
             if (effectName === 'ruissellement')
             {
                 indicatorRatio = 1;
@@ -104,10 +106,19 @@ function updateAmenagementsEffects()
                 indicatorRatio = easeOutQuad(indicatorRatio);
             }
 
-            indicatorElt
-                .toggleClass('visible', indicatorVisible)
-                .css('opacity', indicatorRatio)
-                // .css('transform', 'scale(' + indicatorScale + ')');
+            indicatorElt.each(function()
+            {
+                let elt = $(this);
+
+                let amenagementElt = elt.closest('.amenagement');
+                let amenagement = amenagementElt.data('amenagement');
+                let amenagementEffect = amenagement.effects[effectName];
+                let rotate = amenagementEffect.rotate | 0;
+
+                elt
+                    .toggleClass('visible', indicatorVisible)
+                    .css('transform', 'scale(' + indicatorScale + '), rotate(' + rotate + 'deg)');
+            });
         }
 }
 

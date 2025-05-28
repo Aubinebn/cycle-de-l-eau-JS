@@ -393,6 +393,7 @@ body[data-milieu="3"] #focus-container {
     text-transform:uppercase;
 }
 
+
 @property --toggle-button-gradient-1 {
     syntax: '<color>';
     initial-value: #D4D4D4;
@@ -835,13 +836,14 @@ body[data-milieu="3"] #gui #gui-bottom #nav:after {
     pointer-events: none;
     opacity:0;
     visibility: hidden;
-    transition:transform 2s ease-in-out, opacity 1s ease-in-out;
+    transition:transform 1s ease-out, opacity 1s ease-in-out;
+    /* transition:opacity 1s ease-in-out; */
 }
 
 .effect-indicator.effect-indicator-evaporation {
     width: 200px;
     height: 200px;
-    transform: scale(0.8);
+    transform: scale(1.2);
     mix-blend-mode: hard-light;
     transform-origin: center bottom;
     /*overflow:hidden;*/
@@ -857,7 +859,7 @@ body[data-milieu="3"] #gui #gui-bottom #nav:after {
 .effect-indicator.effect-indicator-infiltration {
     width: 200px;
     height: 200px;
-    transform: scale(0.8);
+    transform: scale(1.2);
     transform-origin: center top;
 }
 .effect-indicator.effect-indicator-infiltration .effect-indicator-img {
@@ -873,6 +875,23 @@ body[data-milieu="3"] #gui #gui-bottom #nav:after {
     opacity:1;
     visibility: visible;
 }
+
+/* .amenagement .effect-indicator.visible.effect-indicator-ruissellement { */
+    /* animation: ruissellement 2s infinite ease-in-out; */
+/* } */
+
+/* @keyframes ruissellement { */
+    /* 0% { */
+        /* transform:scale(1); */
+    /* } */
+    /* 50% { */
+        /* transform:scale(1.025); */
+    /* } */
+    /* 100% { */
+        /* transform:scale(1); */
+    /* } */
+/* } */
+
 
 @keyframes fleche-evaporation {
     0% {
