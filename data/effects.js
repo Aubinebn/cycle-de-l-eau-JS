@@ -5,8 +5,8 @@ const effects = {
             label: 'Infiltration',
             default: {
                 'urbain' : 1,
-                'agricole' : 2.5,
-                'naturel' : 4
+                'agricole' : 1,
+                'naturel' : 3
             },
             modifiers: {
                 cold: {
@@ -70,7 +70,7 @@ const effects = {
             label: 'Qualité de l\'eau',
             default: {
                 'urbain' : 5,
-                'agricole' : 1,
+                'agricole' : 0,
                 'naturel' : 3
             },
         }

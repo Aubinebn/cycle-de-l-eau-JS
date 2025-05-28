@@ -99,9 +99,10 @@ const urbain = [
             infiltration: {
                 modifier: +1,
                 indicator: {
-                    x: 951,
-                    y: 1371
-                }
+                    x: 931,
+                    y: 1351
+                },
+                rotate:18
             },
             qualiteEau: {
                 modifier: +1
@@ -246,7 +247,7 @@ const urbain = [
             infiltration: {
                 modifier: +1,
                 indicator: {
-                    x: 1443,
+                    x: 1453,
                     y: 1447
                 }
             },
@@ -292,10 +293,10 @@ const urbain = [
             infiltration: {
                 modifier: +1,
                 indicator: {
-                    x: 1106,
+                    x: 1216,
                     y: 1420
                 },
-                rotate:24
+                rotate:14
             },
             qualiteEau: {
                 modifier: +1
@@ -429,13 +430,13 @@ const agricole = [
             y: 883
         },
         effects: {
-            // infiltration: {
-                // modifier: +1,
-                // indicator: {
-                    // x: 6915,
-                    // y: 1380
-                // }
-            // },
+            infiltration: {
+                modifier: -1,
+                indicator: {
+                    x: 6915,
+                    y: 1380
+                }
+            },
             // qualiteEau: {
                 // modifier: +1
             // },
@@ -522,7 +523,7 @@ const agricole = [
         },
         effects: {
             qualiteEau: {
-                modifier: +5
+                modifier: +2
             },
             biodiversite: {
                 modifier: +1
@@ -585,9 +586,10 @@ const naturel = [
             infiltration: {
                 modifier: +1,
                 indicator: {
-                    x: 8584,
-                    y: 1351
-                }
+                    x: 8754,
+                    y: 1313
+                },
+                rotate:-14
             },
             qualiteEau: {
                 modifier: +1
@@ -628,6 +630,14 @@ const naturel = [
             ruissellement: {
                 modifier: -1
             },
+            infiltration: {
+                modifier: +1,
+                indicator: {
+                    x: 8040,
+                    y: 1383
+                },
+                rotate:-14
+            },
             reseauEau: {
                 modifier: -1
             },
@@ -647,21 +657,21 @@ const naturel = [
         imageActive: {
             path: "amenagements/naturel-cropped/ripisylve.png",
             x: 7562,
-            y: 840
+            y: 677
         },
         effects: {
             evaporation: {
                 modifier: -1,
                 indicator: {
-                    invalidIndicator: true,
-                    x: 8072,
-                    y: 765
+                    inactiveIndicator: true,
+                    x: 8003,
+                    y: 947
                 }
             },
             infiltration: {
                 modifier: +1,
                 indicator: {
-                    x: 7684,
+                    x: 7750,
                     y: 1376
                 }
             },
@@ -772,11 +782,11 @@ const naturel = [
                 }
             },
             infiltration: {
-                modifier: -1,
+                modifier: -2,
                 indicator: {
-                    invalidIndicator: true,
-                    x: 11150,
-                    y: 1223
+                    inactiveIndicator: true,
+                    x: 10650,
+                    y: 1359
                 }
             },
             qualiteEau: {
@@ -825,7 +835,12 @@ const naturel = [
                 }
             },
             infiltration: {
-                modifier: -1
+                modifier: -2,
+                indicator: {
+                    inactiveIndicator: true,
+                    x: 9415,
+                    y: 1285
+                }
             },
             qualiteEau: {
                 modifier: -1

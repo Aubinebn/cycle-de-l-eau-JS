@@ -95,30 +95,36 @@ function updateAmenagementsEffects()
             let indicatorRatio = .5 + weatherModifier * .5;
             let indicatorScale = .9 + weatherModifier * .3;
             
-// log(weatherModifier);
             if (effectName === 'ruissellement')
             {
                 indicatorRatio = 1;
 
-                //-- pour le ruissellement, on ne montre pas l'indicateur si la valeur de l'effet est trop faible
+                //-- pour le ruissellement, on prend aussi en compte le niveau global de ruissellement (permet de bien montrer l'impact des aménagements)
                 let globalEffectValue = $('.gui-effect-' + effectName).data('effect-ratio');
                 indicatorRatio = weatherModifier * globalEffectValue;
                 indicatorRatio = easeOutQuad(indicatorRatio);
+                indicatorElt.css('opacity', indicatorRatio);
             }
-
-            indicatorElt.each(function()
+            else
             {
-                let elt = $(this);
+                //-- pour les autres effets, on appliquera un scale, et potentiellement un rotate si configuré en fonction de chaque aménagement
+                indicatorElt.each(function()
+                {
+                    let elt = $(this);
 
-                let amenagementElt = elt.closest('.amenagement');
-                let amenagement = amenagementElt.data('amenagement');
-                let amenagementEffect = amenagement.effects[effectName];
-                let rotate = amenagementEffect.rotate | 0;
+                    let amenagementElt = elt.closest('.amenagement');
+                    let amenagement = amenagementElt.data('amenagement');
+                    let amenagementEffect = amenagement.effects[effectName];
+                    let rotate = amenagementEffect.rotate | 0;
 
-                elt
-                    .toggleClass('visible', indicatorVisible)
-                    .css('transform', 'scale(' + indicatorScale + '), rotate(' + rotate + 'deg)');
-            });
+                    elt.toggleClass('visible', indicatorVisible);
+                    
+                    if (effectName != 'ruissellement')
+                        elt.css('transform', 'scale(' + indicatorScale + '), rotate(' + rotate + 'deg)');
+                    else
+                        elt.css('opacity', indicatorRatio);
+                });
+            }
         }
 }
 
