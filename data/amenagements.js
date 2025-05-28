@@ -322,14 +322,14 @@ const agricole = [
     {
         milieu: "agricole",
         label: "Diversité culturale",
-        x: 35.8,
+        x: 40,
         y: 34.8,
         active: false,
         positionFiche: 'right middle',
         imageActive: {
             path: "amenagements/agricole-cropped/diversite-cultures.png",
-            x: 3842,
-            y: 587
+            x: 3847,
+            y: 590
         },
         imageInactive: {
             path: "amenagements/agricole-cropped/monoculture.png",
